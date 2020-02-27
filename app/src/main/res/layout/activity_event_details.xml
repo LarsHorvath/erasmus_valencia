@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EventDetailsActivity">
+
+    <ImageView
+        android:id="@+id/companyImage"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/timeImage"
+        app:layout_constraintStart_toStartOf="@+id/timeImage"
+        app:layout_constraintTop_toBottomOf="@+id/locationImage"
+        app:srcCompat="@drawable/company" />
+
+    <TextView
+        android:id="@+id/timeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Time"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/timeImage"
+        app:layout_constraintStart_toEndOf="@+id/timeImage"
+        app:layout_constraintTop_toTopOf="@+id/timeImage" />
+
+    <TextView
+        android:id="@+id/locationText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:text="Location"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/locationImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/timeText"
+        app:layout_constraintTop_toTopOf="@+id/locationImage"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <ImageView
+        android:id="@+id/locationImage"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/timeImage"
+        app:layout_constraintStart_toStartOf="@+id/timeImage"
+        app:layout_constraintTop_toBottomOf="@+id/timeImage"
+        app:srcCompat="@drawable/loc" />
+
+    <ImageView
+        android:id="@+id/urlImage"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/companyImage"
+        app:layout_constraintStart_toStartOf="@+id/companyImage"
+        app:layout_constraintTop_toBottomOf="@+id/companyImage"
+        app:srcCompat="@drawable/url" />
+
+    <TextView
+        android:id="@+id/urlText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:autoLink="web"
+        android:text="facebook"
+        app:layout_constraintBottom_toBottomOf="@+id/urlImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/companyText"
+        app:layout_constraintTop_toTopOf="@+id/urlImage" />
+
+    <ImageView
+        android:id="@+id/timeImage"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleText"
+        app:srcCompat="@drawable/time" />
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:text="titletext"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoView" />
+
+    <ImageView
+        android:id="@+id/logoView"
+        android:layout_width="144dp"
+        android:layout_height="144dp"
+        android:layout_marginTop="32dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/questionmark" />
+
+    <TextView
+        android:id="@+id/companyText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:text="company"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/companyImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/locationText"
+        app:layout_constraintTop_toTopOf="@+id/companyImage" />
+
+    <ImageButton
+        android:id="@+id/favouriteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/companyText"
+        app:srcCompat="@android:drawable/btn_star_big_on" />
+    <ImageButton
+        android:id="@+id/notFavouriteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/companyText"
+        app:srcCompat="@android:drawable/btn_star_big_off" />
+</androidx.constraintlayout.widget.ConstraintLayout>
