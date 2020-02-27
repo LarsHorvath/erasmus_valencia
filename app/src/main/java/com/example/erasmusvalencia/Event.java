@@ -1,16 +1,23 @@
 package com.example.erasmusvalencia;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Locale;
 
 public class Event implements Comparable<Event> {
-    private String id;
+    public static HashMap<Integer, Event> allEvents = new HashMap<>();
+
+    private int id;
     private String title;
     private String company;
     private int companyID = 4;
@@ -19,32 +26,39 @@ public class Event implements Comparable<Event> {
     private String url;
     private Date startDate;
     private Date endDate;
-    static final String[] companies = {"ESN", "Happy Erasmus", "Soy Erasmus", "Erasmus Life"};
+    private boolean favourite;
+    private boolean custom;
+    static public final String[] companies = {"ESN", "Happy Erasmus", "Soy Erasmus", "Erasmus Life"};
+    static public final int imagesrc[] = {R.drawable.esn, R.drawable.happyerasmus, R.drawable.soyerasmus,
+            R.drawable.erasmuslife, R.drawable.questionmark};
     public static final int FILTER_TITLE = 1;
     public static final int FILTER_DESCRIPTION = 2;
     public static final int FILTER_LOCATION = 3;
     public static final int FILTER_COMPANY = 4;
     public static final int FILTER_DATE = 5;
+    public static final int FILTER_FAVOURITE = 6;
 
     public Event() {
-        id = "no id";
         title = "no title";
         company = "no company";
         description = "no description";
         location = "no location";
         startDate = new Date();
         endDate = new Date();
+        id = generateID();
+        allEvents.put(id, this);
+        favourite = false;
     }
 
     public int compareTo(Event other) {
         return startDate.compareTo(other.startDate);
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -114,6 +128,17 @@ public class Event implements Comparable<Event> {
         }
     }
 
+    public static String toJson(final HashMap<Integer, Event> events) {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        return gson.toJson(events);
+    }
+
+    public static HashMap<Integer, Event> parseFromJSON(final String json) {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        Type type = new TypeToken<HashMap<Integer,Event>>() {}.getType();
+        return gson.fromJson(json, type);
+    }
+
     /**
      * Parses a String that is formatted as a JSON to generate an ArrayList of type Event
      * @param JSONString the String to be parsed
@@ -135,6 +160,7 @@ public class Event implements Comparable<Event> {
             event.setEndDate(new Date(item.getAsJsonObject("end").getAsJsonPrimitive("dateTime").getAsString()));
             event.findCompany();
             event.findLink();
+            event.setCustom(false);
             result.add(event);
         }
         return result;
@@ -190,6 +216,9 @@ public class Event implements Comparable<Event> {
                         }
                         else if (((Date) filters[i]).compareTo(event.getStartDate()) > 0 || event.getStartDate().compareTo((Date) filters[++i]) >= 0) return false;
                         break;
+                    case FILTER_FAVOURITE:
+                        if (!(filters[i] instanceof Boolean)) throw new IllegalArgumentException();
+                        return event.isFavourite() == (Boolean) filters[i];
                 }
                 i++;
             }
@@ -214,6 +243,30 @@ public class Event implements Comparable<Event> {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public boolean isFavourite() {
+        return favourite;
+    }
+
+    public void setFavourite(boolean favourite) {
+        this.favourite = favourite;
+    }
+
+    //id is 6 digit number
+    static public int generateID() {
+        while (true) {
+            int id = (int) (Math.random()*1000000);
+            if (!allEvents.containsKey(id)) return id;
+        }
+    }
+
+    public boolean isCustom() {
+        return custom;
+    }
+
+    public void setCustom(boolean custom) {
+        this.custom = custom;
     }
 
     public static class Date implements Comparable<Date> {

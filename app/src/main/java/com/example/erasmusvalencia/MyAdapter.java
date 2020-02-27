@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,19 +18,12 @@ import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
-    ArrayList<Event> eventsToDisplay;
+    private int ids[];
+    private Context context;
 
-    String titles[], dates[], locations[];
-    int logosources[];
-    Context context;
-
-    public MyAdapter(Context ct, String s1[], String s2[], String s3[], int img[], ArrayList<Event> eventsToDisplay) {
+    public MyAdapter(Context ct, int ids[]) {
         context = ct;
-        titles = s1;
-        dates = s2;
-        locations = s3;
-        logosources = img;
-        this.eventsToDisplay = eventsToDisplay;
+        this.ids = ids;
     }
 
     @NonNull
@@ -42,25 +36,22 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
-        /*holder.myText1.setText(titles[position]);
-        holder.myText2.setText(dates[position]);
-        holder.myText3.setText(locations[position]);
-        holder.myImage.setImageResource(logos[position]);*/
-        final Event e = eventsToDisplay.get(position);
+        final Event e = Event.allEvents.get(ids[position]);
         holder.myText1.setText(e.getTitle());
         holder.myText2.setText(e.getStartDate().toString());
         holder.myText3.setText(e.getLocation());
-        holder.myImage.setImageResource(logosources[e.getCompanyID()]);
+        holder.myImage.setImageResource(Event.imagesrc[e.getCompanyID()]);
+        if (e.isFavourite()) {
+            holder.myImage.setBackgroundColor(Color.YELLOW);
+        }
+        else {
+            holder.myImage.setBackgroundColor(Color.TRANSPARENT);
+        }
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, EventDetailsActivity.class);
-                intent.putExtra("data1", e.getTitle());
-                intent.putExtra("data2", e.getStartDate().toString());
-                intent.putExtra("data3", e.getLocation());
-                intent.putExtra("url", e.getUrl());
-                intent.putExtra("company", e.getCompany());
-                intent.putExtra("myImage", logosources[e.getCompanyID()]);
+                intent.putExtra("event_id", e.getId());
                 context.startActivity(intent);
             }
         });
@@ -68,7 +59,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public int getItemCount() {
-        return titles.length;
+        return ids.length;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{

@@ -29,18 +29,13 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
     // Declarations
     RecyclerView recyclerView;
-    String s1[], s2[], s3[];
-    int images[];
-    int imagesrc[] = {R.drawable.esn, R.drawable.happyerasmus, R.drawable.soyerasmus,
-            R.drawable.erasmuslife, R.drawable.questionmark};
+
     private static final String TAG = "MainActivity";
-    private static final String FILE_NAME = "events_list";
     ArrayList<Event> events;
     TextView dateText;
     Event.Date today, tmw;
@@ -53,9 +48,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Initialization
-        events = new ArrayList<>();
-        FileHandler fileHandler = new FileHandler(FILE_NAME);
-
         dateText = findViewById(R.id.dateView);
         ImageButton fButton = findViewById(R.id.fButton);
         ImageButton ffButton = findViewById(R.id.ffButton);
@@ -63,10 +55,49 @@ public class MainActivity extends AppCompatActivity {
         ImageButton fbButton = findViewById(R.id.fbButton);
         filterSwitch = findViewById(R.id.filterSwitch);
 
+        FileHandler.context = this;
+
+        // Reading file if this is the first time that app is open
+        SharedPreferences preferences = getSharedPreferences("init", MODE_PRIVATE);
+        boolean firstOpen = preferences.getBoolean("first_time", true);
+        events = new ArrayList<>();
+        if (firstOpen) {
+            Log.i(TAG, "onCreate: we are opening for first time");
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putBoolean("first_time", false);
+            editor.apply();
+
+            FileHandler fileHandler = new FileHandler(FileHandler.DEFAULT_FILE);
+            // Reading the file with the Events
+            try {
+                fileHandler.readFile();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Log.i(TAG, "onCreate: following read" + fileHandler.getContent());
+            // Parsing the read String to get the ArrayList of Event
+            events = Event.parseFromJSONString(fileHandler.getContent());
+
+            for (Event e : events) {
+                Event.allEvents.put(e.getId(), e);
+            }
+        }
+        else {
+            FileHandler fileHandler = new FileHandler(FileHandler.FILE_NAME);
+            try {
+                fileHandler.readFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            String json = fileHandler.getContent();
+            Event.allEvents = Event.parseFromJSON(json);
+            events.addAll(Event.allEvents.values());
+        }
+
         // Getting the current date and initializing today & tomorrow
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date();
-        SharedPreferences preferences = getSharedPreferences("init", MODE_PRIVATE);
         String day = preferences.getString("day", dateFormat.format(date));
         today = new Event.Date(day);
         tmw = today;
@@ -74,16 +105,6 @@ public class MainActivity extends AppCompatActivity {
         filterSwitch.setChecked(restrict);
         tmw = today.addDays(1);
 
-        // Reading the file with the Events
-        try {
-            fileHandler.readFile();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        // Parsing the read String to get the ArrayList of Event
-        events = Event.parseFromJSONString(fileHandler.getContent());
         Collections.sort(events);
 
         // Updating the UI for the current date
@@ -150,6 +171,14 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = preferences.edit();
         // editor.clear();
         editor.apply();
+        String json = Event.toJson(Event.allEvents);
+        FileHandler handler = new FileHandler(FileHandler.FILE_NAME);
+        try {
+            handler.clearFile();
+            handler.writeFile(json);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     // Updates the UI (the date and the events on that date)
@@ -170,26 +199,20 @@ public class MainActivity extends AppCompatActivity {
     // Sets tiles invisible, fills them, and only the filled ones to visible
     public void displayEvents(ArrayList<Event> fEvents) {
         int size = fEvents.size();
-        s1 = new String[size];
-        s2 = new String[size];
-        s3 = new String[size];
-        images = new int[size];
+        int [] fids = new int[size];
         for (int i = 0; i < size; i++) {
-            s1[i] = fEvents.get(i).getTitle();
-            s2[i] = String.format(Locale.ENGLISH,  fEvents.get(i).getStartDate().toString());
-            s3[i] = fEvents.get(i).getLocation();
-            images[i] = imagesrc[fEvents.get(i).getCompanyID()];
+            fids[i] = fEvents.get(i).getId();
         }
 
         recyclerView = findViewById(R.id.recyclerView);
 
-        MyAdapter myAdapter = new MyAdapter(this, s1, s2, s3, imagesrc, fEvents);
+        MyAdapter myAdapter = new MyAdapter(this, fids);
         recyclerView.setAdapter(myAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
     
     // Class that helps reading and writing files, just close the whole class. (also not all functions used, some still from the game)
-    public class FileHandler {
+    /*public class FileHandler {
 
         private String fileName;
         private ArrayList<Player> players;
@@ -285,6 +308,7 @@ public class MainActivity extends AppCompatActivity {
                 this.score = score;
             }
 
+
             // Getters
             public String getName() {
                 return name;
@@ -298,8 +322,6 @@ public class MainActivity extends AppCompatActivity {
             public int compareTo(Player p){
                 return Integer.compare(this.score, p.score);
             }
-
         }
-
-    }
+    }*/
 }
