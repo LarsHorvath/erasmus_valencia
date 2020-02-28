@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Event> events;
     TextView dateText;
     Event.Date today, tmw;
+    ImageButton fButton, ffButton, bButton, fbButton;
     Switch filterSwitch;
     boolean restrict;
 
@@ -39,10 +40,10 @@ public class MainActivity extends AppCompatActivity {
 
         // Initialization
         dateText = findViewById(R.id.dateView);
-        ImageButton fButton = findViewById(R.id.fButton);
-        ImageButton ffButton = findViewById(R.id.ffButton);
-        ImageButton bButton = findViewById(R.id.bButton);
-        ImageButton fbButton = findViewById(R.id.fbButton);
+        fButton = findViewById(R.id.fButton);
+        ffButton = findViewById(R.id.ffButton);
+        bButton = findViewById(R.id.bButton);
+        fbButton = findViewById(R.id.fbButton);
         filterSwitch = findViewById(R.id.filterSwitch);
 
         // Get event data and score them in Event.allEvents and this.events
@@ -51,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
         // Getting the current date and initializing today & tomorrow
         getDate();
 
-        // OnClickListeners for the buttons
-        setListeners(fButton, ffButton, bButton, fbButton);
+        // OnClickListeners for the buttons and the switch
+        setListeners();
 
         // Updating the UI for the currently set date
         updateEvents(today, tmw);
@@ -109,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
         Collections.sort(events);
     }
 
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
-    private void setListeners(ImageButton fButton, ImageButton ffButton, ImageButton bButton, ImageButton fbButton) {
+    private void setListeners() {
         fButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
