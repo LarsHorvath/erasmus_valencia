@@ -1,6 +1,5 @@
 package com.example.erasmusvalencia;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,16 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.lang.reflect.Type;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -55,6 +45,34 @@ public class MainActivity extends AppCompatActivity {
         ImageButton fbButton = findViewById(R.id.fbButton);
         filterSwitch = findViewById(R.id.filterSwitch);
 
+        // Get event data and score them in Event.allEvents and this.events
+        doFileMagic();
+
+        // Getting the current date and initializing today & tomorrow
+        getDate();
+
+        // OnClickListeners for the buttons
+        setListeners(fButton, ffButton, bButton, fbButton);
+
+        // Updating the UI for the currently set date
+        updateEvents(today, tmw);
+    }
+
+    private void getDate() {
+        SharedPreferences preferences = getSharedPreferences("init", MODE_PRIVATE);
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = new Date();
+        String day = preferences.getString("day", dateFormat.format(date));
+        today = new Event.Date(day);
+        tmw = today;
+        restrict = preferences.getBoolean("restrictToDay", false);
+        filterSwitch.setChecked(restrict);
+        tmw = today.addDays(1);
+    }
+
+    // Either reads and parses the events from the raw_event_data resource or parses the in that case already existing json array of type Event
+    private void doFileMagic() {
+        // Setting the FileHandler's context
         FileHandler.context = this;
 
         // Reading file if this is the first time that app is open
@@ -83,108 +101,14 @@ public class MainActivity extends AppCompatActivity {
             SharedPreferences.Editor editor = preferences.edit();
             editor.putBoolean("first_time", false);
             editor.apply();
-            String s, total = "";
-
-            try {
-                BufferedReader reader = new BufferedReader(
-                        new InputStreamReader(getResources().openRawResource(R.raw.raw_event_data)));
-                while ((s = reader.readLine())!=null) {
-                    total += " " + s;
-                    //Log.i(TAG, "onCreate: s is " + s);
-                }
-                reader.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            /*FileHandler fileHandler = new FileHandler(FileHandler.DEFAULT_FILE);
-            // Reading the file with the Events
-            try {
-                fileHandler.readFile();
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            Log.i(TAG, "onCreate: following read" + fileHandler.getContent());
-            // Parsing the read String to get the ArrayList of Event
-            events = Event.parseFromJSONString(fileHandler.getContent());*/
-            Log.i(TAG, "onCreate: read string " + total) ;
-            events = Event.parseFromJSONString(total);
-
-
+            events = Event.parseFromJSONString(FileHandler.readFromRaw());
             for (Event e : events) {
                 Event.allEvents.put(e.getId(), e);
             }
         }
-
-        // Getting the current date and initializing today & tomorrow
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        Date date = new Date();
-        String day = preferences.getString("day", dateFormat.format(date));
-        today = new Event.Date(day);
-        tmw = today;
-        restrict = preferences.getBoolean("restrictToDay", false);
-        filterSwitch.setChecked(restrict);
-        tmw = today.addDays(1);
-
         Collections.sort(events);
-
-        // Updating the UI for the current date
-        upDateEvents(today, tmw);
-
-        // OnClickListeners for the buttons
-        fButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                today = today.addDays(1);
-                tmw = today.addDays(1);
-                dateText.setText(today.dayToString());
-                upDateEvents(today, tmw);
-            }
-        });
-        ffButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                today = today.addDays(7);
-                tmw = today.addDays(1);
-                dateText.setText(today.dayToString());
-                upDateEvents(today, tmw);
-            }
-        });
-        bButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                today = today.addDays(-1);
-                tmw = today.addDays(1);
-                dateText.setText(today.dayToString());
-                upDateEvents(today, tmw);
-
-            }
-        });
-        fbButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                today = today.addDays(-7);
-                tmw = today.addDays(1);
-                dateText.setText(today.dayToString());
-                upDateEvents(today, tmw);
-            }
-        });
-        filterSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                restrict = isChecked;
-                SharedPreferences preferences = getSharedPreferences("init", MODE_PRIVATE);
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.putBoolean("restrictToDay", restrict);
-                editor.apply();
-                upDateEvents(today, tmw);
-            }
-        });
-
-        upDateEvents(today, tmw);
     }
+
 
     @Override
     protected void onDestroy() {
@@ -204,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Updates the UI (the date and the events on that date)
-    public void upDateEvents(Event.Date start, Event.Date end) {
+    public void updateEvents(Event.Date start, Event.Date end) {
         SharedPreferences preferences = getSharedPreferences("init", MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString("day", start.localeDateString());
@@ -218,7 +142,6 @@ public class MainActivity extends AppCompatActivity {
         displayEvents(filteredDate);
     }
 
-    // Sets tiles invisible, fills them, and only the filled ones to visible
     public void displayEvents(ArrayList<Event> fEvents) {
         int size = fEvents.size();
         int [] fids = new int[size];
@@ -232,118 +155,56 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(myAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
-    
-    // Class that helps reading and writing files, just close the whole class. (also not all functions used, some still from the game)
-    /*public class FileHandler {
 
-        private String fileName;
-        private ArrayList<Player> players;
-        private String content;
-
-        public FileHandler(String fileName) {
-            this.fileName = fileName;
-            players = new ArrayList<>();
-            content="no content yet";
-            try {
-                if (!fileExists()) createFile();
-            } catch (IOException e) {
-                Log.e(TAG, "FileHandler: exception at creation", e);
-            }
-        }
-
-        public String getContent(){ return content; }
-
-        private void writeScore(String player, int score) throws IOException {
-            Player p = new Player(player, score);
-            if (loadData() == null) {
-                players = new ArrayList<>();
-            }
-            players.add(p);
-            Collections.sort(players);
-            saveData();
-        }
-
-        private void appendFile(String text) throws IOException {
-            OutputStreamWriter fout = new OutputStreamWriter(openFileOutput(fileName, Context.MODE_APPEND));
-            fout.write(text);
-            fout.write(System.getProperty("line.separator"));
-            fout.close();
-        }
-
-        private void writeFile(String text) throws IOException {
-            OutputStreamWriter fout = new OutputStreamWriter(openFileOutput(fileName, Context.MODE_PRIVATE));
-            fout.write(text);
-            fout.close();
-        }
-
-        public void clearFile() throws IOException {
-            this.writeFile("");
-        }
-
-        private void createFile() throws IOException {
-            File file = new File(getFilesDir(), fileName);
-            FileOutputStream fout = new FileOutputStream(file);
-            fout.close();
-        }
-
-        public void readFile() throws IOException {
-            if (!fileExists()) return;
-            InputStreamReader fis = new InputStreamReader(openFileInput(fileName));
-            BufferedReader fin = new BufferedReader(fis);
-
-            String s, total = "";
-            while ((s = fin.readLine())!=null) {
-                total += " " + s;
-            }
-            fin.close();
-            content = total;
-            return;
-        }
-
-        private boolean fileExists() {
-            File file = new File(getFilesDir(), fileName);
-            return file.exists();
-        }
-
-        private void saveData() throws IOException {
-            Gson gson = new Gson();
-            String json = gson.toJson(players);
-            writeFile(json);
-        }
-
-        public ArrayList<Player> loadData() throws IOException {
-            Gson gson = new Gson();
-            readFile();
-            String json = content;
-            Type type = new TypeToken<ArrayList<Player>>() {}.getType();
-            players = gson.fromJson(json, type);
-            return players;
-        }
-
-        public class Player implements Comparable<Player> {
-            private String name;
-            private Integer score;
-
-            // Constructors
-            public Player(String name, int score){
-                this.name = name;
-                this.score = score;
-            }
-
-
-            // Getters
-            public String getName() {
-                return name;
-            }
-
-            public Integer getScore() {
-                return score;
-            }
-
+    private void setListeners(ImageButton fButton, ImageButton ffButton, ImageButton bButton, ImageButton fbButton) {
+        fButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public int compareTo(Player p){
-                return Integer.compare(this.score, p.score);
+            public void onClick(View v) {
+                today = today.addDays(1);
+                tmw = today.addDays(1);
+                dateText.setText(today.dayToString());
+                updateEvents(today, tmw);
             }
-        }
-    }*/
+        });
+        ffButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                today = today.addDays(7);
+                tmw = today.addDays(1);
+                dateText.setText(today.dayToString());
+                updateEvents(today, tmw);
+            }
+        });
+        bButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                today = today.addDays(-1);
+                tmw = today.addDays(1);
+                dateText.setText(today.dayToString());
+                updateEvents(today, tmw);
+
+            }
+        });
+        fbButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                today = today.addDays(-7);
+                tmw = today.addDays(1);
+                dateText.setText(today.dayToString());
+                updateEvents(today, tmw);
+            }
+        });
+        filterSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                restrict = isChecked;
+                SharedPreferences preferences = getSharedPreferences("init", MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putBoolean("restrictToDay", restrict);
+                editor.apply();
+                updateEvents(today, tmw);
+            }
+        });
+    }
 }
