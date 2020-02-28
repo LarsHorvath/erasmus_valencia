@@ -1,15 +1,24 @@
 package com.example.erasmusvalencia;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.ActionMenuItemView;
+import androidx.core.content.ContextCompat;
 
 import java.io.IOException;
+import java.util.Locale;
 
 public class EventDetailsActivity extends AppCompatActivity {
 
@@ -31,38 +40,32 @@ public class EventDetailsActivity extends AppCompatActivity {
         locationText = findViewById(R.id.locationText);
         urlText = findViewById(R.id.urlText);
         companyText = findViewById(R.id.companyText);
-        favouriteButton = findViewById(R.id.favouriteButton);
-        notFavouriteButton = findViewById(R.id.notFavouriteButton);
-
-        favouriteButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                event.setFavourite(false);
-                favouriteButton.setVisibility(View.INVISIBLE);
-                notFavouriteButton.setVisibility(View.VISIBLE);
-                Toast.makeText(v.getContext(),"removed from favourites", Toast.LENGTH_SHORT).show();
-            }
-        });
-        notFavouriteButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                event.setFavourite(true);
-                notFavouriteButton.setVisibility(View.INVISIBLE);
-                favouriteButton.setVisibility(View.VISIBLE);
-                Toast.makeText(v.getContext(),"event added to favourites", Toast.LENGTH_SHORT).show();
-            }
-        });
 
         getData();
         setData();
 
-        favouriteButton.setVisibility(event.isFavourite() ? View.VISIBLE : View.INVISIBLE);
-        notFavouriteButton.setVisibility(event.isFavourite() ? View.INVISIBLE : View.VISIBLE);
     }
 
     @Override
-    protected void onResume() {
+    public void onResume() {
         super.onResume();
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+
+        MenuItem settingsItem = menu.findItem(R.id.favouriteIcon);
+        // set your desired icon here based on a flag if you like
+        if (event != null) {
+            if (event.isFavourite()) settingsItem.setIcon(ContextCompat.getDrawable(this, R.drawable.ic_favorite_black_24dp));
+            else settingsItem.setIcon(ContextCompat.getDrawable(this, R.drawable.ic_favorite_border_black_24dp));
+        }
+        else {
+            Log.i(TAG, "onPrepareOptionsMenu: event isn't defined yet wjasdfjkasdf jkö asdfjlöksdaf");
+        }
+        
+
+        return super.onPrepareOptionsMenu(menu);
     }
 
     @Override
@@ -77,6 +80,47 @@ public class EventDetailsActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.favouriteIcon:
+                if (event.isFavourite()) {
+                    event.setFavourite(false);
+                    item.setIcon(R.drawable.ic_favorite_border_black_24dp);
+                    Toast.makeText(this,"removed from favourites", Toast.LENGTH_SHORT).show();
+                } else {
+                    event.setFavourite(true);
+                    item.setIcon(R.drawable.ic_favorite_black_24dp);
+                    Toast.makeText(this,"Event added to favourites", Toast.LENGTH_SHORT).show();
+                }
+                return true;
+            case R.id.shareIcon:
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, String.format(Locale.ENGLISH,"Hi, I would like to share the following event with you:\n\n*%s*\n%s _%s_\n%s %s\n%s\n\n Are you in?\n%s",event.getTitle(), getString(R.string.emoji_clock), event.getStartDate().toString(), getString(R.string.emoji_location), event.getLocation(),event.getUrl(),"&#128522;"));
+                sendIntent.setType("text/plain");
+                startActivity(sendIntent);
+                return true;
+            default:return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.event_details_menu, menu);
+        MenuItem fav_item = findViewById(R.id.favouriteIcon);
+        if (fav_item == null) return true;
+        if (event.isFavourite()) {
+            fav_item.setIcon(R.drawable.ic_favorite_black_24dp);
+        } else {
+            fav_item.setIcon(R.drawable.ic_favorite_border_black_24dp);
+        }
+        return true;
+    }
+
+
 
     private void getData() {
         if(getIntent().hasExtra("event_id")) {

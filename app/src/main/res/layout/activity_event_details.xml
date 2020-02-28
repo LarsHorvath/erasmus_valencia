@@ -122,21 +122,4 @@
         app:layout_constraintStart_toStartOf="@+id/locationText"
         app:layout_constraintTop_toTopOf="@+id/companyImage" />
 
-    <ImageButton
-        android:id="@+id/favouriteButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/logoView"
-        app:layout_constraintTop_toTopOf="@+id/logoView"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
-
-    <ImageButton
-        android:id="@+id/notFavouriteButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/logoView"
-        app:layout_constraintTop_toTopOf="@+id/logoView"
-        app:srcCompat="@android:drawable/btn_star_big_off" />
 </androidx.constraintlayout.widget.ConstraintLayout>

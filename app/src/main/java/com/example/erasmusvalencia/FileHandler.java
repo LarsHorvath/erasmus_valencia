@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-// Class that helps reading and writing files, just close the whole class. (also not all functions used, some still from the game)
+// Class that helps reading and writing files
 public class FileHandler {
 
     private String fileName;
