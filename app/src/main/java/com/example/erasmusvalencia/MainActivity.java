@@ -24,20 +24,17 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    String[] AlertDialogItems = new String[]{
+    String[] filterDialogItems = new String[]{
             "Restrict to today",
             "Only show favourites",
             "Free events",
             "Single day events"
     };
 
-    List<String> ItemsIntoList;
-
-    boolean[] Selectedtruefalse = new boolean[]{
+    boolean[] filterDialogSelection = new boolean[]{
             false,
             false,
             false,
@@ -112,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         String[] items = {"Large", "Medium", "Small"};
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
         mBuilder.setTitle("Text size")
-                .setMultiChoiceItems(AlertDialogItems, Selectedtruefalse, new DialogInterface.OnMultiChoiceClickListener() {
+                .setMultiChoiceItems(filterDialogItems, filterDialogSelection, new DialogInterface.OnMultiChoiceClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i, boolean b) {
                         SharedPreferences preferences = getSharedPreferences("init", MODE_PRIVATE);
@@ -120,13 +117,13 @@ public class MainActivity extends AppCompatActivity {
                         switch (i) {
                             case 0:
                                 filterDay = b;
-                                Selectedtruefalse[0] = b;
+                                filterDialogSelection[0] = b;
                                 editor.putBoolean("restrictToDay", filterDay);
                                 editor.apply();
                                 break;
                             case 1:
                                 filterFavourites = b;
-                                Selectedtruefalse[1] = b;
+                                filterDialogSelection[1] = b;
                                 editor.putBoolean("restrictToFavourites", filterFavourites);
                                 editor.apply();
                         }
@@ -150,8 +147,8 @@ public class MainActivity extends AppCompatActivity {
         tmw = today;
         filterDay = preferences.getBoolean("restrictToDay", false);
         filterFavourites = preferences.getBoolean("restrictToFavourites", false);
-        Selectedtruefalse[0] = filterDay;
-        Selectedtruefalse[1] = filterFavourites;
+        filterDialogSelection[0] = filterDay;
+        filterDialogSelection[1] = filterFavourites;
         tmw = today.addDays(1);
     }
 

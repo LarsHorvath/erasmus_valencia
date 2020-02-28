@@ -14,7 +14,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.view.menu.ActionMenuItemView;
 import androidx.core.content.ContextCompat;
 
 import java.io.IOException;
@@ -98,7 +97,7 @@ public class EventDetailsActivity extends AppCompatActivity {
             case R.id.shareIcon:
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, String.format(Locale.ENGLISH,"Hi, I would like to share the following event with you:\n\n*%s*\n%s _%s_\n%s %s\n%s\n\n Are you in?\n%s",event.getTitle(), getString(R.string.emoji_clock), event.getStartDate().toString(), getString(R.string.emoji_location), event.getLocation(),event.getUrl(),"&#128522;"));
+                sendIntent.putExtra(Intent.EXTRA_TEXT, String.format(Locale.ENGLISH,"Hi, I would like to share the following event with you:\n\n*%s*\n%s _%s_\n%s %s\n%s\n\n Are you in?",event.getTitle(), getString(R.string.emoji_clock), event.getStartDate().toString(), getString(R.string.emoji_location), event.getLocation(),event.getUrl()));
                 sendIntent.setType("text/plain");
                 startActivity(sendIntent);
                 return true;
