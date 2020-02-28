@@ -60,14 +60,44 @@ public class MainActivity extends AppCompatActivity {
         // Reading file if this is the first time that app is open
         SharedPreferences preferences = getSharedPreferences("init", MODE_PRIVATE);
         boolean firstOpen = preferences.getBoolean("first_time", true);
+        boolean success = true;
         events = new ArrayList<>();
-        if (firstOpen) {
+        if (!firstOpen) {
+            Log.i(TAG, "onCreate: already opened it before");
+            FileHandler fileHandler = new FileHandler(FileHandler.FILE_NAME);
+            try {
+                fileHandler.readFile();
+                String json = fileHandler.getContent();
+                Event.allEvents = Event.parseFromJSON(json);
+                events.addAll(Event.allEvents.values());
+                Log.i(TAG, "onCreate: successfully read from json");
+            } catch (IOException e) {
+                e.printStackTrace();
+                success = false;
+            } catch (Exception e) {
+                success = false;
+            }
+        }
+        if (firstOpen || !success) {
             Log.i(TAG, "onCreate: we are opening for first time");
             SharedPreferences.Editor editor = preferences.edit();
             editor.putBoolean("first_time", false);
             editor.apply();
+            String s, total = "";
 
-            FileHandler fileHandler = new FileHandler(FileHandler.DEFAULT_FILE);
+            try {
+                BufferedReader reader = new BufferedReader(
+                        new InputStreamReader(getResources().openRawResource(R.raw.raw_event_data)));
+                while ((s = reader.readLine())!=null) {
+                    total += " " + s;
+                    //Log.i(TAG, "onCreate: s is " + s);
+                }
+                reader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            /*FileHandler fileHandler = new FileHandler(FileHandler.DEFAULT_FILE);
             // Reading the file with the Events
             try {
                 fileHandler.readFile();
@@ -77,22 +107,14 @@ public class MainActivity extends AppCompatActivity {
             }
             Log.i(TAG, "onCreate: following read" + fileHandler.getContent());
             // Parsing the read String to get the ArrayList of Event
-            events = Event.parseFromJSONString(fileHandler.getContent());
+            events = Event.parseFromJSONString(fileHandler.getContent());*/
+            Log.i(TAG, "onCreate: read string " + total) ;
+            events = Event.parseFromJSONString(total);
+
 
             for (Event e : events) {
                 Event.allEvents.put(e.getId(), e);
             }
-        }
-        else {
-            FileHandler fileHandler = new FileHandler(FileHandler.FILE_NAME);
-            try {
-                fileHandler.readFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            String json = fileHandler.getContent();
-            Event.allEvents = Event.parseFromJSON(json);
-            events.addAll(Event.allEvents.values());
         }
 
         // Getting the current date and initializing today & tomorrow

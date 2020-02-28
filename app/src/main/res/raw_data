@@ -1,0 +1,998 @@
+{
+ "kind": "calendar#events",
+ "etag": "\"p334ejaeouffee0g\"",
+ "summary": "Erasmus App Valencias Facebook-Veranstaltungen",
+ "updated": "2020-02-20T00:46:08.205Z",
+ "timeZone": "UTC",
+ "accessRole": "reader",
+ "defaultReminders": [],
+ "nextSyncToken": "CMjpqdjz3ucCEMjpqdjz3ucCGAE=",
+ "items": [
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_ckoj0chi64sjed9n6gs32d1m6gs40pj1cdim4rrfdcn66rrd",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2Nrb2owY2hpNjRzamVkOW42Z3MzMmQxbTZnczQwcGoxY2RpbTRycmZkY242NnJyZCBnbGpmM2dwOXVja25xYTNvbnBhOXB1bnNmNXRlbzJlcUBp",
+   "created": "2020-02-17T18:21:47.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "Vinaros Carnival with Erasmus Life",
+   "description": "🆕 CARNAVAL DE VINAROS 🆕 \n\n* ESTÁS PREPARADO PARA UNA EXPLOSIÓN DE ALEGRÍA Y COLOR? *\n\n📆 SABADO 22 FEBRERO 2020\n\n► IDA: 15.30 desde la oficina Erasmus Life\n► VUELTA: 03.30 desde Vinaros\n\nErasmus Life Card: 21€\nErasmus Life Premium Card: 19€\n\nGrupo de 5: 20€\nGrupo de 10: 19€\n\nEL VIAJE INCLUYE:\n✓ Autobus de Valencia a Vinaros y de Vinaros a Valencia\n✓ Participación en el Carnaval más famoso de la Provincia Valenciana\n✓ Desfile \n✓ Fotógrafo\n✓ Coordinación de Erasmus\n\nEsta fiesta tiene una duración de 7 días segun la pascua cristiana, los meses en los que se suele celebrar. Nosotros vamos a celebrar LA CULMINACIÓN DE LA FIESTA - EL ÚLTIMO FINDE!\n\nÚltimo fin de semana:\nLos dos grandes desfiles que se celebran en un circuito cerrado.\n\nÚltimo día de Carnaval:\n- Velatorio de don Carnal\n- Entierro de la Sardina y quemada de don Carnal.\n- Castillo de fuegos artificiales\n\nEL PUNTO DE ENCUENTRO:\nCalle Ramon Llull, 21 (oficina morada) \n-\u003e en frente de la oficina erasmuslife donde cogemos el autobus a Vinaros. \n\nCUANDO?\nA las 15:30 \n\nEN VINAROS PASAREMOS LA FIESTA DE DISFRAZES!\nParticiparemos a las 18h30 en el desfile y seguiremos con la fiesta.\n\nVUELTA:\nPor las 03:30 de la mañana cogemos autobus que nos lleva a Valencia\n\nULTIMO DÍA PARA PODER PAGAR: \nEl 21 de Febrero. PLAZAS LIMITADAS\n\nPROGRAMA: https://www.erasmus-valencia.com/trips_687-carnaval-de-vinaros.htm#myTrip\n\nY PARA HACERTE TU TARJETA ERASMUS LIFE: http://www.erasmus-valencia.com/carta.htm\n\nASOCIACION ERASMUS LIFE \nDireccion: Calle Ramon Llull numero 21 – OFICINA MORADA\nTel: 963 298 319\nWhatsapp : +34 634 300 402\n\n-----------------------------------------------------------------------------------\n\n🆕 CARNAVAL DE VINAROS 🆕\n\n* ARE YOU READY FOR AN EXPLOSION OF JOY AND COLOURS?*\n\n📆 SATURDAY 22th of FEBRUARY 2020\n\nErasmus Life Card: 21€\nErasmus Life Premium Card: 19€\n\nGrupo de 5: 20€\nGrupo de 10: 19€\n\n► DEPARTURE: 15.30 at Erasmus Life's office\n► RETURN: 03.30 from Vinaros\n\nTHE TRIP INCLUDES:\n✓ Bus from Valencia to Vinaros and from Vinaros to Valencia\n✓ Participation in the most famous Carnival Valencia Province\n✓ Photographer\n✓ Erasmus Coordination\n\nThe event lasts 7 days and we will celebrate THE BEST PART - THE VERY END! \n\nLast weekend:\nThe two big parades that are taking place in a closed circuit.\n\nLast Day of Carnival:\n- Wake of Don Carnal\n- Burial of the Sardine and burning of Don Carnal.\n- Fireworks display\n\nMEETING POINT:\nCalle Ramon Llull, 21 in front of the erasmuslife office \n\nWHEN?\nat 3:30 pm \n\nWe will participate in the Parade at 6.30pm and we will follow with the party.\n\nRETURN:\nAt 03.30am in the morning we take the bus back to Valencia.\n\nThe deadline is 21st of February! LIMITED PLACES!\n\nPROGRAM: https://www.erasmus-valencia.com/trips_687-carnaval-de-vinaros.htm#myTrip\n\nAND DON'T FORGET YOUR ERASMUS LIFE CARD:\nhttp://www.erasmus-valencia.com/carta.htm\n\nASSOCIACION ERASMUS LIFE\nAddress: Calle Ramon Llull, n. 21 – PURPLE OFFICE\nTel: 963 298 319\nWhatsapp : +34 634 300 402\n\nhttps://www.facebook.com/events/1022197574814648/",
+   "location": "Erasmus Life Valencia",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-02-22T14:30:00Z"
+   },
+   "end": {
+    "dateTime": "2020-02-23T02:30:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e1022197574814648@facebook.com",
+   "sequence": 1395969,
+   "reminders": {
+    "useDefault": true
+   }
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_ckoj4chi6gs32e1i6gs30e9l7506cob3clh6urrb5phmur8",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2Nrb2o0Y2hpNmdzMzJlMWk2Z3MzMGU5bDc1MDZjb2IzY2xoNnVycmI1cGhtdXI4IGdsamYzZ3A5dWNrbnFhM29ucGE5cHVuc2Y1dGVvMmVxQGk",
+   "created": "2020-02-07T12:00:01.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "Welcome Dinner with ESN",
+   "description": "¡Bienvenidas damas y caballeros a nuestra primera cena y fiesta del semestre!\n\nQueremos celebrar con todos vosotros el comienzo de vuestra nueva aventura!Ven a conocer gente nueva mientras cenas o cantas en el karaoke,\nPrimero cenaremos en La Pecera y más tarde iremos a bailar a LePremiere.\n\nPonte tu mejor outfit y trae todas las ganas de pasar una noche increíble.\nNo dejes que otros te cuenten cuánta diversión te has perdido.\n\n----------------------------------------------------------------------------------------------------------------------------\n\nWelcome ladies and gentlemen to our first dinner+party of the semester!\n\nWe wanna celebrate with all of you the beginning of your new adventure! Come to meet new people meanwhile you're eating or singing in the karaoke.\nFirst we'll have dinner at La Pecera and then we'll dance at LePremiere.\n\nPut on your best clothes and bring your desire to have a great time.\nDon't let others tell you how much fun you've missed.\n\nhttps://www.facebook.com/events/122248182480959/",
+   "location": "La Pecera",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-02-21T20:00:00Z"
+   },
+   "end": {
+    "dateTime": "2020-02-21T23:00:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e122248182480959@facebook.com",
+   "sequence": 8800,
+   "reminders": {
+    "useDefault": true
+   }
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_ckoj4chj70r32d1i6gs3ie9g6l06cob3clh6urrb5phmur8",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2Nrb2o0Y2hqNzByMzJkMWk2Z3MzaWU5ZzZsMDZjb2IzY2xoNnVycmI1cGhtdXI4IGdsamYzZ3A5dWNrbnFhM29ucGE5cHVuc2Y1dGVvMmVxQGk",
+   "created": "2020-02-15T08:30:03.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "Running with ESN Valencia",
+   "description": "Hello everybody! After all those Erasmus parties and activities it's time to do some sport, so every Monday we go running to the Turia River 🏃\u200d♀\u200d🏃\u200d♂\u200d.\n\nLet's have fun! You will have a great time.\nRemember summer is coming 😉. \n\n- DATE 📆: Every Monday\n- TIME 🕰: 19.30h\n- PLACE📍: Alameda Metro Station\n\n\nhttps://www.facebook.com/events/122386142489905/",
+   "location": "Metro-Alameda",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-02-24T18:30:00Z"
+   },
+   "end": {
+    "dateTime": "2020-02-24T21:30:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e122386142489905@facebook.com",
+   "sequence": 320124,
+   "reminders": {
+    "useDefault": true
+   }
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_ckoj4cpi68rjgcpl6oq34cpk6d06cob3clh6urrb5phmur8",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2Nrb2o0Y3BpNjhyamdjcGw2b3EzNGNwazZkMDZjb2IzY2xoNnVycmI1cGhtdXI4IGdsamYzZ3A5dWNrbnFhM29ucGE5cHVuc2Y1dGVvMmVxQGk",
+   "created": "2020-02-01T14:30:36.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "Visit Oceanografic with Erasmus Life - Every Sunday",
+   "description": "ERASMUS LIFE & OCEANOGRAFIC\n\n🔝ESTE DOMINGOa las 13.00 ➡ VISITA OCEANOGRAFIC🔝\n\n🔜 Estas listo para visitar el ACUARIO más FAMOSO DE EUROPA? Te esperamos CADA DOMINGO por solo 19€ a las 13.00🎉\n\nRegistrate aquí ➡http://www.erasmus-valencia.com/home.htm\n\nLo más importante es PAGAR ANTES DEL VIERNES en nuestra oficina en EFECTIVO o ONLINE con PAYPAL o TRANSFERENCIA.\nTambien tus AMIGOS pueden APROVECHAR DEL DESCUENTO si son ESTUDIANTES Y TIENEN CARNE DE ESTUDIANTE VÁLIDO!\n\n🍹Y sabes que? Tenemos DOS PRECIOS🍹\n\n► Tarjeta GRATIS Erasmus Life: 19€\n► Tarjeta PREMIUM Erasmus Life: 17€ \n\n🐬 Que es OCEANOGRAFIC? 🐬\nUna tarde en el mayor acuario de Europa con más de 500 especies marinas. Un viaje por los mares, desde las praderas de posidonia mediterránea, pasando por los arrecifes de coral de los mares tropicales, hasta las heladas aguas de los mares polares. 🐬\n\nPUNTO DE ENCUENTRO ► A las 13:00h de Domingo delante de la entrada de Oceanografic- TIENES QUE PAGAR ANTES DEL VIERNES (NO PODEMOS ACEPTAR PAGOS EN LA PUERTA EL MISMO DIA).\n\n🎈Quieres pasar un fin de semana diferente, descubrir maravillosos animales y pagar la entrada por mitad precio?🎈\n\nQue estas esperando? Hazte tu tarjeta Erasmus Life. Es GRATIS!\n➡ http://www.erasmus-valencia.com/compte.htm\n\nTE ESPERAMOS!\n\n► ¿Donde esta el ACUARIO?: OCEANOGRAFIC\nDirección: Ciutat de les Arts i de les Ciències, Carrer d'Eduardo Primo Yúfera, 1B, 46013 Valencia.\nMapa: https://goo.gl/maps/zFUNhbXYdYQ2\n\n►¿Donde esta la OFICINA?: ERASMUS LIFE (oficina morada)\nDirección: Calle Ramon LLull, 21, 46021, Valencia\nMapa: https://goo.gl/maps/LtyPcfME71F2\nWhatsapp:+34634300402\nInstagram: erasmuslifevalencia\n\n〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰\n🇬🇧🇬🇧🇬🇧🇬🇧🇬🇧🇬🇧 ERASMUS LIFE & OCEANOGRAFIC🇬🇧🇬🇧🇬🇧🇬🇧🇬🇧🇬🇧\n\n🔝THIS SUNDAY at 13.00 ➡ VISIT OCEANOGRAFIC🔝\n\n🔜 Are you ready to visit the most FAMOUS ACQUARIUM of EUROPE? We'll wait for you EVERY SUNDAY for only 19€ at 13.00🎉\n\nRegister here ➡ http://www.erasmus-valencia.com/home.htm\n\nThe most important is to PAY BEFORE FRIDAY in our office by CASH or ONLINE by PAYPAL or BANK TRANSFER.\nAlso your FRIENDS & RELATIVES can USE THE DISCOUNT IF THEY ARE STUDENTS AND HAVE A VALID STUDENT CARD!\n\n🍹Do you know what? We have TWO PRICES🍹\n\n► FREE Erasmus Life Card: 19€\n► PREMIUM Erasmus Life Card: 17€ \n\n🐬 What is OCEANOGRAFIC? 🐬\nThe Oceanogràfic is the largest aquarium in Europe and has more than 500 different species. Also there is a dolphinarium.🐬\n\nMEETING POINT ► At 13:00h of Sunday at the MAIN ENTRANCE of Oceanografic- YOU HAVE TO PAY BEFORE FRIDAY (WE CAN'T ACCEPT PAYMENT AT THE DOOR THE SAME DAY).\n\n🎈Do you want to spend a different weekend, discover amazing animals and pat only half price?🎈\n\nWhat are you waiting for? Make your Erasmus Life Card. It's FREE!\n➡ http://www.erasmus-valencia.com/compte.htm\n\nHOPE TO SEE YOU THERE!\n\n► ¿Where is the Acquarium?: OCEANOGRAFIC\nDirección: Ciutat de les Arts i de les Ciències, Carrer d'Eduardo Primo Yúfera, 1B, 46013 Valencia.\nMap: https://goo.gl/maps/zFUNhbXYdYQ2\n\n►¿Where is the OFFICE?: ERASMUS LIFE (purple office)\nAddress: Calle Ramon LLull, 21, 46021, Valencia\nMap: https://goo.gl/maps/LtyPcfME71F2\nWhatsapp: +34634300402\nInstagram: erasmuslifevalencia\n\nhttps://www.facebook.com/events/123227835642343/",
+   "location": "Erasmus Life Valencia",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-02-23T12:00:00Z"
+   },
+   "end": {
+    "dateTime": "2020-02-23T19:00:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e123227835642343@facebook.com",
+   "sequence": 0,
+   "reminders": {
+    "useDefault": true
+   }
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_ckojac9k6co3adhn68o3ee1k74o40pj1cdim4rrfdcn66rrd",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2Nrb2phYzlrNmNvM2FkaG42OG8zZWUxazc0bzQwcGoxY2RpbTRycmZkY242NnJyZCBnbGpmM2dwOXVja25xYTNvbnBhOXB1bnNmNXRlbzJlcUBp",
+   "created": "2020-01-24T10:17:50.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "Andalucia Trip",
+   "description": "ANDALUSIA (Cordova, Seville and Granada) and Cadiz Carnival!!!\n\nWe will visit the south of Spain - Andalucia. It is an autonomous community located in the south of the Iberian Peninsula and is the most populated region in Spain. It is the land where flamenco was born, from which Columbus sailed to the \"New World\", or where literature and opera created myths like Don Juan Tenorio, Carmen and The Barber of Seville. We will visit four key cities in the region: Granada, Seville and Cordova.\n\n\n \n1st day Cordova and Seville: Guided tour in Cordova - Mosque - Seville - Tapeo - Disco and Party\n\nWe we leave Valencia in the night to come to Cordova in the morning.\n\nOnce we are in Cordoba we will start the tour with a guide who will show us their typical spots and we will get lost in its typical Andalusian streets. We can see alsow the Mosque of Cordova, cultural heritage site and has over 1200 years old and was the second largest in the world.\n\nThe city of Cordova in the eleventh century it had become the largest and most cultured capital of Europe, it coexisted in perfect harmony Jews, Muslims and Christians. It was the birthplace of philosophers, scientists, artists and scholars. It is also said that from Cordova come the most beautiful women of Andalusia.\n\n\n\nAfter having a free time to eat in Cordova we will leave direction to Seville where we will spend 2 nights.\n\nIn the afternoon we arrive in Seville, famous capital of Andalusia. It is the land of joy, grace and charm and is one of the most popular places in Spain. Its history, culture and architecture deserve admiration.\n\nWe will be staying in a super central hostel. At night we will go out for tapas in the old quarter of Seville, where the La Giralda is located and next to our accommodation. We will enjoy the unique atmosphere that can be found only in this unique city. At night we will go to one of the most famous clubs in Seville.\n\n\n\n2d day in Seville: Guided tour - The Alcázar of Seville - Tapas - Disco and Party - Cadiz Carnival (optional)\n\nOn next morning we will have a guided tour and see the Cathedral with its famous tower \"La Giralda\" (you can climb it), the Rio Guadalquivir and Torre del Oro who guarded the neighborhood of Triana, Plaza de España, the Maria Luisa Park...\n\nIn the afternoon there is a trip to Cadiz to enjoy the Carnival (optional). We'll leave Seville in the afternoon and return in the evening after the carnival.\nCadiz Carnival is the most famous in Spain (along with Tenerife) and a colorful parade is prepares tthe city for the arrival of Spring. It is considered not only one of the most beautiful carnivals in Spain, but also ranked third in the world, after the carnivals in Venice and Rio de Janeiro.\n\nThis night we stay in the histel in Seville as well.\n\n\n\n3rd day in Granada: Guided tour in Granada - Arab Teahouses - Tapas - Barrio Albaicín and Flamenco - Disco and Party\n\nIn the morning we will go directly to Granada.\n\nIn Granada we'll staying in the city center. We've chosen a place with super central location. We will stay 1 night in this city.\n\nOnce we are in the city we'll have a guided tour of the center of Granada and see monuments such as the Cathedral (where are buried the Catholic Kings who unified Spain and financed Christopher Columbus). We will go through the streets of the Arab teahouses where we can drink and flowers aromatic teas, Arabic sweets and smoking a hookah.\n\nWe will eat tapas (TAPAS !!!) in Granada with every drink you have a FREE SuperTapa.\n\nGranada is the city where the art of Flamenco was born. In the evening we will have a nocturnal tour of the Gypsy neighborhood of Albaicin, and we'll go to a authentic Flamenco show in the same neighborhood (nothing to do with what they do in Valencia). Then we'll go FREE to a disco party.\n\n\n\n4th day in Granada: Alhambra - way back to Valencia\n\nWe will visit the best jewel of the city, The Alhambra, where the Muslim Court lived 1000 years ago, and we can still visit and tour the gardens almost as if time has not passed ... Remember that the entrance ticket is not included in the price and we advice you to buy it on-line before the trip.\n\nAfter the visit to the Alhambra we will have some free time to have lunch and we will leave to Valencia.\n\nWe will arrive to Valencia around 23h00.\n\n\nhttps://www.facebook.com/events/1514305672078490/",
+   "location": "Happy Erasmus Valencia",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-02-26T23:30:00Z"
+   },
+   "end": {
+    "dateTime": "2020-03-02T01:00:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e1514305672078490@facebook.com",
+   "sequence": 1276517,
+   "reminders": {
+    "useDefault": true
+   }
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_ckojec9m6kqj2dpn6ksj2c9l6d06cob3clh6urrb5phmur8",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2Nrb2plYzltNmtxajJkcG42a3NqMmM5bDZkMDZjb2IzY2xoNnVycmI1cGhtdXI4IGdsamYzZ3A5dWNrbnFhM29ucGE5cHVuc2Y1dGVvMmVxQGk",
+   "created": "2020-02-18T23:01:02.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "Regional Erasmus Games ESN",
+   "description": "The most expected sports event of the year has finally arrived... REGIONAL ERASMUS GAMES are finally here! ⚽🏀🏐\n\nOur Regional Erasmus Games consist on a sports tournament that will gather erasmus students from the region of Valencia (Valencia, Gandía, Castellón, Burjassot, Alcoy, Moncada...). All of them will be able to compete and become the best team of Valencia. \n\nWhich sports are included?\n⚽ Futsal (5 vs 5)\n🏀Basketball (3 vs 3)\n🏐Volley (6 vs 6)\n\nWhen and where?\nThe event will be held in the UPV sports hall the 29th of February. 🎉\nIn the morning we are going to play the Futsal tournament (10:00-13:00), and in the afternoon Volley (15:00- 18:00) and Basketball (18:00- 21:00)\n\nRequirements to participate:\n✔ Every player should have a valid ESNcard\n✔ You must bring to our offices at least 1 kg of cat food per person. That will be donated to the Animal Shelter of Valencia Modepran 🐱🐶\n\nHow to participate? \nYou'll have to register your team in the following link and bring the food to the office. After that we will contact you.\nDon't worry if you don't have a team, just register yourself and we will try to found the best one for you! 😉\n\nAre you ready?💪💪💪\nhttps://forms.gle/K6x8vHUpt1Dw3M449\n\nInformation meeting\nFurthermore, we are organising a meeting next Thursday 17th at 19:00 at \"UPV students house\" (Casa del alumno https://goo.gl/maps/y38skgsTAt6Vd2yJ7) to give you more details about our Regional Erasmus Games and also about the National Erasmus Games in Granada.\n\nhttps://www.facebook.com/events/171655177591153/",
+   "location": "Universitat Politècnica de València UPV",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-02-29T09:00:00Z"
+   },
+   "end": {
+    "dateTime": "2020-02-29T20:00:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e171655177591153@facebook.com",
+   "sequence": 619,
+   "reminders": {
+    "useDefault": true
+   }
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_ckojgc1g70rj8e1p74rj4c9i6p06cob3clh6urrb5phmur8",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2Nrb2pnYzFnNzByajhlMXA3NHJqNGM5aTZwMDZjb2IzY2xoNnVycmI1cGhtdXI4IGdsamYzZ3A5dWNrbnFhM29ucGE5cHVuc2Y1dGVvMmVxQGk",
+   "created": "2020-02-07T23:07:07.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "National Event De Sevilla al Cielo with ESN en UV",
+   "description": "[ENGLISH]:\n\nSevilla, the capital of Andalusia, is waiting for you in what will become one of greatest events of the year. Get ready for the National De Sevilla al Cielo!\nThe days 6th, 7th and 8th of March 2020, international students from all around Spain will gather in Sevilla to discover and live it in a way few fortunate people could. Here you’ll be able to enjoy a unique city thanks to its culture, gastronomy, parties and people! Are you really going to miss it?\n\n\nWhat's included? \n- Round trip bus\n- Travel insurance\n- Accommodation for 2 nights\n- City tours\n- Tickets for Alcazar de Sevilla \n- Flag Parade\n- Free entry with one drink in OCCO\n- Free entry with one drink in B3\n- Picnic for Sunday\n- Welcome Pack\n\nPrice: 160€. There are limited limited spots, don't miss it!\n\nCome to our office to get you ticket or pay via Verse sending us a Direct Message.\n \n#THISisESN #ENDeSevillaalCielo #NationalEvent #HeavenOnEarth\n\n[ESPAÑOL]\n\nSevilla, la capital de Andalucía, te espera en lo que será uno de los mayores eventos del año. ¡Prepárate para el Evento Nacional De Sevilla al Cielo!\nLos días 6, 7 y 8 de marzo de 2020, estudiantes internacionales de todas partes de España coincidirán en Sevilla para descubrir la ciudad y vivirla de un modo que muy pocos afortunados podrían. Aquí disfrutarás de una ciudad que es única gracias su cultura,\ngastronomía, fiestas, y a su gente. ¿De verdad te lo vas a perder?\n\n¿Qué incluye el viaje?\n- Transporte en bus, ida y vuelta\n- Seguro de viaje\n- 2 noches de alojamiento\n- City tours\n- Entrada al Alcazar de Sevilla\n- Flag Parade\n- Entrada con consumición en la discoteca OCCO\n- Entrada con consumición en la discoteca B3\n- Picnic del domingo\n- Welcome Pack\n\nPrecio: 160€ ¡Las plazas sin limitadas, no te quedes sin tu plaza!\n\nVen a nuestra oficina a conseguir tu ticket o puedes pagar via Verse enviándonos un Mensaje Directo.\n\n#THISisESN #ENDeSevillaalCielo #NationalEvent #HeavenOnEarth\n\nhttps://www.facebook.com/events/180087489972126/",
+   "location": "Sevilla",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-03-06T05:00:00Z"
+   },
+   "end": {
+    "dateTime": "2020-03-08T22:00:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e180087489972126@facebook.com",
+   "sequence": 689117,
+   "reminders": {
+    "useDefault": true
+   }
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_ckp34chp60s3ee9p6go3ad1h6cs40pj1cdim4rrfdcn66rrd",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2NrcDM0Y2hwNjBzM2VlOXA2Z28zYWQxaDZjczQwcGoxY2RpbTRycmZkY242NnJyZCBnbGpmM2dwOXVja25xYTNvbnBhOXB1bnNmNXRlbzJlcUBp",
+   "created": "2020-02-01T11:00:01.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "ESN Island Experience with ESN en UV",
+   "description": "[ENGLISH]:\n\nAre you ready for the best trip of your life? Where we will meet Erasmus students from all over Spain on the Island of Mallorca, in the same Hotel with an ALL INCLUSIVE PACK!\n\nYES! you heard correctly ALL INCLUSIVE! Breakfasts, lunches, dinners, soft drinks, drinks… but also you will enjoy POOL PARTIES and DISCO PARTIES that you will never forget, THE BEST INTERNATIONAL ENVIRONMENT.\n\nBut that´s not all! You will also discover the island of Mallorca with PARADISE BEACHES that you will fall in love with, in addition you will enjoy its MORE THAN FAMOUS DISCOS.\nWHEN? From April 29th to May 3st 2020\n\nMORE INFO SOON...\n\n[ESPAÑOL]:\n\n¿Estás preparado para vivir el mejor viaje de tu vida? Donde nos reuniremos estudiantes Erasmus de todas partes de España en la Isla de Mallorca, en un mismo Hotel con ¡TODO INCLUIDO!\n\nSi has oído bien ¡TODO INCLUIDO! Desayunos, comidas, cenas, refrescos, bebidas… además de disfrutar de POOL PARTIES, FIESTAS que nunca olvidarás, EL MEJOR AMBIENTE INTERNACIONAL.\n\n¡Pero no solo es eso! También descubrirás la isla de Mallorca con PLAYAS PARADISÍACAS de las que os enamoraréis además de disfrutar de sus MÁS QUE FAMOSAS DISCOTECAS.\n\n¿CUÁNDO? Del 29 de Abril al 3 de Mayo del 2020\n\nMÁS INFORMACIÓN MUY PRONTO...\n\nhttps://www.facebook.com/events/2229087994054138/",
+   "location": "Mallorca",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-04-28T22:00:00Z"
+   },
+   "end": {
+    "dateTime": "2020-05-03T19:00:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e2229087994054138@facebook.com",
+   "sequence": 126626,
+   "reminders": {
+    "useDefault": true
+   }
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_ckp38c9l6ksjecpj68o3ge9p64q40pj1cdim4rrfdcn66rrd",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2NrcDM4YzlsNmtzamVjcGo2OG8zZ2U5cDY0cTQwcGoxY2RpbTRycmZkY242NnJyZCBnbGpmM2dwOXVja25xYTNvbnBhOXB1bnNmNXRlbzJlcUBp",
+   "created": "2019-12-13T19:15:14.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "Portugal Trip: Lisboa, Porto, Nazare, Fatima",
+   "description": "🇪🇦🇪🇦🇪 VIAJE PORTUGAL: LISBOA + SINTRA + PORTO + OBIDOS + FATIMA + NAZARE + BOCA DEL INFIERNO 🇪🇦🇪🇦🇪🇦🇪🇦🇪🇦🇪🇦🇪 \n\n📆 DESDE EL 10 (21.00) AL 15 de ABRIL\n\n📌 PRECIOS:\n☞ Tarjeta Erasmus Life: 219€ \n☞ Tarjeta Erasmus Life PREMIUM: 209€\n\n📌 PRECIOS DE GRUPO:\n☞ 3 personas: 214€\n☞ 5 personas: 209€\n☞ 10 personas: 204€\n\nQue estas esperando? Hazte tu tarjeta Erasmus Life. Es GRATIS!\n➡ http://www.erasmus-valencia.com/compte.htm\n\n💃NUESTRO PROGRAMA: PORTUGAL YA LLEGAMOS!💃\n\nPROGRAMA COMPLETO: http://www.erasmus-valencia.com/trips_682-viaje-a-portugal.htm#myTrip\n\n🎈 Prepárese para un viaje a través del oeste de España destino PORTUGAL.\nEste maravilloso país tiene un importante patrimonio arquitectónico, maravillosos paisajes, una gran variedad culinaria y una gran atmósfera que podréis descubrir en nuestros viajes.\nA continuación, visitamos la capital Lisboa y sus barrios y monumentos como la Torre de Belém, el Palacio da Pena o el Parque de las Naciones.\nDespués, vamos a ir a Porto, la segunda ciudad de Portugal, con sus edificios de altura. Visitamos las famosas bodegas de la ciudad, que se encuentra el vino de Oporto y degustaremos unas copas..🎈\n\n🎁 INCLUIDO 🎁\n📌 Traslados en autobús\n📌 Alojamiento: 2 noches en hostal en Lisboa con desayuno + 1 noche en hostal en Porto con desayuno\n📌 Visita guiada con guía local oficial en Lisboa + Porto \n📌 Coordinación Erasmus Life\n📌 Fotografo\n📌 Seguro de viaje\n\n🚫 FECHA LIMITE DE PAGO: 15 de MARZO 🚫\n\n►¿Donde esta nuestra OFICINA?: ERASMUS LIFE (oficina morada)\nDirección: Calle Ramon LLull, 21, 46021, Valencia\nMapa: https://goo.gl/maps/Av3ZWToyuRE2\nWhatsapp: +34634300402\n\n--------------------------------------------\n🇬🇧🇬🇧🇬🇧🇬🇧🇬🇧🇬🇧 PORTUGAL TRIP: LISBON + SINTRA + PORTO + OBIDOS + FATIMA + NAZARE + BOCA DEL INFIERNO🇬🇧🇬🇧🇬🇧🇬🇧🇬🇧🇬🇧\n\n📆 FROM 10h (9.00pm) TO 15th OF MARCH\n📌 PRICES:\n☞ Erasmus Life Card: 219€ \n☞ Erasmus Life PREMIUM Card: 209€\n\n📌 GROUP PRICES:\n☞ 3 people: 214€ \n☞ 5 people: 209€ \n☞ 10 people: 204€ \n\nWhat are you waiting for? Make your Erasmus Life Card. It's FREE!\n➡ http://www.erasmus-valencia.com/compte.htm\n\n💃 OUR PROGRAM: PORTUGAL HERE WE GO! 💃\n\nCOMPLETE PROGRAM: http://www.erasmus-valencia.com/trips_682-viaje-a-portugal.htm#myTrip\n\n🎈Get ready for a trip as we travel through western Spain to PORTUGAL.\nThis wonderful country has an important architectural, culinary heritage and many stunnning landscapes that we will discover during our travels.\nWe will then visit the capital Lisbon and its many neighborhoods and monuments including the Tower of Belém, the palace Pena or the Park das Nações.\nWe will then go to Porto, second city of Portugal, with its buildings all in height. We will visit the famous wineries of the city, in which the Port is made and we will enjoy wine tasting together.🎈\n\n🎁 INCLUDED🎁\n📌 Transport by bus\n📌 Accommodation: 2 nights in hostal in Lisbon with breakfast + 1 night in hostal in Porto with breakfast \n📌 Guided tour with official local guide in Lisboa + Porto \n📌 Erasmuslife Coordination\n📌 Photographer\n📌 Insurance\n\n🚫 PAYMENT DEADLINE: MARCH 15 🚫\n\n►¿Where is our OFFICE?: ERASMUS LIFE (purple office)\nAddress: Calle Ramon LLull, 21, 46021, Valencia\nMap: https://goo.gl/maps/6FVtPzKToL62\n\nhttps://www.facebook.com/events/2415597332089914/",
+   "location": "Erasmus Life Valencia",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-04-10T20:00:00Z"
+   },
+   "end": {
+    "dateTime": "2020-04-14T22:00:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e2415597332089914@facebook.com",
+   "sequence": 77,
+   "reminders": {
+    "useDefault": true
+   }
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_ckp3ad1n74s3idpm70s30e9k6cq40pj1cdim4rrfdcn66rrd",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2NrcDNhZDFuNzRzM2lkcG03MHMzMGU5azZjcTQwcGoxY2RpbTRycmZkY242NnJyZCBnbGpmM2dwOXVja25xYTNvbnBhOXB1bnNmNXRlbzJlcUBp",
+   "created": "2020-01-24T10:10:19.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "BUS Blanco",
+   "description": "BUS BLANCO: HAPPY ERASMUS IS THE OFFICIAL SALES POINT\n\nThe famous Bus Blanco leaves every weekend to nearby ski areas in Valdelinares (In the province of Teruel and about one and a half to two hours from Valencia).\nIt is an official trip organized by the Aramon-Valdelinares ski resort that guarantees the experience and organization in this type of trips.\n\nThis trip is only available when purchased through an authorized vendor (such as Happy Erasmus), so be sure to reserve it in an official place in order to avoid unwanted surprises.\n\nThere are many price options, with or without equipment, with or without lessons and there is also the option of accommodation (under request).\n\nThe Bus Blanco is scheduled to go every weekend in winter, but this is subject to the weather conditions and conditions of the ski resorts and also the amount of snow on the slopes.\n\nBut we have no doubt that you will have a great day in the snow with Bus Blanco and Happy Erasmus.\n\n\n\nKeep in mind that no ski station rents snow clothes! Get ready from Valencia already. You will need pants, coat (if you are going to go to the tracks better that they are waterproof), gloves and hat.\n\nDeparture from Valencia at 7 a.m. in front of the Palau de la Música. Presentation 20 minutes before.\u200b\n\nDEPARTURES OF BUS BLANCO (VALDELINARES SKI STATION):\nDECEMBER: 14 • 21 • 22 • 27 • 28 • 29 • 30\nJANUARY: 3 • 4 • 11 • 12 • 18 • 19 • 25 • 26\nFEBRUARY: 1 • 2 • 8 • 9 • 15 • 16 • 22 • 23 • 29\nMARCG: 1 • 7 • 8 • 14 • 15\n\nDEPARTURES OF BUS BLANCO 2 DAYS (VALDELINARES SKI STATION):\nDECEMBER: 27 - 28\nJANUARY: 25 - 36\nFEBRUARY/MARCH: 29 - 1\n\nDEPARTURES OF BUS LOCO (JAVALAMBRE SKI STATION):\nJANUARY: 22 • 29\nFEBRUARY: 5• 12 • 19 • 26\nMARCH: 4\n\nhttps://www.facebook.com/events/2547989768809434/",
+   "location": "Happy Erasmus Valencia",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-02-22T06:00:00Z"
+   },
+   "end": {
+    "dateTime": "2020-02-22T18:00:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e2547989768809434@facebook.com",
+   "sequence": 0,
+   "reminders": {
+    "useDefault": true
+   }
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_ckp3adhj64sj8c1h6crjic9p6cr40pj1cdim4rrfdcn66rrd",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2NrcDNhZGhqNjRzajhjMWg2Y3JqaWM5cDZjcjQwcGoxY2RpbTRycmZkY242NnJyZCBnbGpmM2dwOXVja25xYTNvbnBhOXB1bnNmNXRlbzJlcUBp",
+   "created": "2020-01-24T10:26:45.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "Morocco!",
+   "description": "We're going to MOROCCO!\n\nChefchaouen, Fes, Merzouga, Desert, Todra Gorges, Ouarzazate, Marrakech, Casablanca, Rabat.\n\n\u200b\u200bIf you want to explore all of Morocco then this is the ideal trip.\n\u200bYou will discover the history of these imperial cities,\nthe fascinating nature and cities of Rif, the mountains where you will find thousands of Kasbahs (castles made from sun-dried brick),\n\u200band Berber towns, the calmness and immensity of the desert and the strength of the atlantic coast.\n\u200bSuch a vast country with various traditions that will fascinate you!\n\n \u200bIn Morocco, anything is possible!!!\n\n\n* Note: the trip consists of 7 nights in accommodation in Morocco and 2 nights on the bus (1st night is the one-way trip from Valencia to Algeciras, the last night back on the journey from Algeciras to Valencia)\n\n1st day: Departure from Valencia towards the Port of Algeciras.\n\nWe will board our buses and go to the southern coast of Iberian Peninsula to catch the boat that will take us to Africa!\n\n2nd day: Chefchaouen - Fez\n\nOnce we arrive in Morocco we take the Chefchaouen course !!\nChefchaouen, holy city hanging on the mountain, is located within a natural reserve of the biosphere. Its streets painted white and blue, a village of wise people, friendly and respectful, offer visitors beautiful urban landscapes in decline, beautiful samples of local crafts and a peace and serenity that is difficult to find today. We will visit the city, and depending on the availability of accommodation we will sleep in Chefchaouen or we will go to Fez.\n\n3rd day: Fez, and Forest of the cedars of God.\n\nWe wake up in the morning, already rested after the trip and - as in each city - we will have a visit of Fez with a local guide. When you enter the streets of its medina (ancient city) you can feel that time goes back: the union structure is still present at work, the narrowness of its streets does not allow other means of transport than donkeys and a constant tingling of people. Move through the labyrinthine streets, in the middle of which you will be surprised by neighborhoods such as the Andalusian and magnificent mosques and Koranic schools.\nFez has always been associated with study and religiosity, and remains the spiritual capital of Morocco.\nInteresting are also the streets of Fez-Jdid, where the royal palace, the mellah (Jewish quarter) and the oldest mosque in Fez are located.\n\nAfter the visit of Fez we will continue our trip making some interesting stops along the way.\n\nTonight we will sleep near Midelt - the small town located in the middle between the sea and the desert.\n\n4th day: Mezouga - desert - camels - camp\n\nWe will continue our trip to Merzouga and the desert, we will sleep under the stars!!!\n\nOnce we are there we will take our Camels and we will cross the dunes, we will see the sunset in the desert and spend the night in Jaimas (typical Moroccan tents). We will have dinner there and spend an incredible night drinking, singing and dancing under the stars.\n\nWe will sleep in the magical atmosphere of the desert.\n\n5th day: Desert\n\nAt dawn we will be waked up so we can see the magnificent sunrise in the desert. We will take the camels and return to the hotel with a pool in the same desert, at the foot of the dunes.\n\nOn the same day there is an option to make the route by desert in 4x4. We will visit the nomadic villages, the lake (yes yes, in the desert there is a lake!), The local cooperative. We will spend the night partying and  dancing to the beat of drums at the hotel in the desert.\n\n6th day: Water Wells - Todrá Gorges - Ourazazate\n\nIn the morning we will continue our trip to Ouarzazate and on the way we will visit the impressive Todra Gorges and the water wells.\nWe will sleep in Ouarzazate one night.\nWe will spend the day traveling, making stops in impressive places, enjoy the views of southern Morocco.\n\n7th day: Kasbah of Ait Ben Haddou - Marrakech\n\nWe will wake up early and go to Marrakech with a stop at the famous Kasbah of Ait Ben Haddou, declared a World Heritage Site. To reach Marrakech we will have to pass the High Atlas - the mountains with stunning views, a nature that will leave you breathless with emotions. In these mountains argan trees grow - they only grow in this part of our planet - from argan almonds the famous argan oil is prepared - so valuable for its characteristics and it is quoted worldwide. For who is interested we will make a stop at the women's cooperative that produces this oil by hand, those who want to can buy it there, in the same place where they produce it, real argan oil.\n\nWe will arrive in Marrakech for lunchtime.\nIn Marrakech there is the famous Jemma El Fna Square, a show at night! We will have a guided tour to know all its incredible corners knowing its history and its main buildings and monuments.\nAt night we can party to the famous Pacha Marrakech disco!!! We will stay one night in Marrakech.\n\n8th day: Marrakech - Casablanca\n\nWe have all morning and all afternoon to continue enjoying Marrakech. After lunch we continue our trip to Casablanca where we will spend the night.\n\n9th day: Hassan II Mosque - Mohammed V Mausoleum in Rabat - return to the port\n\nThe next day we will visit the Hassan II Mosque, the 2nd largest in the world.\n\nThen we will go to Rabat, the capital of the kingdom, where we will make a panoramic view of the mausoleum of Mohammed V.\nAfter the panoramic visit of Rabat we will begin our return to Spain.\n\n10th day: return to Valencia in the morning\n\n\nhttps://www.facebook.com/events/2563194013791936/",
+   "location": "Happy Erasmus Valencia",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-04-10T15:30:00Z"
+   },
+   "end": {
+    "dateTime": "2020-04-19T10:00:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e2563194013791936@facebook.com",
+   "sequence": 0,
+   "reminders": {
+    "useDefault": true
+   }
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_ckp3adho60r3ae1g6os32dhj64o40pj1cdim4rrfdcn66rrd",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2NrcDNhZGhvNjByM2FlMWc2b3MzMmRoajY0bzQwcGoxY2RpbTRycmZkY242NnJyZCBnbGpmM2dwOXVja25xYTNvbnBhOXB1bnNmNXRlbzJlcUBp",
+   "created": "2020-02-12T11:14:44.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "La Crida de las Fallas 2020 | Valencia",
+   "description": "El acto con el que dan comienzo a las Fallas consiste en la lectura de un bando ciudadano, a cargo de las falleras mayores y los gobernantes municipales, que se acompaña (como no podía ser de otro modo) de un espectáculo pirotécnico. \nLa Crida de este año se celebra el 1 de marzo, a las 20 horas, para anunciar las fiestas grandes de la ciudad. Aunque es de acceso libre, hay que acudir pronto, porque congrega a multitud de personas frente a las Torres de Serrano.\n\nActos Falleros:\nDomingo 1 de marzo\n07:20 horas\nDespertà Infantil\n07:30 horas\nDespertà\n12:00 horas\nEntrada de Bandas de Música.\n14:00 horas\nMascletà en la plaza del Ayuntamiento\n20:00 horas\nCrida en las Torres de los Serranos.\n\nhttps://www.facebook.com/events/2568065806816310/",
+   "location": "Torres de Serranos",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-03-01T19:00:00Z"
+   },
+   "end": {
+    "dateTime": "2020-03-01T22:45:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e2568065806816310@facebook.com",
+   "sequence": 791,
+   "reminders": {
+    "useDefault": true
+   }
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_ckp3ce9l68q34d1g6osj8c1p6h06cob3clh6urrb5phmur8",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2NrcDNjZTlsNjhxMzRkMWc2b3NqOGMxcDZoMDZjb2IzY2xoNnVycmI1cGhtdXI4IGdsamYzZ3A5dWNrbnFhM29ucGE5cHVuc2Y1dGVvMmVxQGk",
+   "created": "2020-02-12T11:21:20.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "Fallas 2020 Valencia | Programa.",
+   "description": "Las Fallas ya están aquí y, como no podía ser de otra manera, ya se conoce la programación de las Fallas 2020, que volverán a inundar la ciudad de València de pólvora, buen ambiente y, como no, de sátira fallera. Y es que las Fallas, cada año, concentran a miles de personas – locales y turistas – que no se quieren perder algunos de los actos más emblemáticos, como la Ofrenda de Flores a la Virgen, las famosas mascletás en la Plaza del Ayuntamiento de València o la cremà que pone fin a todo un año fallero. Por eso, para que vivas de cerca estos y otros muchos más actos, en València Extra, te informamos de todo el programa de actos falleros para el 2020.\n\nACTOS FALLEROS MARZO\nDomingo 1 de marzo\n07:20 horas\nDespertà Infantil\n07:30 horas\nDespertà\n12:00 horas\nEntrada de Bandas de Música.\n14:00 horas\nMascletà en la plaza del Ayuntamiento\n20:00 horas\nCrida en las Torres de los Serranos.\nDel 1 al 19 de marzo\n14:00 horas\nMascletà en la plaza del Ayuntamiento\nSábado 7 de marzo\n17:30 horas\nCabalgata del Ninot. Itinerario: Glorieta, Paz, San Vicente, plaza del Ayuntamiento, Marqués de Sotelo y Xàtiva.\n00:00 horas\nMascletà de colores en la plaza del Ayuntamiento\nViernes 13 de marzo\n19:30 horas\nCabalgata del Patrimonio. Itinerario: Lonja, Maria Cristina y plaza del Ayuntamiento.\n00:00 horas\nMascletà de colores en la plaza del Ayuntamiento\nSábado 14 de marzo\n17:00 horas\nClausura de la Exposición del Ninot Infantil\n17:30 horas\nLectura del veredicto popular y proclamación del Ninot Indultat Infantil de 2019\n17:45 horas\nRecogida de los ninots infantiles por parte de las comisiones falleras.\n19:00 horas\nPlantà de la Falla Municipal Infantil en la Plaza del Ayuntamiento\nDomingo 15 de marzo\n09:00 horas\nPlantà de todas las fallas infantiles\n14:00 horas\nMascletà en la plaza del Ayuntamiento\n17:00 horas\nClausura de la Exposición del Ninot\n17:30 horas\nLectura del veredicto popular y proclamación del Ninot Indultat de 2019\n17:45 horas\nRecogida de los ninots por parte de las comisiones falleras\nDurante la tarde,\nLectura de los Premios de las Fallas Infantiles (el de la Sección Especial se conocerá sobre las 21:00 horas)\n00:00 horas\nL’albà de les falles en la plaza del Ayuntamiento\nLunes 16 de marzo\n08:00 horas\nPlantà de todas las fallas\n14:00 horas\nMascletà en la plaza del Ayuntamiento\n16:30 horas\nReparto de premios ante el Ayuntamiento\nDurante la tarde,\nLectura de los Premios de las Fallas Grandes (el de la Sección Especial se conocerá sobre las 21:00 horas)\n00:00 horas\nCastillo de fuegos artificiales en el paseo de la Alameda\nMartes 17 de marzo\n09:00 horas\nReparto de premios ante el Ayuntamiento\n14:00 horas\nMascletà en la plaza del Ayuntamiento\n15:30 horas.\nOfrenda a la Virgen de los Desamparados\nA la 01:00 horas\nCastillo de fuegos artificiales en el paseo de la Alameda\nMiércoles 18 de marzo\n10:30 horas\nHomenaje ante el monumento del poeta Maximiliano Thous\n12:00 horas\nHomenaje ante el monumento del mestre Serrano\n14:00 horas\nMascletà en la plaza del Ayuntamiento\n15:30 horas.\nOfrenda a la Virgen de los Desamparados\n01:30 horas\nNit del Foc en la Alameda\nJueves 19 de marzo\n11:00 horas\nOfrenda de flores ante la imagen del Patriarca en el puente de San José\n12:00 horas\nMisa en honor de San José.\n14:00 horas\nMascletà en la plaza del Ayuntamiento\n19:00 horas\nCabalgata del Foc. Itinerario: desde calle Russafa hasta Puera del Mar, pasando por la calle Colón.\n22:00 horas\nCremà de las fallas infantiles\n22:30 horas\nCremà de la falla infantil que haya obtenido el primer premio de la sección especial\n23:00 horas\nCremà de la falla infantil de la plaza del Ayuntamiento\n00:00 horas\nCremà de todas las fallas de Valencia\n00:30 horas\nCremà de la falla que haya obtenido el primer premio de la sección especial\n01:00 horas\nFuegos aéreos en la plaza del Ayuntamiento y cremà de la falla municipal\n\nhttps://www.facebook.com/events/269524240694094/",
+   "location": "Valence, Valenciana, Spain",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-03-01T19:00:00Z"
+   },
+   "end": {
+    "dateTime": "2020-03-02T06:00:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e269524240694094@facebook.com",
+   "sequence": 0,
+   "reminders": {
+    "useDefault": true
+   }
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_ckp3gdpn74q3gchp70sj6d1j70q40pj1cdim4rrfdcn66rrd",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2NrcDNnZHBuNzRxM2djaHA3MHNqNmQxajcwcTQwcGoxY2RpbTRycmZkY242NnJyZCBnbGpmM2dwOXVja25xYTNvbnBhOXB1bnNmNXRlbzJlcUBp",
+   "created": "2020-02-05T09:00:00.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "Teruel with ESN Valencia",
+   "description": "¿Te gustaría conocer la historia de los amantes de Teruel? ¿Ver una ciudad disfrazada de medieval? ¿Vivir los toros de cerca? Aquí tienes una magnífica oportunidad: ¡Ven con ESN a Teruel! 🎭🎉\n\nLas fiestas medievales son un gran acontecimiento que nos permite viajar en el tiempo para adentrarnos a un Teruel medieval ⚔️ en el que convivían pacíficamente tres culturas: los cristianos, los musulmanes y los judíos.\n\n Te esperamos el sábado 22 a las 11 AM en frente de la para de tranvía de La Carrasca. ¡El precio del viaje es de solo 14€! Incluye el viaje de ida y vuelta y comida ¿A qué esperas? Pásate por la oficina de ESN e inscríbete. No puedes perdértelo! 💃\n\n🗓️ Sábado, 22 feb\n\n⏰ 11:00h\n\n📍Parada de tranvía La Carrasca\n\n[ENGLISH]\n\nWould you like to know more about the story of the two lovers of Teruel? Would you like to visit a city which will be decorated as a medieval hamlet for the occasion? Would you like to take a close look at bulls? Here is a great opportunity to do so! Join ESN for a trip to Teruel!🎭🎉\n\nMedieval festivals are huge events allowing us to travel back in time in order to gain an insight into a medieval Teruel⚔️, where three cultures pacifically coexisted: Christian, Muslim and Jewish.\n\nWe will leave on Saturday 22th at 11 AM from the street in front of the tram stop La Carrasca. The cost of the trip is only 14€!Includes round trip and food. What are you waiting for? Pop by the office and book yourself a place! You cannot miss it!!!💃\n\n🗓️ Saturday, 22th of February\n\n⏰ 11am\n\n📍Tram stop La Carrasca\n\nhttps://www.facebook.com/events/2877948298934384/",
+   "location": "La Carrasca Station",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-02-22T10:00:00Z"
+   },
+   "end": {
+    "dateTime": "2020-02-22T22:30:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e2877948298934384@facebook.com",
+   "sequence": 89473,
+   "reminders": {
+    "useDefault": true
+   }
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_ckpj4cpm6sq3gd1h74o32d1i6106cob3clh6urrb5phmur8",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2NrcGo0Y3BtNnNxM2dkMWg3NG8zMmQxaTYxMDZjb2IzY2xoNnVycmI1cGhtdXI4IGdsamYzZ3A5dWNrbnFhM29ucGE5cHVuc2Y1dGVvMmVxQGk",
+   "created": "2020-02-03T12:00:00.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "ESN Island Experience",
+   "description": "[English version bellow]\nESN ISLAND EXPERIENCE\n¿Estás preparado para vivir el mejor viaje de tu vida? Donde nos reuniremos estudiantes Erasmus de todas partes de España en la Isla de Mallorca, en un mismo Hotel con ¡TODO INCLUIDO!\nSi has oído bien ¡TODO INCLUIDO! Desayunos, comidas, cenas, refrescos, bebidas… además de disfrutar de POOL PARTIES, FIESTAS que nunca olvidarás, EL MEJOR AMBIENTE INTERNACIONAL.\n¡Pero no solo es eso! También descubrirás la isla de Mallorca con PLAYAS PARADISÍACAS de las que os enamoraréis además de disfrutar de sus MÁS QUE FAMOSAS DISCOTECAS.\n¿CUÁNDO? Del 29 de Abril al 3 de Mayo del 2020\nINCLUIMOS \n- Transporte a la isla\n- 4 noches de alojamiento en el hotel BH MALLORCA\n- Régimen TODO INCLUIDO\n- Entrada para las discotecas más top de la isla\n- City tour por Palma de Mallorca\n- Actividades deportivas\n- Flag Parade\n- Fotos y videos para recordar el mejor viaje de tu vida\n\n¡5 DÍAS INOLVIDABLES CON TU FAMILIA ERASMUS!\n¿Te lo vas a perder?\n\n--------------------------------------------------------------------\n\n[ENGLISH]\n\nESN ISLAND EXPERIENCE\nAre you ready for the best trip of your life? Where we will meet Erasmus students from all over Spain on the Island of Mallorca, in the same Hotel with an ALL INCLUSIVE PACK!\nYES! you heard correctly ALL INCLUSIVE! Breakfasts, lunches, dinners, soft drinks, drinks… but also you will enjoy POOL PARTIES and DISCO PARTIES that you will never forget, THE BEST INTERNATIONAL ENVIRONMENT.\nBut that´s not all! You will also discover the island of Mallorca with PARADISE BEACHES that you will fall in love with, in addition you will enjoy its MORE THAN FAMOUS DISCOS.\nWHEN? From April 29th to May 3st 2020\nWE INCLUDE\n- Transport to the island \n- 4 nights accommodation at  BH MALLORCA hotel\n- All inclusive scheme\n- Entrance for the most top nightclubs on the island\n- City tour around Palma de Mallorca\n- Sport activities\n- Flag Parade\n- Photos and videos to remember the best trip of your life\n\n5 UNFORGETTABLE DAYS WITH YOUR ERASMUS FAMILY!\nAre you going to miss it?\n\n\nhttps://www.facebook.com/events/323674841901420/",
+   "location": "Palma",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-04-28T23:00:00Z"
+   },
+   "end": {
+    "dateTime": "2020-05-03T18:00:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e323674841901420@facebook.com",
+   "sequence": 47963,
+   "reminders": {
+    "useDefault": true
+   }
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_ckpjcd9n70ojidhn6opjgd9h6h06cob3clh6urrb5phmur8",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2NrcGpjZDluNzBvamlkaG42b3BqZ2Q5aDZoMDZjb2IzY2xoNnVycmI1cGhtdXI4IGdsamYzZ3A5dWNrbnFhM29ucGE5cHVuc2Y1dGVvMmVxQGk",
+   "created": "2020-02-12T11:11:34.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "Mascletà vertical en la Marina de Valencia | 29 Feb. 2020",
+   "description": "El próximo 29 de febrero Amstel dará el pistoletazo de salida a las Fallas 2020 con la organización y disparo de la primera mascletà del ejercicio que, como viene siendo habitual, se celebrará en La Marina de València, frente al espacio Veles e Vents a las 20.00 horas. Este espectáculo pirotécnico volverá a ser uno de los más espectaculares de cuantos se celebren durante los festejos falleros y estará en consonancia con los hitos que han convertido esta mascletà, organizada y patrocinada por Amstel, en una cita imprescindible del calendario festivo.\n\nhttps://www.facebook.com/events/365781967638514/",
+   "location": "Erasmus Valencia",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-02-29T19:00:00Z"
+   },
+   "end": {
+    "dateTime": "2020-03-01T06:00:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e365781967638514@facebook.com",
+   "sequence": 0,
+   "reminders": {
+    "useDefault": true
+   }
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_ckq3acpj68pjadpl6oo36dhj7106cob3clh6urrb5phmur8",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2NrcTNhY3BqNjhwamFkcGw2b28zNmRoajcxMDZjb2IzY2xoNnVycmI1cGhtdXI4IGdsamYzZ3A5dWNrbnFhM29ucGE5cHVuc2Y1dGVvMmVxQGk",
+   "created": "2020-02-18T11:11:23.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "Trip to Andalucia: Granada Sevilla Cordoba Carnaval Cadiz",
+   "description": "ANDALUCIA TRIP: Granada, Sevilla, Carnaval de Cadiz y Córdoba\n\nDesde el 27 de Febrero hasta el 01 de Marzo 2020\n\n☞ Tarjeta Erasmus Life PREMIUM: 189€\n☞ Tarjeta Erasmus Life: 199€\n\nANDALUCIA - YA LLEGAMOS !!!\n\nVamos Erasmus de Valencia! Nos iremos todos a visitar la región la más hermosa de España, un viaje increíble a través de varias ciudades excepcionales cuyos monumentos gozan de fama mundial y condecorados como Monumentos Materiales de la Unesco.\n\nNos juntaremos con los Erasmus de otras ciudades : Murcia, Alicante, Cartagena, Castellón y otros que vendrán de otras ciudades de España. También podéis traer vuestros amigos a este viaje!\nVamos a descubris Granada, Sevilla, Córdoba y el maravilloso Carnaval de Cadiz.\n\nTampoco debemos olvidarnos de que Andalucía es el corazón del Flamenco, por eso que nos espera un verdadero e inolvidable espectáculo de Flamenco - El mejor del mundo!\n\nLISTOS PARA LA AVENTURA?\n\nVUELTA: DOMINGO 01 de MARZO A LAS 23.30 (en Valencia)\n\n1. Traslado en autobus:\n· Valencia - Granada \n· Granada - Sevilla \n. Sevilla - Cadiz\n. Cadiz - Sevilla \n. Sevilla - Cordoba \n. Cordoba - Valencia\n\n2. HOSTALES\n· 1 noche en hostal con desayuno (Granada)\n· 2 noches en hostal con desayuno (Sevilla)\n\n3. Visita guiada con un guia local oficial en Granada \n· Visita guiada con un guia local oficial en Sevilla \n· Visita guiada con un guia local oficial en Cordoba \n\n4. Descuento para el espectaculo de flamenco en el Palacio Andaluz de SEVILLA\n· Precio normal: 36€ (bebida incluida )\n· Precio con descuento Erasmus Life: 16€ (bebida incluida) \n\nMas informaciones: http=//www.elpalacioandaluz.com/espectaculo-flamenco-sevilla-informacion.html\n\nPRECIOS DE GRUPO=\n\n3 personas= 194 € / pers.\n5 personas= 189€/ pers.\n\n▨▨ INFO TRIP & VENTA DE TICKETS ▨▨\n\n► Programa : \nhttp://www.erasmus-valencia.com/trips_678-andalucia-trip--carnaval-de-cadiz.htm#myTrip\n\nFECHA LIMITE DE PAGO: 21 de FEBRERO\n\nLas plazas son limitadas. Ya puedes reservar tu plaza para no quedarte en tierra haciendo un primer pago de 50€.\n\nRegistrate aqui y pasa por nuestra oficina para recoger tu tarjeta:\n► http://erasmus-valencia.com/carta.htm\n\nY no te olvides de descargar nuestra App: Erasmus Life Valencia\nDesde el PlayStore: https://play.google.com/store/apps/details?id=es.ventajasapp.creador.android5981d1680643f\n\n¿Dónde esta nuestra OFICINA?: ERASMUS LIFE (oficina morada)\n\n►Dirección: Calle Ramon Llull, 21, 46021, Valencia\n►Mapa: https://goo.gl/maps/Av3ZWToyuRE2\n►Tel.: +34 963298319\n►Whatsapp: +34 634300402\n►Instagram: erasmuslifevalencia\n----------------------------------------------------------------------------\n\nANDALUCIA TRIP: Granada, Sevilla, Carnaval de Cadiz y Córdoba\n\nFrom 27th of February to 1rd of March 2020\n\n☞ Erasmus Life PREMIUM card: 189€\n☞ Erasmus Life FREE card: 199€\n\nANDALUCIA - WE´RE COMING !!!\n\nLet´s go Erasmus Life Valencia! We're going to visit the most beautiful region in Spain! \nIt will be an amazing trip through the three major cities of the South of Spain, all of which have exceptional sights. Some of the most beautiful in Europe!\nWe will be joined by Erasmus stundents from other cities as: Murcia, Alicante, Cartagena, Castellon and so on.\nYou can also bring your friends to this trip!\nLet's discover Granada, Sevilla, Cordoba and the amazing Carnival of Cadiz.\nAndalusia is the heart of Flamenco, so we will go to an unforgettable Flamenco show - The best flamenco show in the world!\n\nARE YOU READY FOR THE ADVENTURE?!\n\nARRIVAL: SUNDAY 1rd of MARCH AT 11.30PM (in Valencia)\n\nIN ORDER TO TRAVEL WITH US, YOU NEED TO BE A MEMBER OF OUR ASSOCIATION (ERASMUS LIFE VALENCIA) AND A STUDENT, AGED 18 OR OVER.\n\n1. Transport by bus:\n· Valencia - Granada \n· Granada - Sevilla \n. Sevilla - Cadiz\n. Cadiz - Sevilla \n. Sevilla - Cordoba \n. Cordoba - Valencia\n\n2. Accommodation\n· 1 night in a hostel with breakfast (Granada)\n· 2 night in a hostel with breakfast (Sevilla)\n\n3. Guided tour with official local guide in Granada \n· Guided tour with official local guide in Sevilla \n· Guided tour with official local guide in Cordoba \n\n4. Discount for the flamenco show in the Andalusian palace of SEVILLA\n· Normal price: 36€ (drink included)\n· With Erasmus Life discount: 16€ (drink included) \n\nMore infos: http=//www.elpalacioandaluz.com/espectaculo-flamenco-sevilla-informacion.html\n\nGROUP PRICES=\n3 person= 194 € / pers.\n5 person= 189 € / pers.\n\n▨▨▨ INFO & SALE TICKETS ▨▨▨\n\n► Full programme :\nhttp://www.erasmus-valencia.com/trips_678-andalucia-trip--carnaval-de-cadiz.htm#myTrip\n\nPAYMENT DEADLINE: 21st of FEBRUARY\n\nPlaces are limited. You can reserve your place by making a down payment of 50€.\n\nMake your registration and pass by our office for your card!\n► http://erasmus-valencia.com/carta.htm\n\nAnd don't forget to download our app: Erasmus Life Valencia\nFrom the PlayStore: https://play.google.com/store/apps/details?id=es.ventajasapp.creador.android5981d1680643f\n\nWhere is our OFFICE? ERASMUS LIFE (purple office)\n\n►Address: Calle Ramon Llull, 21, 46021, Valencia\n►Map: https://goo.gl/maps/6FVtPzKToL62\n►Tel.: +34 963298319\n►Whatsapp: +34 634300402\n►Instagram: erasmuslifevalencia\n\nhttps://www.facebook.com/events/453323575603638/",
+   "location": "Erasmus Life Valencia",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-02-26T23:30:00Z"
+   },
+   "end": {
+    "dateTime": "2020-03-01T22:30:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e453323575603638@facebook.com",
+   "sequence": 5846982,
+   "reminders": {
+    "useDefault": true
+   }
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_ckq3cc9j6sqjgchk6sq34chn6906cob3clh6urrb5phmur8",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2NrcTNjYzlqNnNxamdjaGs2c3EzNGNobjY5MDZjb2IzY2xoNnVycmI1cGhtdXI4IGdsamYzZ3A5dWNrbnFhM29ucGE5cHVuc2Y1dGVvMmVxQGk",
+   "created": "2020-02-03T09:37:51.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "Tandem with ESN València UPV",
+   "description": "[Español]\n¿Quieres conocer gente nueva y practicar idiomas al mismo tiempo?\nEsta es tu oportunidad. ¡Vuelve el mejor tándem de Valencia! 🙈😄\nTe esperamos los lunes a las 21:00 en JAMon session\nTendrás descuentos con tu ESNcard. 🍺🌭🍔\n\nÚnete a nuestro grupo de whatsapp para estar al día de las novedades:\nhttps://chat.whatsapp.com/K4Yr6zGdDM19RA2KfVKef0 😉\n\n\n[English]\nDo you want to meet new people and practice languages at the same time?\nThis is your opportunity! The best tandem of Valencia is back! 🙈😄\nWe will wait for you on Mondays at 9 p.m. in JAMon session\nYou will have discounts with your ESNcard🍺🌭🍔\n\nJoin our whatsapp group to stay updated:\nhttps://chat.whatsapp.com/K4Yr6zGdDM19RA2KfVKef0 😉\n\nhttps://www.facebook.com/events/461375824742272/",
+   "location": "Jamon Session Oficial",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-02-24T19:00:00Z"
+   },
+   "end": {
+    "dateTime": "2020-02-24T22:00:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e461375824742272@facebook.com",
+   "sequence": 1093785,
+   "reminders": {
+    "useDefault": true
+   }
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_ckq3cdhp60r38d9n68p3ec1n6d06cob3clh6urrb5phmur8",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2NrcTNjZGhwNjByMzhkOW42OHAzZWMxbjZkMDZjb2IzY2xoNnVycmI1cGhtdXI4IGdsamYzZ3A5dWNrbnFhM29ucGE5cHVuc2Y1dGVvMmVxQGk",
+   "created": "2020-01-24T10:18:07.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "YEAH IBIZA TRIP 2020",
+   "description": "We are going to Ibiza with all Erasmus in Spain-more than a thousand participants! The group YEAH! has prepared an unforgettable trip with our private parties in world-famous halls, pool parties, boat parties, beaches, surprises!\n\n\nhttps://www.facebook.com/events/466906457227073/",
+   "location": "Happy Erasmus Valencia",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-04-30T18:30:00Z"
+   },
+   "end": {
+    "dateTime": "2020-05-04T17:30:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e466906457227073@facebook.com",
+   "sequence": 14230657,
+   "reminders": {
+    "useDefault": true
+   }
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_ckq3ce9l6sp3idhj74pjae1i7506cob3clh6urrb5phmur8",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2NrcTNjZTlsNnNwM2lkaGo3NHBqYWUxaTc1MDZjb2IzY2xoNnVycmI1cGhtdXI4IGdsamYzZ3A5dWNrbnFhM29ucGE5cHVuc2Y1dGVvMmVxQGk",
+   "created": "2020-01-09T15:47:57.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "Portugal Trip",
+   "description": "¡¡We are going to PORTUGAL!!\nLisbon, Porto,  Fatima Sanctuary, Coimbra, Battle Monastery and Sintra.\n\nIf you are enjoying already your Erasmus here, it´s the perfect case to visit our favorite neighborhood country . Portugal is bordered by Spain to the north and east, while in the western part it is bordered by the Atlantic Ocean. A country of contradictions and big natural treasures that you will not forget!\nPaying an incredible price, we will get to know Oporto, Coimbra, Santuario de Fatima, Monastery of Batalha, Lisbon and Sintra. We will spend one night in Porto and two in Lisbon while we will have guided visits in order to find out all the important monuments and it´s ones history. And for those who want… party, a lot of party!\n\nWe depart from Valencia the previous day ,travelling during night so we can take advantage to the fullest of our day in Lisbon.\n\n\n\nFirst day: Lisbon and Jeronimos Monastery – Guided tour - party!\n\nArrival in Lisbon in the morning. We are going to visit the Jerónimos Monastery. We will approach the the Belem Tower, the Monument to the Discoverers, the Vasco de Gama bridge, the Comercio Square...\n\nYou will be impressed by the Belem Tower. A fortress made of white rock, small but at the same time tremendous robust and elegant, surrounded by water just like an island or like a big boat sailing out of the port and starting a big journey in the ocean. In fact it is accessed by a catwalk, as if you had a ship. It´s union with the sea,can also be seen in the sailor motifs that embellish its façade. It´s canons point to the four cardinal points, and for this reason, throughout history, Lisbon has been a city impregnable and well-protected.\n\nReally close it is located the Jeronimos Monastery, which is the place where Vasco de Gama prayed before embarking on his great journey, and where all the sailors were praying as well before crossing the Atlantic ocean. Inside you will feel that you are under an immense sky of arches and vaults with a very special lighting due to the impossible colors of its stained glass. The columns seem to evoke a large forest perhaps imitating the Amazon discovered by the Portuguese sailors.\n\nThe Comercio square is a big square where they were selling the products from India. It has a triumphal arch and monuments of historical figures such as Vasco de Gama.\n\nIn the afternoon we will have the guided visit around the city center.\n\nAnd in the evening , party!! Lisbon is one of the cities that you have to get to know by night as well.\n\n\n\nSecond Day : Sintra - Quinta de Regaleira - Cabo de Roca - Party\n\nWe depart early from Lisbon and we are heading to Sintra. Sintra was declared a World Heritage Site in 1995. This villa near Lisbon is of Celtic origin, in the XV century it was established as a holiday residence for noblemen and portugeous monarchs, due to its natural environment. Sintra has a unique charm that makes it one of the most beautiful places in Portugal. Its architecture, its palaces and gardens, castles and forests make this destination worth a visit.\n\nWe are going to visit the jewel of this place (optional): Quinta da Regaleira\nThis palace may be the most mystical place in Sintra. Built by a Portuguese aristocrat, Antonio Carvalho Monteiro, millionaire and philanthropist, is surrounded by gardens, a small lake, a greenhouse, several towers and a beautiful chapel.\n\nThe Cabo de Roca was once considered the place where the world ends as it is known as the westernmost end of Europe. In the souvenir shop that is out there you can buy a certificate for your passage through the most western point of the continent. It is located about 18 km from Sintra, within the Natural Park of Sintra-Cascais. From its viewpoint, which is an impressive cliff that rises 140 meters above the Atlantic, there is a spectacular view of the coast cut out over the ocean. There we can find a monolith where the exact coordinates of the cape are inscribed.\n\nAfternoon free to see some things around the city. A good plan is to listen to fados. If in Spain our traditional music is flamenco, in Portugal they have fado. It is a melancholic and nostalgic music that comes from the frustration of the most humble people. His songs are passionate, virile and intimate in their essence. They tell the story of Lisbon as something that could be but was lost. It is likely that the most sensitive are seized and some tear escapes them.\n\n\n\nThird Day: Coimbra – Fatima- the Battle Monastery - Porto\n\nDeparture to Porto, on the way we will pass through the Snacuary of Fatima, the Battle Monastery and Coimbra.\n\nThe Sanctuary of Fatima, located in the Cova da Iria, freguesia of Fatima (Portugal) is one of the most famous Marian sanctuaries in the world. According to history, in 1917 three little shepherds, Lúcia de Jesús, Francisco Marto and Jacinta Marto, witnessed several apparitions of the Virgin Mary under the oak in which they prayed while they were pastoring. The Virgin asked them to build a chapel in that place, which currently holds an image of Nossa Senhora. That simple chapel went bigger with time and today there are two huge basilicas capable of welcoming  more than five million pilgrims from all over the world, the amount that  it  actually receives every year.\n\nThe Battle Monastery (The Convent of Santa Maria da Vitória) was built as gratitude to the Virgin Mary of the victory of the Portuguese troops to the Castilian troops in battle of Aljubarrota in 1385. It took two centuries to be built during the reign of 7 kings and now it has become the symbol of Portuguese pride. It is one of the best and most original examples of late Gothic architecture in Portugal.\n\nWe will arrive to Porto at the dinner time.\n\nAt night we will party in the center of Porto. Porto is a very tourist city so there is always a great atmosphere in its streets, terraces and squares. In addition, you will discover the joy and vivacity of the Portuguese people. The Portuguese love the party almost as much as the Spaniards!!\n\n\n\nFourth day: Porto - Guided Tour - Sightseeing - Way back to Valencia\n\nWe will have free time and we will have the opportunity to visit the Port wine cellars and take a trip (whoever wants) on the river boat to see and appreciate the impressive bridges of this city. In the afternoon we will have a guided tour of the city center.\n\nAs well we will have the guided tour through the city to see all important points of the city.\n\nOporto will remain on your palate for a long time, and not only for its wines. Get ready to taste this city full of charm, color, wonderful bridges and panoramic views of the river Douro. Porto is the second largest city in Portugal after Lisbon. Located north of Portugal next to the river mouth of the Douro  in a very special enclave. An unforgettable city with beautiful bridges and narrow, colorful streets full of history and nostalgia that will mark you forever.\n\nWe will visit the Cais da Ribera (Muelle de la Ribera), Unesco heritage. This type of promenade, but fluvial in this case, collects the essence of Portuguese decadent style with its uneven and colorful houses, with clothes hanging on its uncorked facades and seagulls flying over this marine and special atmosphere. The streets are labyrinthine and charming, it is worth getting lost in them and enjoying a good wine in one of its many terraces.\n\nWe can not miss one of the most beautiful libraries in the world. The Lello library was the one that inspired J.K. Rowling when describing the Hogwarts library, and here were shot several scenes from the Harry Potter saga. It's beautiful, but it's always full of Muggles!\n\n\n\nIn the highest part of the city, next to the old walls, the cathedral rises, of different mixtures and architectural styles. In his square we can still see the pillory in which the murderers were hanged. The views of the city from this square are really impressive.\n\nWe can take a small boat trip through the Douro to contemplate its characteristic bridges. The most famous and well-traveled is the San Luis bridge, designed by a pupil of Eiffel, so that you will be familiar with its iron and metal structures. By its upper level, the tramway and pedest",
+   "location": "Happy Erasmus Valencia",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-03-04T20:00:00Z"
+   },
+   "end": {
+    "dateTime": "2020-03-09T09:00:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e469572963935829@facebook.com",
+   "sequence": 0,
+   "reminders": {
+    "useDefault": true
+   }
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_ckqj0e1l60s3ad1g60rjee9g7106cob3clh6urrb5phmur8",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2NrcWowZTFsNjBzM2FkMWc2MHJqZWU5ZzcxMDZjb2IzY2xoNnVycmI1cGhtdXI4IGdsamYzZ3A5dWNrbnFhM29ucGE5cHVuc2Y1dGVvMmVxQGk",
+   "created": "2020-02-18T20:30:01.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "Carnaval Party",
+   "description": "Hola! Ha llegado una de las mejores fiestas del año, Carnaval! 🤩🥳🤡 El próximo martes 25 celebramos nuestra fiesta de Carnaval en el Natura Dub 🎭 🎉Aprovechad y traer vuestro mejor disfraz! Va a ser una gran noche con muchos juegos y sorpresas 🎁🎉🎊, nos lo pasaremos genial! Recordad que podéis traer vuestra propia mascara, que además podréis realizar el día 24 en el taller 🤩🥳. No olvidéis vuestro mascara en casa porque habrá premio para la mejor! \n\nHello! The time has come for one of the best parties of the year, Carnival! 🤩🥳🤡 Next Tuesday on the 25th we'll celebrate our Carnival party in Natura Dub 🎭 🎉 Take the chance and bring your best costume! It's going to he a night with many games and surprises  🎁🎉🎊, we'll have lots of fun! Remember that you can bring your own mask, which you could make the day before on our workshop 🤩🥳. Don't forget your mask at home because there'll be a prize for the best one! \n\n\nhttps://www.facebook.com/events/508508540077908/",
+   "location": "Natura Dub",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-02-25T21:00:00Z"
+   },
+   "end": {
+    "dateTime": "2020-02-26T00:00:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e508508540077908@facebook.com",
+   "sequence": 39580,
+   "reminders": {
+    "useDefault": true
+   }
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_ckqj2e1p6opjedpl6osjcdhn6d06cob3clh6urrb5phmur8",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2NrcWoyZTFwNm9wamVkcGw2b3NqY2RobjZkMDZjb2IzY2xoNnVycmI1cGhtdXI4IGdsamYzZ3A5dWNrbnFhM29ucGE5cHVuc2Y1dGVvMmVxQGk",
+   "created": "2020-02-19T15:50:04.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "Fallas 2020 with ESN",
+   "description": "Fallas are coming! Are you ready for the biggest party in the city? \nThere are so many events during coming days. To not be confused and enjoy this festival read our small survival. \nAnd don't worry if you don't understand words like mascleta, crida, etc. Scroll down and improve your knowledge with the dictionary of Fallas. \n\nAGENDA\n🔥 Sábado, 29.02\n18:30 h. - Concierto gratuito frente al edificio Veles e Vents.\n20:00 h. - Espectáculo Pirotécnico de Amstel en el Puerto\n\n🔥 Domingo, 01.03\n7:20 h. – \"Despertà\" Infantil.\n7:30 h. – \"Macrodespertà\"\n12:00 h. - Entrada de Bandas de Música. Salida desde la Plaza de la Virgen - Reina - San Vicente - Plaza del Ayuntamiento. \n14:00 h. - Mascletà en la plaza del Ayuntamiento de Valencia\n20:00 h. – Crida en las Torres de los Serranos.\n\nFrom 1st of March everyday there is Mascletà in Plaza del Ayuntamiento at 14:00\nDesde 1 de marzo cada dia Mascletà en Plaza del Ayuntamiento a las 14:00 h.\n\n🔥 Sábado, 7 de marzo\n14:00 h. - Mascletà en la plaza del Ayuntamiento.\n17.30 h. Cabalgata del Ninot.\nItinerario: Glorieta / Paz / Sant Vicente / Plaza del Ayuntamiento / Marqués de Sotelo, cerrando la Cabalgata la entrada de las primeras piezas de la falla municipal.\n00:00 h. - Mascletà de colores en la plaza del Ayuntamiento.\n00.00 - 4.00 h. Verbenas en las demarcaciones.\n\nFrom 10th of March they start to put the lights and figures on the streets \nDesde 10 de marzo la instalación de carpas\n\n🔥 Viernes, 13 de marzo\n14:00 h. - Mascletà en la plaza del Ayuntamiento.\n00.00 h. - Mascletà en la plaza del Ayuntamiento.\n\n🔥 Sábado, 14 de marzo\n14:00 h. - Mascletà en la plaza del Ayuntamiento.\n00.00 - 4.00 h. - Verbenas en las demarcaciones. \n\n🔥 Domingo, 15 de marzo \n14:00 h. - Mascletà en la plaza del Ayuntamiento.\n00:00 h. - L´Albà de les Falles - espectáculo pirotécnico en la Plaza del Ayuntamiento\n\n🔥 Lunes, 16 de marzo\n14:00 h. - Mascletà en la plaza del Ayuntamiento.\n00:00 h. – Castillo de fuegos artificiales al paseo de la Alameda.\n00.00 - 4.00 h. - Verbenas en las demarcaciones. \n\n🔥 Martes, 17 de marzo\n14:00 h. - Mascletà en la plaza del Ayuntamiento.\n15.30 h. - Ofrenda de Flores a la Virgen de los Desamparados desde las calles Paz y San Vicente\n1:00 h. - Castillo de fuegos artificiales en el paseo de la Alameda.\n00.00 - 4.00 h. - Verbenas en las demarcaciones.\n\n🔥 Miércoles, 18 de marzo\n14:00 h. - Mascletà en la plaza del Ayuntamiento.\n15.30 h. - Ofrenda de Flores a la Virgen de los Desamparados desde las calles Paz y San Vicente\n1:30 h. - Nit de Foc en el paseo de la Alameda.\n00.00 - 4.00 h. - Verbenas en las demarcaciones. \n\n🔥 Jueves, 19 de marzo\n11.00 h. Ofrenda a San José en el puente del mismo nombre.\n14:00 h. - Mascletà en la plaza del Ayuntamiento.\n19:00 h. - Cabalgata del Fuego por la calle de Colón, desde la calle de Ruzafa hasta la plaza de la Porta la Mar.\n19 h. Parada mora de la falla Almirante Cadarso-Conde Altea\n22:00 h. - Cremà de las fallas infantiles.\n22:30 h. - Cremà de la falla infantil ganadora del primer premio de la sección especial.\n23:00 h. - Cremà de la falla infantil de la plaza del Ayuntamiento.\n00:00 h. - Cremà de todas las fallas.\n00:30 h. - Cremà de la falla ganadora del primer premio de la sección especial.\n01:00 h. - Cremà de la falla de la Plaza del Ayuntamiento.\n\n\n🔥🔥🔥 DICTIONARY OF FALLAS 🔥🔥🔥\n\n➡ Desperta - it’s a typical way to wake up the neighbours by throwing firecrackers and playing music. After that, some \"fallas\" invite the neighbours to join them for a hot chocolate. So... be ready for that on your street!\n\n➡ Entrada de bandas - it’s a music march \n\n➡ Mascletà - it’s a pyrotechnic event which forms a very noisy and rhythmic composition. If you wanna have a good spot, come 30 min before the starting time. It gets really crowded!\n\n➡ Crida - the reading of a public proclamation marks the beginning of the Fallas. It is made by the falleras mayores and municipal leaders, accompanied by a fireworks display. \n\n➡ Cabalgata del Ninot - march of figures, troupes and disguised groups, representing various humorous scenes. The posters and legends are used as weapons to launch criticism and thus make satire of the main events of the year seeking the laughter of the public.\n\n➡ Verbenas - the music on the street, bands, concerts, discomoviles. Better than any club during Las Fallas!\n\n➡ Ofrenda de Flores - all the commissions or fallas make an offering of flowers to the Virgen de los Desamparados, patron saint of the city. In the Plaza de la Virgen there is an immense reproduction of the patron saint, the \"Geperudeta\", which is adorned with a colourful mantle with the flowers that the falleros offer her. The result is wonderful!\n\n➡ Nit de Foc - the biggest firework show during Las Fallas\n\n➡ Cabalgata del Fuego - It is a fire parade with floats, big pieces of mechanisms, people that are dressed up, fireworks, music, etc. The fire is the essence of this extravaganza. It’s quite crazy!\n\n➡ Cremà - It is the act of setting fire to a falla monument. It’s the last event of Las Fallas. All the beauty of Las Fallas will be burnt that night. \n\n\n\n\n\n\n\n\nhttps://www.facebook.com/events/518963775696673/",
+   "location": "Erasmus Student Network Valencia UPV",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-02-29T07:00:00Z"
+   },
+   "end": {
+    "dateTime": "2020-02-29T22:30:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e518963775696673@facebook.com",
+   "sequence": 1290,
+   "reminders": {
+    "useDefault": true
+   }
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_ckqj6cho6crjgdhg6os38e9o6d06cob3clh6urrb5phmur8",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2NrcWo2Y2hvNmNyamdkaGc2b3MzOGU5bzZkMDZjb2IzY2xoNnVycmI1cGhtdXI4IGdsamYzZ3A5dWNrbnFhM29ucGE5cHVuc2Y1dGVvMmVxQGk",
+   "created": "2020-02-13T09:00:01.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "Oceanogràfic with ESN València",
+   "description": "[ESPAÑOL]\n¡Ven a sumergirte en lo más profundo del mundo submarino! 🐳🐠🦀 Visita con ESN Valencia uno de los mayores acuarios de Europa con espectáculos de delfines increíbles al ritmo de la mejor música 🎶🐬 ¡Aprovecha el descuento de tu ESNcard y ven por solo 14 € con nosotros (45% DE DESCUENTO)! ¡Lo pasaremos genial!\n\nDescubriremos la fauna que alberga el vasto Mediterráneo, los Humedales, Mares Templados y Tropicales, el océano Antártico, Ártico, las Islas y Mar Rojo. ¡Un viaje por el mundo subacuático sin salir de Valencia! 🌎🌊\n\nPara conseguir tu ticket, ven a nuestras oficinas de ESN antes del viernes 28 de febrero.\n\n📍 Nos vemos el domingo 1 de febrero a las 11.00 horas en la puerta del Oceanogràfic.\n\n\n[ENGLISH]\nCome with us and dive into the deepest undersea world! 🐳🐠🦀 Visit with ESN one of the biggest aquarius of Europe with incredible dolphins shows dancing to the music. 🎶🐬Use your ESNcard and come with us for only 14 € (45% DISCOUNT)! We'll have a great time!\n\nWe'll discover the animals that live on the Mediterranean Sea, the Weatlands, the Tropical and Tempered Seas and the Antartic and Artic Oceans, and also the Isles and the Red Sea. A trip arround the undersea world without going out of Valencia! 🌎🌊\n\nFor getting your ticket, come to our ESN offices before February 28th.\n\n📍 See you next Sunday 1st at 11.00 hours on Oceanogràfic's gate  \n\nhttps://www.facebook.com/events/532837860684983/",
+   "location": "Erasmus Student Network Valencia UPV",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-03-01T10:00:00Z"
+   },
+   "end": {
+    "dateTime": "2020-03-01T13:00:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e532837860684983@facebook.com",
+   "sequence": 37368,
+   "reminders": {
+    "useDefault": true
+   }
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_ckqj8d1p6cqj8cpi6sr36dhm7106cob3clh6urrb5phmur8",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2NrcWo4ZDFwNmNxajhjcGk2c3IzNmRobTcxMDZjb2IzY2xoNnVycmI1cGhtdXI4IGdsamYzZ3A5dWNrbnFhM29ucGE5cHVuc2Y1dGVvMmVxQGk",
+   "created": "2020-02-11T22:17:57.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "National Event de Sevilla al Cielo with ESN València UPV!",
+   "description": "[SPANISH VERSION]\n\nSe dice por ahí que Sevilla es como soñar con el cielo, se va escuchando el \"taconeo\" y desde ESN València UPV ya nos vamos preparando porque... \n\n🎉EL EVENTO NACIONAL YA HA LLEGADO🎉\n\nPor si aún no lo sabes... ¿Qué es un Evento Nacional?\nDurante un fin de semana se reúnen más de 1500 estudiantes erasmus de toda España para conocer la cultura Sevillana, disfrutar del sur y bailar como nunca 🥳😱\n\n➡ Información importante: \n📆 6, 7 y 8 de marzo\n📍Sevilla, capital de Andalucía\n\n➡¿Qué incluye?\n✔ Transporte ida y vuelta de Sevilla\n✔ Alojamiento (noche del viernes y del sábado)\n✔ Desayuno sábado y domingo\n✔ Welcome Pack\n✔ Flag Parade\n✔ Entrada fiestas + consumición\n✔ Transporte a fiestas\n✔ City Tours\n✔ Entrada a la Girarlda y la Catedral \n✔ Picnic del domingo\n\n➡ ¿Cuánto cuesta? \nTodo por solo 140€ 😏\n\nUno de los eventos más grandes y más emocionantes del semestre por lo que ¡no puedes perdértelo!\n\nSi estás interesado en asistir, tienes dos opciones: \n1. Pásate por nuestra oficina cuanto antes ya que las plazas son limitadas. \n2. Consigue tu ticket online y paga a través de Verse con el siguiente link: https://forms.gle/9vWNgfXnAUrD9GAG6\n\n🤩 ¡NOS VEMOS EN SEVILLA! 🤩\n\n________________________________________________________________\n\n[ENGLISH VERSION]\n\nIt is said out there that Seville is like dreaming of the sky, you can already hear the sound of flamenco and from ESN Valencia UPV we are getting ready because... \n\n🎉 THE NATIONAL EVENT HAS ARRIVED🎉\n\nIn case you don't know yet... What is a National Event?\nDuring a weekend more than 1500 Erasmus students from all over Spain gather to get to know Sevilla's culture, enjoy the south and dance like never before 🥳😱\n\n➡ Important Information: \n📆 6, 7 and 8 March\n📍Seville, capital of Andalusia\n\n➡What's included?\n✔ Round Trip Transport from Seville\n✔ Accommodation (Friday and Saturday night)\n✔ Breakfast Saturday and Sunday\n✔ Welcome Pack\n✔ Flag Parade\n✔ Party entrance + drink \n✔ Transportation to Parties\n✔ City Tours\n✔ Entrance to the Girarlda and the Cathedral \n✔ Sunday Picnic\n\n➡ How much does it cost? \nAll included just for 140€ 😏\n\nOne of the biggest and most exciting events of the semester are you gonna dare miss it?\n\nIf everything we've mentioned before has caught your attention hurry up and come to get your ticket! You have two options: \n1. Come to our office as soon as possible since the spots are limited.\n2. Get your ticket online and pay with Verse through this link: https://forms.gle/9vWNgfXnAUrD9GAG6\n\n🤩 SEE YOU IN SEVILLA! 🤩\n\n\nhttps://www.facebook.com/events/544935432763668/",
+   "location": "Sevilla",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-03-06T11:00:00Z"
+   },
+   "end": {
+    "dateTime": "2020-03-07T19:00:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e544935432763668@facebook.com",
+   "sequence": 2249775,
+   "reminders": {
+    "useDefault": true
+   }
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_ckqjid9p60pjcc1n6oq30chk6h06cob3clh6urrb5phmur8",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2NrcWppZDlwNjBwamNjMW42b3EzMGNoazZoMDZjb2IzY2xoNnVycmI1cGhtdXI4IGdsamYzZ3A5dWNrbnFhM29ucGE5cHVuc2Y1dGVvMmVxQGk",
+   "created": "2020-01-24T10:46:15.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "Official Pub Crawl - Old City",
+   "description": "OFFICIAL PUB CRAWL - OLD CITY\n\nWE ARE GOING TO PARTY IN THE HISTORICAL CENTER OF VALENCIA (Barrio del Carmen - Ciudad Vieja)\n\nA fun way to make new friends, spend an unforgettable night and get to know the beautiful old town of Valencia in its nocturnal and party atmosphere!\n\nDo you want to go out but you do not know anyone? Your friends don't want to party? Do you want to change the environment and meet many new friends?\n\nThe Pub Crawl consists of gathering a group of people who want to meet new people, who want to go out and do not know the city or just do something new for once!\nAfter gathering the group at the meeting point, the official guide of the Pub Crawl will be in charge of introducing everyone and starting the route through at least 4 of the best disco-pubs in the center of Valencia (Carmen neighborhood), including a shot in each and discounts on all drinks. The crawl will finish by access to Free entry in to the trendiest club of the season!\n\nEvery Thursday Happy Erasmus offers you something different and always with new people.\n\nBook your place now and decide to go out and do something special this Thursday!\n\nhttps://www.facebook.com/events/595903607640244/",
+   "location": "Happy Erasmus Valencia",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-02-20T22:00:00Z"
+   },
+   "end": {
+    "dateTime": "2020-02-21T05:00:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e595903607640244@facebook.com",
+   "sequence": 0,
+   "reminders": {
+    "useDefault": true
+   }
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_ckr34e9o60rj6cpk6gpjid9j6p06cob3clh6urrb5phmur8",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2NrcjM0ZTlvNjByajZjcGs2Z3BqaWQ5ajZwMDZjb2IzY2xoNnVycmI1cGhtdXI4IGdsamYzZ3A5dWNrbnFhM29ucGE5cHVuc2Y1dGVvMmVxQGk",
+   "created": "2020-02-16T13:06:18.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "Valencia Basket VS Maccabi Tel Aviv",
+   "description": "🇧🇧 English 🇧🇧\n\n🏀 Hello sports lovers! 🏀\nValencia Basket is here again and stronger than ever!\n\nESN en UV offers Euroleague matches together with Valencia Basket. Do not miss one of the best sports shows in the world and the opportunity to meet the players before the match, for just €10!\n\nTickets at the ESN en UV office (Tarongers or Burjassot).\n\nWe are waiting for you to cheer on our champion against his rival: Maccabi Tel Aviv.\n\nJoin our “🏀ESN Valencia Basket 🏀” Whastapp Group for all the updates: https://chat.whatsapp.com/K5rAsxa0cwh4DuICQv9SF8\n\n🇸🇸 Español 🇸🇸\n\n🏀 ¡Hola amantes de los deportes! 🏀\n\n¡El Valencia Basket está aquí de nuevo y más fuerte que nunca!\n\nEsta temporada, ESN en UV ofrece partidos de Euroleague junto al Valencia Basket.\n\nNo te pierdas uno de los mejores espectáculos deportivos del mundo y la oportunidad de conocer a los jugadores antes del partido por 10€! \n\nEntradas en la oficina de ESN en UV (Tarongers o Burjassot).\n\nTe esperamos para animar a nuestro campeón contra su rival: el Maccabi Tel Aviv.\n\nUníos al grupo de Whatsapp “🏀ESN Valencia Basket 🏀” para saber todas las novedades:   https://chat.whatsapp.com/K5rAsxa0cwh4DuICQv9SF8\n\nhttps://www.facebook.com/events/629807334439536/",
+   "location": "Pabellón Fuente de San Luis",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-02-21T19:00:00Z"
+   },
+   "end": {
+    "dateTime": "2020-02-21T22:00:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e629807334439536@facebook.com",
+   "sequence": 424985,
+   "reminders": {
+    "useDefault": true
+   }
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_ckr3ae9g6oqj0dpo68q30d9l6d06cob3clh6urrb5phmur8",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2NrcjNhZTlnNm9xajBkcG82OHEzMGQ5bDZkMDZjb2IzY2xoNnVycmI1cGhtdXI4IGdsamYzZ3A5dWNrbnFhM29ucGE5cHVuc2Y1dGVvMmVxQGk",
+   "created": "2020-02-12T09:59:45.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "Trip to Morocco with Erasmus",
+   "description": "🇪🇦🇪🇦🇪🇦🇪🇦🇪🇦🇪🇦 MARRUECOS: FEZ + CHEFCHAOUEN + CASABLANCA + OUARZAZATE + MARRAKECH + 2 NOCHES EN EL DESIERTO🇪🇦🇪🇦🇪🇦🇪🇦🇪🇦🇪🇦\n\n📆 DESDE EL 10 AL 19 ABRIL \n\n📌 PRECIOS:\n☞ Tarjeta Erasmus Life: 369€ \n☞ Tarjeta Erasmus Life PREMIUM: 359€\n\n📌 PRECIOS DE GRUPO:\n☞ 3 personas: 364€\n☞ 5 personas: 359€\n☞ 10 personas: 354€\n\nQue estas esperando? Hazte tu tarjeta Erasmus Life. Es GRATIS!\n➡ http://www.erasmus-valencia.com/compte.htm\n\n💃NUESTRO PROGRAMA: MARRUECOS YA LLEGAMOS!💃\n\nPROGRAMA COMPLETO: https://www.erasmus-valencia.com/trips_681-viaje-a-marruecos.htm#myTrip\n\n🎁 INCLUIDO 🎁\n📌 Traslados en autobús\n📌 Translados en barco \n📌 Hoteles 3* y 4* con habitaciones de 2/3/4 personas por un maximo de 8 (en el desierto)\n📌 Alojamiento:\n📌 Visitas guiadas en Marrakech + Fez + Chefchauen + Rabat + Mezquita de Casablanca \n📌 Paseo en el Sahara en camellos hasta las jaimas \n📌 Visita de la Garganta de la Casbah Ait Ben Hadot \n📌 Visita de las Gargantas de Todra \n📌 Coordinación Erasmus Life\n\n➡ Si NO eres de la Unión Europea y necesita un visado para entrar a Marruecos avísanos y te enviaremos el documento de la agencia de viaje que facilita el procedimiento. \n\n►►SALIDAS \n\n🚌 Valencia: 10/04 at 3.45pm (Calle Ramon Llull )\n🚌 Alicante : 10/04 at 6.30pm (Plaza de toros)\n🚌 Murcia : 10/04 at 8.45pm (Plaza circular) \n🚌 Granada: 11/04 at 0.15am (Bus station) \n🚌 Malaga 11/04 at 2am ( Avenida andalucia con Avenida Juan XXIII) \nMap: https://goo.gl/maps/gDZgBjxz1Au \n\n►¿Donde esta nuestra OFICINA?: ERASMUS LIFE (oficina morada)\nDirección: Calle Ramon LLull, 21, 46021, Valencia\nMapa: https://goo.gl/maps/Av3ZWToyuRE2\nWhatsapp: +34634300402\n------------------------------------------------------------------------------\n🇪🇦🇪🇦🇪🇦🇪🇦🇪🇦🇪🇦 MOROCCO: FEZ + CHEFCHAOUEN + CASABLANCA + OUARZAZATE + MARRAKECH + 2 NIGHTS IN THE DESERT 🇪🇦🇪🇦🇪🇦🇪🇦🇪🇦🇪🇦\n\n📆 FROM 10 TO 19 APRIL \n\n📌 PRICES:\n☞ Erasmus Life Card: 369€ \n☞ Erasmus Life PREMIUM Card: 359€\n\n📌 GROUP PRICES:\n☞ 3 people: 364€ \n☞ 5 people: 359€ \n☞ 10 people: 354€ \n\nWhat are you waiting for? Make your Erasmus Life Card. It's FREE!\n➡ http://www.erasmus-valencia.com/compte.htm\n\n💃 OUR PROGRAMM: MOROCCO HERE WE GO! 💃\n\nCOMPLETE PROGRAMM: https://www.erasmus-valencia.com/trips_681-viaje-a-marruecos.htm#myTrip\n\n🎁 INCLUDED🎁\n📌 Bus transfers \n📌 Ferry transfers\n📌 3* & 4* hotels with romos of 2/3/4 people or máximum 8 (in the desert)\n📌 Accommodation\n📌 Guided tour in Marrakech + Fez +Chefchaouen + Rabat + Mosquee of Casablanca\n📌 Riding a camel in the Sahara desert\n📌 Visit Kasbah Ait Ben Hadot\n📌 Visit Gargantas de Todra\n📌 Erasmus Life coordination \n\n➡ Check online if you need a VISA in order to travel to Morocco\n\n►►DEPATURES\n\n🚌 Valencia: 10/04 at 3.45pm (Calle Ramon Llull )\n🚌 Alicante : 10/04 at 6.30pm (Plaza de toros)\n🚌 Murcia : 10/04 at 8.45pm (Plaza circular) \n🚌 Granada: 11/04 at 0.15am (Bus station) \n🚌 Malaga 11/04 at 2am ( Avenida andalucia con Avenida Juan XXIII) \nMap: https://goo.gl/maps/gDZgBjxz1Au \n\n►¿Where is our OFFICE?: ERASMUS LIFE (purple office)\nAddress: Calle Ramon LLull, 21, 46021, Valencia\nMap: https://goo.gl/maps/6FVtPzKToL62\n\nhttps://www.facebook.com/events/659065078240553/",
+   "location": "Erasmus Life Valencia",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-04-10T13:30:00Z"
+   },
+   "end": {
+    "dateTime": "2020-04-19T16:30:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e659065078240553@facebook.com",
+   "sequence": 87251,
+   "reminders": {
+    "useDefault": true
+   }
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_ckrjichm70qjad9h64q38c1p6106cob3clh6urrb5phmur8",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2NrcmppY2htNzBxamFkOWg2NHEzOGMxcDYxMDZjb2IzY2xoNnVycmI1cGhtdXI4IGdsamYzZ3A5dWNrbnFhM29ucGE5cHVuc2Y1dGVvMmVxQGk",
+   "created": "2020-01-22T18:36:09.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "Toledo: Express Trip with Erasmus Life",
+   "description": "🇪🇦🇪🇦🇪🇦🇪🇦🇪🇦🇪🇦 TOLEDO: EXPRESS TRIP 🇪🇦🇪🇦🇪🇦🇪🇦🇪🇦🇪🇦\n\n📆 DOMINGO 23 FEBRERO 📆\n\n🕐 SALIDA: 6.00am - Desde oficina Erasmus Life (Calle Ramon LLull 21) 🚌\n🕐 VUELTA: 21.30 desde Toledo 🚌\n\n📌 PRECIOS:\n\n☞ Tarjeta Erasmus Life: 45€ \n☞ Tarjeta Erasmus Life PREMIUM: 41€\n\n📌 PRECIOS DE GRUPO:\n\n☞ 3 personas: 44€\n☞ 5 personas: 43€\n☞ 10 personas: 42€\n\nQué estas esperando? Hazte tu tarjeta Erasmus Life. Es GRATIS!\n➡ http://www.erasmus-valencia.com/compte.htm\n\nPROGRAMA COMPLETO: https://www.erasmus-valencia.com/trips_688-toledo.htm#myTrip\n\n🎁 INCLUIDO 🎁\n\n📌 Traslados en autobús Valencia-Toledo-Valencia\n📌 Coordinación Erasmus Life\n📌 Fotógrafo\n📌 Visita panorámica en el autobús de la ciudad\n📌 Visita guiada con guía oficial\n\n\n🚫 FECHA LÍMITE DE PAGO: VIERNES 21 🚫\n\n►¿Donde esta nuestra OFICINA?: ERASMUS LIFE (oficina morada)\nDirección: Calle Ramon LLull, 21, 46021, Valencia\nMapa: https://goo.gl/maps/Av3ZWToyuRE2\nWhatsapp: +34634300402\n\n---------------------------------------------\n🇬🇧🇬🇧🇬🇧🇬🇧🇬🇧🇬🇧 TOLEDO: EXPRESS TRIP 🇬🇧🇬🇧🇬🇧🇬🇧🇬🇧🇬🇧\n\n📆 SUNDAY 23 FEBRUARY 📆\n\n🕐 DEPARTURE FROM VALENCIA: 6AM from Erasmus Life Office (Calle Ramon LLull 21) 🚌\n🕐 DEPARTURE FROM TOLEDO: 9.30PM 🚌\n\n📌 PRICES:\n\n☞ Erasmus Life Card: 45€ \n☞ Erasmus Life PREMIUM Card: 41€\n\n📌 GROUP PRICES:\n\n☞ 3 people: 44€ \n☞ 5 people: 43€ \n☞ 10 people: 42€ \n\nWhat are you waiting for? Make your Erasmus Life Card. It's FREE!\n➡ http://www.erasmus-valencia.com/compte.htm\n\nCOMPLETE PROGRAM: https://www.erasmus-valencia.com/trips_688-toledo.htm#myTrip\n\n🎁 INCLUDED 🎁\n\n📌 Transport by bus\n📌 Erasmuslife Coordination\n📌 Photographer\n📌 Guided tour\n\n🚫 PAYMENT DEADLINE: FRIDAY 21 🚫\n\n►¿Where is our OFFICE?: ERASMUS LIFE (purple office)\nAddress: Calle Ramon LLull, 21, 46021, Valencia\nMap: https://goo.gl/maps/6FVtPzKToL62\n\nhttps://www.facebook.com/events/792685551144090/",
+   "location": "Erasmus Life Valencia",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-02-23T05:00:00Z"
+   },
+   "end": {
+    "dateTime": "2020-02-23T20:30:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e792685551144090@facebook.com",
+   "sequence": 0,
+   "reminders": {
+    "useDefault": true
+   }
+  },
+  {
+   "kind": "calendar#event",
+   "etag": "\"3164319135324000\"",
+   "id": "_cksj4d9o64pjgcpk6gr36c9p6106cob3clh6urrb5phmur8",
+   "status": "confirmed",
+   "htmlLink": "https://www.google.com/calendar/event?eid=X2Nrc2o0ZDlvNjRwamdjcGs2Z3IzNmM5cDYxMDZjb2IzY2xoNnVycmI1cGhtdXI4IGdsamYzZ3A5dWNrbnFhM29ucGE5cHVuc2Y1dGVvMmVxQGk",
+   "created": "2019-11-23T02:13:33.000Z",
+   "updated": "2020-02-20T00:46:07.662Z",
+   "summary": "Eurotrips Edicion Primavera",
+   "description": "¿Necesitas hacer una pausa de la rutina? Vente a uno de nuestros viajes de Semana Santa y aprovecha el puente, saliendo los días 12 o 13 de abril. Te ofrecemos tres viajes de 9 o 10 días de duración para que conozcas Europa o Marruecos: Gran Tour por Marruecos, Europa Gótica y Encantos del Mediterráneo. Y si no puedes viajar antes de Semana Santa, ¡no te preocupes! Apúntate a nuestro tour Occidental Express, que comienza el 20 de abril.\n\nINFO: https://www.erasmusvalencia.com/eurotrips-edicion-primavera.html\n\nhttps://www.facebook.com/events/925813834463190/",
+   "location": "Happy Erasmus Valencia",
+   "creator": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "organizer": {
+    "email": "gljf3gp9ucknqa3onpa9punsf5teo2eq@import.calendar.google.com",
+    "displayName": "https://www.facebook.com/events/ical/upcoming/?uid=100047729015837&key=jZ7wKVmL4M031CvC",
+    "self": true
+   },
+   "start": {
+    "dateTime": "2020-04-03T07:00:00Z"
+   },
+   "end": {
+    "dateTime": "2020-04-12T17:00:00Z"
+   },
+   "visibility": "public",
+   "iCalUID": "e925813834463190@facebook.com",
+   "sequence": 5849202,
+   "reminders": {
+    "useDefault": true
+   }
+  }
+ ]
+}
