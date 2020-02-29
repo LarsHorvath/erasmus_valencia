@@ -2,14 +2,26 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
-    android:id="@+id/mainLayout">
+    android:layout_margin="0dp"
+    android:orientation="vertical"
+    android:paddingHorizontal="0dp"
+    android:paddingVertical="0dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="18dp"
+        android:elevation="4dp"
+        app:cardBackgroundColor="#FBFBFB"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="9dp"
+        app:cardMaxElevation="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,7 +30,9 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#92D6C9"
+            android:background="#0092D6C9"
+            android:elevation="0dp"
+            android:paddingVertical="2dp"
             app:layout_constraintEnd_toEndOf="parent">
 
             <ImageView
@@ -49,7 +63,6 @@
                 android:id="@+id/timeImage"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="@+id/titleText"
                 app:layout_constraintTop_toBottomOf="@+id/titleText"
@@ -60,7 +73,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="4dp"
                 android:layout_marginEnd="24dp"
                 android:text="Title"
                 android:textSize="18sp"
@@ -88,7 +101,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="24dp"
                 android:text="Time"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@+id/timeImage"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/timeImage"
