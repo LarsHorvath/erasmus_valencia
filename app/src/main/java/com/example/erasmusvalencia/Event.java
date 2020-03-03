@@ -21,6 +21,8 @@ public class Event implements Comparable<Event> {
     private String title;
     private String company;
     private int companyID = 4;
+
+
     private String description;
     private String location;
     private String url;
