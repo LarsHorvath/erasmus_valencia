@@ -12,7 +12,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,12 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     ArrayList<Event> events;
-    TextView dateText;
-    Event.Date selectedDay;
-    ImageButton fButton, ffButton, bButton, fbButton;
-    Button goToToday;
-    boolean filterDay;
-    boolean filterFavourites;
+    TextView favouritesText;
     Button button_events, button_places, button_info;
 
 
@@ -67,12 +61,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Initialization
-        dateText = findViewById(R.id.dateView);
-        fButton = findViewById(R.id.fButton);
-        ffButton = findViewById(R.id.ffButton);
-        bButton = findViewById(R.id.bButton);
-        fbButton = findViewById(R.id.fbButton);
-        goToToday = findViewById(R.id.goToToday);
+        favouritesText = findViewById(R.id.dateView);
+        favouritesText.setText("Favourites");
         button_events = findViewById(R.id.button_events);
         button_places = findViewById(R.id.button_places);
         button_info = findViewById(R.id.button_info);
@@ -81,19 +71,19 @@ public class MainActivity extends AppCompatActivity {
         doFileMagic();
 
         // Getting the current date and initializing today & tomorrow
-        setDateAndPreferences();
+        //setDateAndPreferences();
 
         // OnClickListeners for the buttons and the switch
         setListeners();
 
         // Updating the UI for the currently set date
-        updateEvents(selectedDay);
+        updateEvents();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        updateEvents(selectedDay);
+        updateEvents();
     }
 
     @Override
@@ -107,22 +97,21 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.filter_icon:
-                AlertDialog dialog = makeFilterAlert();
-                dialog.show();
+                //AlertDialog dialog = makeFilterAlert();
+                //dialog.show();
                 return true;
             case R.id.settings_icon:
                 Toast.makeText(this, "Settings selected", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.calendar_icon:
-                showDatePickerDialog();
+                //showDatePickerDialog();
                 return true;
             default:return super.onOptionsItemSelected(item);
 
         }
     }
 
-    private AlertDialog makeFilterAlert() {
-        String[] items = {"Large", "Medium", "Small"};
+    /*private AlertDialog makeFilterAlert() {
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
         mBuilder.setTitle("Text size")
                 .setMultiChoiceItems(filterDialogItems, filterDialogSelection, new DialogInterface.OnMultiChoiceClickListener() {
@@ -152,9 +141,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
         return mBuilder.create();
-    }
+    }*/
 
-    private void setDateAndPreferences() {
+    /*private void setDateAndPreferences() {
         SharedPreferences preferences = getSharedPreferences("init", MODE_PRIVATE);
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date();
@@ -164,17 +153,24 @@ public class MainActivity extends AppCompatActivity {
         filterFavourites = preferences.getBoolean("restrictToFavourites", false);
         filterDialogSelection[0] = filterDay;
         filterDialogSelection[1] = filterFavourites;
-    }
+    }*/
 
-    private void setToday() {
+    /*private void setToday() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date();
         selectedDay = new Event.Date(dateFormat.format(date));
         updateEvents(selectedDay);
-    }
+    }*/
 
     // Either reads and parses the events from the raw_event_data resource or parses the in that case already existing json array of type Event
     private void doFileMagic() {
+        events = new ArrayList<>();
+        // In case the Hashmap of all events is already populated
+        if (Event.allEvents != null && Event.allEvents.size() != 0) {
+            events.addAll(Event.allEvents.values());
+            Collections.sort(events);
+            return;
+        }
         // Setting the FileHandler's context
         FileHandler.context = this;
 
@@ -182,7 +178,6 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences("init", MODE_PRIVATE);
         boolean firstOpen = preferences.getBoolean("first_time", true);
         boolean success = true;
-        events = new ArrayList<>();
         if (!firstOpen) {
             Log.i(TAG, "onCreate: already opened it before");
             FileHandler fileHandler = new FileHandler(FileHandler.FILE_NAME);
@@ -230,17 +225,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Updates the UI (the date and the events on that date)
-    public void updateEvents(Event.Date start) {
-        SharedPreferences preferences = getSharedPreferences("init", MODE_PRIVATE);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("day", start.localeDateString());
-        editor.apply();
-
-        dateText.setText(selectedDay.dayToString());
+    public void updateEvents() {
         ArrayList<Event> filtered;
-        if (filterDay) filtered = Event.filterEvents(events, Event.FILTER_DATE, start, start.addDays(1));
-        else filtered = Event.filterEvents(events, Event.FILTER_DATE, start, start);
-        if (filterFavourites) filtered = Event.filterEvents(filtered, Event.FILTER_FAVOURITE, true);
+        filtered = Event.filterEvents(events, Event.FILTER_FAVOURITE, true);
         Collections.sort(filtered);
         displayEvents(filtered);
     }
@@ -259,7 +246,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
-    private void showDatePickerDialog() {
+    /*private void showDatePickerDialog() {
         final Calendar cldr = Calendar.getInstance();
         int day = cldr.get(Calendar.DAY_OF_MONTH);
         int month = cldr.get(Calendar.MONTH);
@@ -268,55 +255,15 @@ public class MainActivity extends AppCompatActivity {
         picker = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                selectedDay = new Event.Date(i2, i1, i);
+                selectedDay = new Event.Date(i2, i1 + 1, i);
                 updateEvents(selectedDay);
             }
         }, year, month, day);
 
         picker.show();
-    }
+    }*/
 
     private void setListeners() {
-        fButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                selectedDay = selectedDay.addDays(1);
-                dateText.setText(selectedDay.dayToString());
-                updateEvents(selectedDay);
-            }
-        });
-        ffButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                selectedDay = selectedDay.addDays(7);
-                dateText.setText(selectedDay.dayToString());
-                updateEvents(selectedDay);
-            }
-        });
-        bButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                selectedDay = selectedDay.addDays(-1);
-                dateText.setText(selectedDay.dayToString());
-                updateEvents(selectedDay);
-
-            }
-        });
-        fbButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                selectedDay = selectedDay.addDays(-7);
-                dateText.setText(selectedDay.dayToString());
-                updateEvents(selectedDay);
-            }
-        });
-        goToToday.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setToday();
-            }
-        });
         button_events.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
