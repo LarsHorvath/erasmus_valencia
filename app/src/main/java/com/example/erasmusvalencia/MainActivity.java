@@ -273,6 +273,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // go to PlacesActivity
+                Intent intent = new Intent(MainActivity.this, PlacesActivity.class);
+                startActivity(intent);
             }
         });
         button_info.setOnClickListener(new View.OnClickListener() {

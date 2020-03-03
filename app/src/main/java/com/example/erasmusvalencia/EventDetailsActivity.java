@@ -31,7 +31,7 @@ public class EventDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_details);
         logoView = findViewById(R.id.logoView);
-        titleText = findViewById(R.id.titleText);
+        titleText = findViewById(R.id.titleText_places);
         timeText = findViewById(R.id.timeText);
         locationText = findViewById(R.id.locationText);
         urlText = findViewById(R.id.urlText);

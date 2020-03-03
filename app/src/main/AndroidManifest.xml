@@ -13,6 +13,9 @@
             android:name=".SettingsActivity"
             android:label="Settings"
             android:parentActivityName=".MainActivity" />
+        <activity android:name=".PlacesActivity"
+            android:label="Places"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".EventsActivity"
             android:icon="@drawable/ic_event_note_black_24dp"
