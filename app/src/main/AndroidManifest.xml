@@ -9,10 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EventsActivity"
-            android:parentActivityName=".MainActivity"
+        <activity android:name=".PlacesActivity"
+            android:label="Places"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".EventsActivity"
             android:icon="@drawable/ic_event_note_black_24dp"
-            android:label="Events" />
+            android:label="Events"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".EventDetailsActivity"
             android:parentActivityName=".MainActivity" />

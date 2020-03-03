@@ -7,8 +7,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,7 +31,7 @@ public class EventDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_details);
         logoView = findViewById(R.id.logoView);
-        titleText = findViewById(R.id.titleText);
+        titleText = findViewById(R.id.titleText_places);
         timeText = findViewById(R.id.timeText);
         locationText = findViewById(R.id.locationText);
         urlText = findViewById(R.id.urlText);

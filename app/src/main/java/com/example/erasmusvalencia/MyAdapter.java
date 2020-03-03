@@ -5,10 +5,8 @@ import android.content.Intent;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,9 +67,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            myText1 = itemView.findViewById(R.id.titleText);
+            myText1 = itemView.findViewById(R.id.titleText_places);
             myText2 = itemView.findViewById(R.id.timeText);
-            myText3 = itemView.findViewById(R.id.location_Text);
+            myText3 = itemView.findViewById(R.id.locationText_places);
             myImage = itemView.findViewById(R.id.logoImage);
             favView = itemView.findViewById(R.id.favView);
             mainLayout = itemView.findViewById(R.id.mainLayout);
