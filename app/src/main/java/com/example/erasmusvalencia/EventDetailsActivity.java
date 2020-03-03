@@ -2,6 +2,7 @@ package com.example.erasmusvalencia;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -24,9 +25,7 @@ public class EventDetailsActivity extends AppCompatActivity {
     Event event;
     int event_id;
     ImageView logoView;
-    TextView titleText, timeText, locationText, urlText, companyText;
-    ImageButton favouriteButton;
-    ImageButton notFavouriteButton;
+    TextView titleText, timeText, locationText, urlText, companyText, descriptionText;
     private static final String TAG = "EventDetailsActivity";
 
     @Override
@@ -39,6 +38,7 @@ public class EventDetailsActivity extends AppCompatActivity {
         locationText = findViewById(R.id.locationText);
         urlText = findViewById(R.id.urlText);
         companyText = findViewById(R.id.companyText);
+        descriptionText = findViewById(R.id.descriptionText);
 
         getData();
         setData();
@@ -138,5 +138,7 @@ public class EventDetailsActivity extends AppCompatActivity {
         urlText.setText(event.getUrl());
         companyText.setText(event.getCompany());
         logoView.setImageResource(Event.imagesrc[event.getCompanyID()]);
+        descriptionText.setText(event.getDescription() + event.getDescription());
+        descriptionText.setMovementMethod(new ScrollingMovementMethod());
     }
 }

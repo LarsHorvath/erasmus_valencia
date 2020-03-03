@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -47,8 +48,9 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     ArrayList<Event> events;
     TextView dateText;
-    Event.Date today, tmw;
+    Event.Date selectedDay;
     ImageButton fButton, ffButton, bButton, fbButton;
+    Button goToToday;
     boolean filterDay;
     boolean filterFavourites;
 
@@ -63,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         ffButton = findViewById(R.id.ffButton);
         bButton = findViewById(R.id.bButton);
         fbButton = findViewById(R.id.fbButton);
+        goToToday = findViewById(R.id.goToToday);
 
         // Get event data and score them in Event.allEvents and this.events
         doFileMagic();
@@ -74,13 +77,13 @@ public class MainActivity extends AppCompatActivity {
         setListeners();
 
         // Updating the UI for the currently set date
-        updateEvents(today, tmw);
+        updateEvents(selectedDay);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        updateEvents(today, tmw);
+        updateEvents(selectedDay);
     }
 
     @Override
@@ -132,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        updateEvents(today, tmw);
+                        updateEvents(selectedDay);
                     }
                 });
         return mBuilder.create();
@@ -143,13 +146,18 @@ public class MainActivity extends AppCompatActivity {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date();
         String day = preferences.getString("day", dateFormat.format(date));
-        today = new Event.Date(day);
-        tmw = today;
+        selectedDay = new Event.Date(day);
         filterDay = preferences.getBoolean("restrictToDay", false);
         filterFavourites = preferences.getBoolean("restrictToFavourites", false);
         filterDialogSelection[0] = filterDay;
         filterDialogSelection[1] = filterFavourites;
-        tmw = today.addDays(1);
+    }
+
+    private void setToday() {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = new Date();
+        selectedDay = new Event.Date(dateFormat.format(date));
+        updateEvents(selectedDay);
     }
 
     // Either reads and parses the events from the raw_event_data resource or parses the in that case already existing json array of type Event
@@ -209,15 +217,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Updates the UI (the date and the events on that date)
-    public void updateEvents(Event.Date start, Event.Date end) {
+    public void updateEvents(Event.Date start) {
         SharedPreferences preferences = getSharedPreferences("init", MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString("day", start.localeDateString());
         editor.apply();
 
-        dateText.setText(today.dayToString());
+        dateText.setText(selectedDay.dayToString());
         ArrayList<Event> filtered;
-        if (filterDay) filtered = Event.filterEvents(events, Event.FILTER_DATE, start, end);
+        if (filterDay) filtered = Event.filterEvents(events, Event.FILTER_DATE, start, start.addDays(1));
         else filtered = Event.filterEvents(events, Event.FILTER_DATE, start, start);
         if (filterFavourites) filtered = Event.filterEvents(filtered, Event.FILTER_FAVOURITE, true);
         Collections.sort(filtered);
@@ -242,39 +250,41 @@ public class MainActivity extends AppCompatActivity {
         fButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                today = today.addDays(1);
-                tmw = today.addDays(1);
-                dateText.setText(today.dayToString());
-                updateEvents(today, tmw);
+                selectedDay = selectedDay.addDays(1);
+                dateText.setText(selectedDay.dayToString());
+                updateEvents(selectedDay);
             }
         });
         ffButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                today = today.addDays(7);
-                tmw = today.addDays(1);
-                dateText.setText(today.dayToString());
-                updateEvents(today, tmw);
+                selectedDay = selectedDay.addDays(7);
+                dateText.setText(selectedDay.dayToString());
+                updateEvents(selectedDay);
             }
         });
         bButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                today = today.addDays(-1);
-                tmw = today.addDays(1);
-                dateText.setText(today.dayToString());
-                updateEvents(today, tmw);
+                selectedDay = selectedDay.addDays(-1);
+                dateText.setText(selectedDay.dayToString());
+                updateEvents(selectedDay);
 
             }
         });
         fbButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                today = today.addDays(-7);
-                tmw = today.addDays(1);
-                dateText.setText(today.dayToString());
-                updateEvents(today, tmw);
+                selectedDay = selectedDay.addDays(-7);
+                dateText.setText(selectedDay.dayToString());
+                updateEvents(selectedDay);
+            }
+        });
+        goToToday.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setToday();
             }
         });
     }

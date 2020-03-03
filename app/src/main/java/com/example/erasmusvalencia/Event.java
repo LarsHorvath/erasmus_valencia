@@ -146,6 +146,7 @@ public class Event implements Comparable<Event> {
      */
     public static ArrayList<Event> parseFromJSONString(final String JSONString) {
         ArrayList<Event> result = new ArrayList<>();
+        allEvents = new HashMap<>();
         JsonElement jsonElement = new JsonParser().parse(JSONString);
         JsonObject jsonObject = jsonElement.getAsJsonObject();
         JsonArray items = jsonObject.getAsJsonArray("items");

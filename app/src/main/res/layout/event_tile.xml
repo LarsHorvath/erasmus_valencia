@@ -61,11 +61,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="24dp"
+                android:layout_marginEnd="8dp"
                 android:text="Title"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/favView"
                 app:layout_constraintStart_toEndOf="@+id/logoImage"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -93,6 +93,16 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/timeImage"
                 app:layout_constraintTop_toTopOf="@+id/timeImage" />
+
+            <ImageView
+                android:id="@+id/favView"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_favorite_black_24dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

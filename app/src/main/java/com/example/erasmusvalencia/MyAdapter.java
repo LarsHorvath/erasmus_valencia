@@ -5,6 +5,7 @@ import android.content.Intent;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.Color;
@@ -40,10 +41,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.myText3.setText(e.getLocation());
         holder.myImage.setImageResource(Event.imagesrc[e.getCompanyID()]);
         if (e.isFavourite()) {
-            holder.myImage.setBackgroundColor(Color.YELLOW);
+            holder.favView.setVisibility(View.VISIBLE);
         }
         else {
-            holder.myImage.setBackgroundColor(Color.TRANSPARENT);
+            holder.favView.setVisibility(View.GONE);
         }
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +64,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView myText1, myText2, myText3;
-        ImageView myImage;
+        ImageView myImage, favView;
         ConstraintLayout mainLayout;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -72,6 +73,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             myText2 = itemView.findViewById(R.id.timeText);
             myText3 = itemView.findViewById(R.id.location_Text);
             myImage = itemView.findViewById(R.id.logoImage);
+            favView = itemView.findViewById(R.id.favView);
             mainLayout = itemView.findViewById(R.id.mainLayout);
         }
     }
