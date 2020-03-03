@@ -7,8 +7,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -138,7 +136,7 @@ public class EventDetailsActivity extends AppCompatActivity {
         urlText.setText(event.getUrl());
         companyText.setText(event.getCompany());
         logoView.setImageResource(Event.imagesrc[event.getCompanyID()]);
-        descriptionText.setText(event.getDescription() + event.getDescription());
+        descriptionText.setText(event.getDescription());
         descriptionText.setMovementMethod(new ScrollingMovementMethod());
     }
 }

@@ -20,7 +20,9 @@ public class Event implements Comparable<Event> {
     private int id;
     private String title;
     private String company;
-    private int companyID = 4;
+    static public final int imagesrc[] = {R.drawable.esnupv, R.drawable.esnuv, R.drawable.happyerasmus, R.drawable.soyerasmus,
+            R.drawable.erasmuslife, R.drawable.questionmark};
+    private int companyID = imagesrc.length-1;
 
 
     private String description;
@@ -30,15 +32,13 @@ public class Event implements Comparable<Event> {
     private Date endDate;
     private boolean favourite;
     private boolean custom;
-    static public final String[] companies = {"ESN", "Happy Erasmus", "Soy Erasmus", "Erasmus Life"};
-    static public final int imagesrc[] = {R.drawable.esn, R.drawable.happyerasmus, R.drawable.soyerasmus,
-            R.drawable.erasmuslife, R.drawable.questionmark};
     public static final int FILTER_TITLE = 1;
     public static final int FILTER_DESCRIPTION = 2;
     public static final int FILTER_LOCATION = 3;
     public static final int FILTER_COMPANY = 4;
     public static final int FILTER_DATE = 5;
     public static final int FILTER_FAVOURITE = 6;
+    public static final int FILTER_TEXT_SEARCH = 7;
 
     public Event() {
         title = "no title";
@@ -113,11 +113,20 @@ public class Event implements Comparable<Event> {
     }
 
     public void findCompany() {
+        String[] companies = {"ESN", "ESN", "Happy Erasmus", "Soy Erasmus", "Erasmus Life"};
         for (int i = 0; i < companies.length; i++) {
             if (title.contains(companies[i]) ||  location.contains(companies[i]) || description.contains(companies[i])) {
                 this.company = companies[i];
                 this.companyID = i;
             }
+        }
+        if (company.equals("ESN") && (title.contains("UV") || location.contains("UV") || description.contains(("UV")))) {
+            this.companyID = 1;
+            this.company ="ESN UV";
+        }
+        else if (company.equals("ESN")) {
+            this.companyID = 0;
+            this.company ="ESN UPV";
         }
     }
 
@@ -222,6 +231,10 @@ public class Event implements Comparable<Event> {
                     case FILTER_FAVOURITE:
                         if (!(filters[i] instanceof Boolean)) throw new IllegalArgumentException();
                         return event.isFavourite() == (Boolean) filters[i];
+                    case FILTER_TEXT_SEARCH:
+                        if (!(filters[i] instanceof String)) throw new IllegalArgumentException();
+                        if (!event.getLocation().contains((String) filters[i]) && !event.getTitle().contains((String) filters[i]) && !event.getCompany().contains((String) filters[i])) return false;
+                        break;
                 }
                 i++;
             }
@@ -270,6 +283,10 @@ public class Event implements Comparable<Event> {
 
     public void setCustom(boolean custom) {
         this.custom = custom;
+    }
+
+    public String durationToString() {
+        return String.format(Locale.ENGLISH,"From %s to %s", startDate.toString(), endDate.toString());
     }
 
     public static class Date implements Comparable<Date> {

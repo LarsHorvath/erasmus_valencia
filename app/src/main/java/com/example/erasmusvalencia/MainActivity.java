@@ -5,6 +5,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -12,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,38 +24,34 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.w3c.dom.Text;
+
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
     String[] filterDialogItems = new String[]{
-            "Restrict to today",
-            "Only show favourites",
-            "Free events",
-            "Single day events"
+            "Enable search bar",
     };
 
     boolean[] filterDialogSelection = new boolean[]{
-            false,
-            false,
-            false,
             false,
     };
 
     // Declarations
     RecyclerView recyclerView;
     DatePickerDialog picker;
+    EditText searchEdit;
 
     private static final String TAG = "MainActivity";
     ArrayList<Event> events;
-    TextView favouritesText;
     Button button_events, button_places, button_info;
+    String filterText = "";
 
 
     @Override
@@ -61,20 +60,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Initialization
-        favouritesText = findViewById(R.id.dateView);
-        favouritesText.setText("Favourites");
         button_events = findViewById(R.id.button_events);
         button_places = findViewById(R.id.button_places);
         button_info = findViewById(R.id.button_info);
+        searchEdit = findViewById(R.id.searchEditMain);
 
         // Get event data and score them in Event.allEvents and this.events
         doFileMagic();
 
-        // Getting the current date and initializing today & tomorrow
-        //setDateAndPreferences();
-
         // OnClickListeners for the buttons and the switch
         setListeners();
+
+        //set preferences
+        setDateAndPreferences();
 
         // Updating the UI for the currently set date
         updateEvents();
@@ -83,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        setDateAndPreferences();
         updateEvents();
     }
 
@@ -97,11 +96,13 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.filter_icon:
-                //AlertDialog dialog = makeFilterAlert();
-                //dialog.show();
+                AlertDialog dialog = makeFilterAlert();
+                dialog.show();
                 return true;
             case R.id.settings_icon:
-                Toast.makeText(this, "Settings selected", Toast.LENGTH_SHORT).show();
+                Log.i(TAG, "onOptionsItemSelected: going from mainactivity to settingsactivity");
+                Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+                startActivity(intent);
                 return true;
             case R.id.calendar_icon:
                 //showDatePickerDialog();
@@ -111,9 +112,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /*private AlertDialog makeFilterAlert() {
+    private void setDateAndPreferences() {
+        SharedPreferences preferences = getSharedPreferences("init", MODE_PRIVATE);
+        filterDialogSelection[0] = preferences.getBoolean("restrictToText", false);
+    }
+
+    private AlertDialog makeFilterAlert() {
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
-        mBuilder.setTitle("Text size")
+        mBuilder.setTitle("Choose filters")
                 .setMultiChoiceItems(filterDialogItems, filterDialogSelection, new DialogInterface.OnMultiChoiceClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i, boolean b) {
@@ -121,15 +127,8 @@ public class MainActivity extends AppCompatActivity {
                         SharedPreferences.Editor editor = preferences.edit();
                         switch (i) {
                             case 0:
-                                filterDay = b;
                                 filterDialogSelection[0] = b;
-                                editor.putBoolean("restrictToDay", filterDay);
-                                editor.apply();
-                                break;
-                            case 1:
-                                filterFavourites = b;
-                                filterDialogSelection[1] = b;
-                                editor.putBoolean("restrictToFavourites", filterFavourites);
+                                editor.putBoolean("restrictToText", b);
                                 editor.apply();
                         }
                     }
@@ -137,30 +136,12 @@ public class MainActivity extends AppCompatActivity {
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        updateEvents(selectedDay);
+                        updateEvents();
                     }
                 });
         return mBuilder.create();
-    }*/
+    }
 
-    /*private void setDateAndPreferences() {
-        SharedPreferences preferences = getSharedPreferences("init", MODE_PRIVATE);
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        Date date = new Date();
-        String day = preferences.getString("day", dateFormat.format(date));
-        selectedDay = new Event.Date(day);
-        filterDay = preferences.getBoolean("restrictToDay", false);
-        filterFavourites = preferences.getBoolean("restrictToFavourites", false);
-        filterDialogSelection[0] = filterDay;
-        filterDialogSelection[1] = filterFavourites;
-    }*/
-
-    /*private void setToday() {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        Date date = new Date();
-        selectedDay = new Event.Date(dateFormat.format(date));
-        updateEvents(selectedDay);
-    }*/
 
     // Either reads and parses the events from the raw_event_data resource or parses the in that case already existing json array of type Event
     private void doFileMagic() {
@@ -228,12 +209,28 @@ public class MainActivity extends AppCompatActivity {
     public void updateEvents() {
         ArrayList<Event> filtered;
         filtered = Event.filterEvents(events, Event.FILTER_FAVOURITE, true);
+        if (filterDialogSelection[0]) {
+            filtered = Event.filterEvents(filtered, Event.FILTER_TEXT_SEARCH, filterText);
+        }
         Collections.sort(filtered);
         displayEvents(filtered);
     }
 
     public void displayEvents(ArrayList<Event> fEvents) {
+        if (filterDialogSelection[0]) {
+            searchEdit.setVisibility(View.VISIBLE);
+        }
+        else {
+            searchEdit.setVisibility(View.GONE);
+        }
         int size = fEvents.size();
+        TextView noFavText=findViewById(R.id.noFavText);
+        if (size == 0) {
+            noFavText.setVisibility(View.VISIBLE);
+        }
+        else {
+            noFavText.setVisibility(View.GONE);
+        }
         int [] fids = new int[size];
         for (int i = 0; i < size; i++) {
             fids[i] = fEvents.get(i).getId();
@@ -246,24 +243,24 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
-    /*private void showDatePickerDialog() {
-        final Calendar cldr = Calendar.getInstance();
-        int day = cldr.get(Calendar.DAY_OF_MONTH);
-        int month = cldr.get(Calendar.MONTH);
-        int year = cldr.get(Calendar.YEAR);
-        // date picker dialog
-        picker = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                selectedDay = new Event.Date(i2, i1 + 1, i);
-                updateEvents(selectedDay);
-            }
-        }, year, month, day);
-
-        picker.show();
-    }*/
-
     private void setListeners() {
+        searchEdit.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                filterText = searchEdit.getText().toString();
+                updateEvents();
+            }
+        });
         button_events.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

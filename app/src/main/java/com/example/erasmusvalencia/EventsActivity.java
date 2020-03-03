@@ -11,6 +11,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,6 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,12 +45,13 @@ public class EventsActivity extends AppCompatActivity {
     String[] filterDialogItems = new String[]{
             "Restrict to today",
             "Only show favourites",
-            "Free events",
-            "Single day events"
+            "Show search bar",
     };
 
+    boolean filterDay;
+    boolean filterFavourites;
+
     boolean[] filterDialogSelection = new boolean[]{
-            false,
             false,
             false,
             false,
@@ -55,11 +59,12 @@ public class EventsActivity extends AppCompatActivity {
 
     // Declarations
     DatePickerDialog picker;
+    HorizontalCalendar horizontalCalendar;
 
     ArrayList<Event> events;
     Event.Date selectedDay;
-    boolean filterDay;
-    boolean filterFavourites;
+    EditText searchEdit;
+    String filterText = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +72,7 @@ public class EventsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_events);
 
         // Initialization
+        searchEdit = findViewById(R.id.searchEdit);
 
         // Get event data and score them in Event.allEvents and this.events
         doFileMagic();
@@ -97,7 +103,7 @@ public class EventsActivity extends AppCompatActivity {
         endDate.add(Calendar.MONTH, 3);
 
         // create the horizontal Calender with its builder
-        HorizontalCalendar horizontalCalendar = new HorizontalCalendar.Builder(this, R.id.calendarView)
+        horizontalCalendar = new HorizontalCalendar.Builder(this, R.id.calendarView)
                 .range(startDate, endDate)
                 .datesNumberOnScreen(5)
                 .build();
@@ -134,7 +140,7 @@ public class EventsActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main_menu, menu);
+        inflater.inflate(R.menu.event_menu, menu);
         return true;
     }
 
@@ -146,7 +152,9 @@ public class EventsActivity extends AppCompatActivity {
                 dialog.show();
                 return true;
             case R.id.settings_icon:
-                Toast.makeText(this, "Settings selected", Toast.LENGTH_SHORT).show();
+                Log.i(TAG, "onOptionsItemSelected: going from eventsactivity to settingsactivity");
+                Intent intent = new Intent(EventsActivity.this, SettingsActivity.class);
+                startActivity(intent);
                 return true;
             case R.id.calendar_icon:
                 showDatePickerDialog();
@@ -176,6 +184,10 @@ public class EventsActivity extends AppCompatActivity {
                                 filterDialogSelection[1] = b;
                                 editor.putBoolean("restrictToFavourites", filterFavourites);
                                 editor.apply();
+                            case 2:
+                                filterDialogSelection[2] = b;
+                                editor.putBoolean("restrictToText", filterFavourites);
+                                editor.apply();
                         }
                     }
                 })
@@ -198,6 +210,7 @@ public class EventsActivity extends AppCompatActivity {
         filterFavourites = preferences.getBoolean("restrictToFavourites", false);
         filterDialogSelection[0] = filterDay;
         filterDialogSelection[1] = filterFavourites;
+        filterDialogSelection[2] = preferences.getBoolean("restrictToText", false);
     }
 
     // Either reads and parses the events from the raw_event_data resource or parses the in that case already existing json array of type Event
@@ -273,11 +286,20 @@ public class EventsActivity extends AppCompatActivity {
         if (filterDay) filtered = Event.filterEvents(events, Event.FILTER_DATE, start, start.addDays(1));
         else filtered = Event.filterEvents(events, Event.FILTER_DATE, start, start);
         if (filterFavourites) filtered = Event.filterEvents(filtered, Event.FILTER_FAVOURITE, true);
+        if (filterDialogSelection[2]) {
+            filtered = Event.filterEvents(filtered, Event.FILTER_TEXT_SEARCH, filterText);
+        }
         Collections.sort(filtered);
         displayEvents(filtered);
     }
 
     public void displayEvents(ArrayList<Event> fEvents) {
+        if (filterDialogSelection[2]) {
+            searchEdit.setVisibility(View.VISIBLE);
+        }
+        else {
+            searchEdit.setVisibility(View.GONE);
+        }
         int size = fEvents.size();
         int [] fids = new int[size];
         for (int i = 0; i < size; i++) {
@@ -302,13 +324,34 @@ public class EventsActivity extends AppCompatActivity {
             public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
                 selectedDay = new Event.Date(i2, i1 + 1, i);
                 updateEvents(selectedDay);
+                Calendar date = Calendar.getInstance();
+                date.set(Calendar.YEAR, i);
+                date.set(Calendar.MONTH, i1);
+                date.set(Calendar.DAY_OF_MONTH, i2);
+                horizontalCalendar.selectDate(date, true);
             }
         }, year, month, day);
-
         picker.show();
     }
 
     private void setListeners() {
+        searchEdit.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                filterText = searchEdit.getText().toString();
+                updateEvents(selectedDay);
+            }
+        });
 
     }
 
