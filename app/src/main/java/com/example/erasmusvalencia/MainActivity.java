@@ -1,5 +1,6 @@
 package com.example.erasmusvalencia;
 
+import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +25,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 
@@ -44,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Declarations
     RecyclerView recyclerView;
+    DatePickerDialog picker;
 
     private static final String TAG = "MainActivity";
     ArrayList<Event> events;
@@ -102,6 +106,9 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.settings_icon:
                 Toast.makeText(this, "Settings selected", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.calendar_icon:
+                showDatePickerDialog();
                 return true;
             default:return super.onOptionsItemSelected(item);
 
@@ -244,6 +251,23 @@ public class MainActivity extends AppCompatActivity {
         MyAdapter myAdapter = new MyAdapter(this, fids);
         recyclerView.setAdapter(myAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    private void showDatePickerDialog() {
+        final Calendar cldr = Calendar.getInstance();
+        int day = cldr.get(Calendar.DAY_OF_MONTH);
+        int month = cldr.get(Calendar.MONTH);
+        int year = cldr.get(Calendar.YEAR);
+        // date picker dialog
+        picker = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+                selectedDay = new Event.Date(i2, i1, i);
+                updateEvents(selectedDay);
+            }
+        }, year, month, day);
+
+        picker.show();
     }
 
     private void setListeners() {
