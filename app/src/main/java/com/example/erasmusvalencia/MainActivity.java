@@ -1,6 +1,8 @@
 package com.example.erasmusvalencia;
 
+
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +11,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -53,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
     Button goToToday;
     boolean filterDay;
     boolean filterFavourites;
+    Button button_events, button_places, button_info;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +72,9 @@ public class MainActivity extends AppCompatActivity {
         bButton = findViewById(R.id.bButton);
         fbButton = findViewById(R.id.fbButton);
         goToToday = findViewById(R.id.goToToday);
+        button_events = findViewById(R.id.button_events);
+        button_places = findViewById(R.id.button_places);
+        button_info = findViewById(R.id.button_info);
 
         // Get event data and score them in Event.allEvents and this.events
         doFileMagic();
@@ -285,6 +294,26 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 setToday();
+            }
+        });
+        button_events.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // go to EventsActivity
+                Intent intent = new Intent(MainActivity.this, EventsActivity.class);
+                startActivity(intent);
+            }
+        });
+        button_places.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // go to PlacesActivity
+            }
+        });
+        button_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // go to InfoActivity
             }
         });
     }

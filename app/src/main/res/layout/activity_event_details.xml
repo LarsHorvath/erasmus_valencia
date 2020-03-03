@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="@+id/timeImage"
         app:layout_constraintStart_toStartOf="@+id/timeImage"
         app:layout_constraintTop_toBottomOf="@+id/locationImage"
-        app:srcCompat="@drawable/company" />
+        app:srcCompat="@drawable/ic_people_black_24dp" />
 
     <TextView
         android:id="@+id/timeText"
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="Time"
-        android:textSize="16sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/timeImage"
         app:layout_constraintStart_toEndOf="@+id/timeImage"
         app:layout_constraintTop_toTopOf="@+id/timeImage" />
@@ -78,9 +78,8 @@
         android:id="@+id/timeImage"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginStart="72dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline9"
         app:layout_constraintTop_toBottomOf="@+id/titleText"
         app:srcCompat="@drawable/time" />
 
@@ -88,14 +87,13 @@
         android:id="@+id/titleText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
         android:text="titletext"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline9"
         app:layout_constraintTop_toBottomOf="@+id/logoView" />
 
     <ImageView
@@ -140,5 +138,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/urlText" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
