@@ -233,7 +233,7 @@ public class Event implements Comparable<Event> {
                         return event.isFavourite() == (Boolean) filters[i];
                     case FILTER_TEXT_SEARCH:
                         if (!(filters[i] instanceof String)) throw new IllegalArgumentException();
-                        if (!event.getLocation().contains((String) filters[i]) && !event.getTitle().contains((String) filters[i]) && !event.getCompany().contains((String) filters[i])) return false;
+                        if (!containsIgnoreCase(event.getTitle(),((String) filters[i])) && !containsIgnoreCase(event.getLocation(),((String) filters[i])) && !containsIgnoreCase(event.getCompany(),((String) filters[i]))) return false;
                         break;
                 }
                 i++;
@@ -243,6 +243,10 @@ public class Event implements Comparable<Event> {
             }
         }
         return true;
+    }
+
+    private static boolean containsIgnoreCase(String string, String sub) {
+        return string.toLowerCase().contains(sub.toLowerCase());
     }
 
     public int getCompanyID() {
