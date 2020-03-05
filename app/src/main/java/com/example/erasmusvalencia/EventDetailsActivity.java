@@ -141,6 +141,6 @@ public class EventDetailsActivity extends AppCompatActivity {
         logoView.setImageResource(Event.imagesrc[event.getCompanyID()]);
         descriptionText.setText(event.getDescription());
 
-        descriptionText.setMovementMethod(new ScrollingMovementMethod());
+        //descriptionText.setMovementMethod(new ScrollingMovementMethod());
     }
 }

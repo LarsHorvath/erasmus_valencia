@@ -1,151 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout"
-    android:layout_width="match_parent"
+    android:layout_width="fill_parent"
     android:layout_height="match_parent"
-    android:fadeScrollbars="true"
-    android:isScrollContainer="true"
-    android:scrollbarAlwaysDrawVerticalTrack="false"
-    android:scrollbars="vertical"
-    tools:context=".EventDetailsActivity">
+    android:fillViewport="false"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadeScrollbars="true"
+        android:isScrollContainer="true"
+        android:scrollbarAlwaysDrawVerticalTrack="false"
+        android:scrollbars="vertical"
+        tools:context=".EventDetailsActivity">
 
 
-    <ImageView
-        android:id="@+id/companyImage"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_margin="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/timeImage"
-        app:layout_constraintStart_toStartOf="@+id/timeImage"
-        app:layout_constraintTop_toBottomOf="@+id/locationImage"
-        app:srcCompat="@drawable/ic_people_black_24dp" />
+        <ImageView
+            android:id="@+id/companyImage"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_margin="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/timeImage"
+            app:layout_constraintStart_toStartOf="@+id/timeImage"
+            app:layout_constraintTop_toBottomOf="@+id/locationImage"
+            app:srcCompat="@drawable/ic_people_black_24dp" />
 
-    <ImageView
-        android:id="@+id/locationImage"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_margin="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/timeImage"
-        app:layout_constraintStart_toStartOf="@+id/timeImage"
-        app:layout_constraintTop_toBottomOf="@+id/timeImage"
-        app:srcCompat="@drawable/loc" />
+        <ImageView
+            android:id="@+id/locationImage"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_margin="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/timeImage"
+            app:layout_constraintStart_toStartOf="@+id/timeImage"
+            app:layout_constraintTop_toBottomOf="@+id/timeImage"
+            app:srcCompat="@drawable/loc" />
 
-    <ImageView
-        android:id="@+id/urlImage"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_margin="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/companyImage"
-        app:layout_constraintStart_toStartOf="@+id/companyImage"
-        app:layout_constraintTop_toBottomOf="@+id/companyImage"
-        app:srcCompat="@drawable/url" />
+        <ImageView
+            android:id="@+id/urlImage"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_margin="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/companyImage"
+            app:layout_constraintStart_toStartOf="@+id/companyImage"
+            app:layout_constraintTop_toBottomOf="@+id/companyImage"
+            app:srcCompat="@drawable/url" />
 
-    <ImageView
-        android:id="@+id/timeImage"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="@+id/guideline9"
-        app:layout_constraintTop_toBottomOf="@+id/titleText_places"
-        app:srcCompat="@drawable/time" />
+        <ImageView
+            android:id="@+id/timeImage"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/guideline9"
+            app:layout_constraintTop_toBottomOf="@+id/titleText_places"
+            app:srcCompat="@drawable/time" />
 
-    <ImageView
-        android:id="@+id/logoView"
-        android:layout_width="144dp"
-        android:layout_height="144dp"
-        android:layout_marginTop="32dp"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/questionmark" />
+        <ImageView
+            android:id="@+id/logoView"
+            android:layout_width="144dp"
+            android:layout_height="144dp"
+            android:layout_marginTop="32dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/questionmark" />
 
-    <TextView
-        android:id="@+id/timeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Time"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/timeImage"
-        app:layout_constraintStart_toEndOf="@+id/timeImage"
-        app:layout_constraintTop_toTopOf="@+id/timeImage" />
+        <TextView
+            android:id="@+id/timeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Time"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/timeImage"
+            app:layout_constraintStart_toEndOf="@+id/timeImage"
+            app:layout_constraintTop_toTopOf="@+id/timeImage" />
 
-    <TextView
-        android:id="@+id/locationText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:text="Location"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/locationImage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/timeText"
-        app:layout_constraintTop_toTopOf="@+id/locationImage"
-        app:layout_constraintVertical_bias="0.5" />
+        <TextView
+            android:id="@+id/locationText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Location"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/locationImage"
+            app:layout_constraintEnd_toStartOf="@+id/guideline13"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/timeText"
+            app:layout_constraintTop_toTopOf="@+id/locationImage"
+            app:layout_constraintVertical_bias="0.5" />
 
-    <TextView
-        android:id="@+id/urlText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:autoLink="web"
-        android:text="facebook"
-        app:layout_constraintBottom_toBottomOf="@+id/urlImage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/companyText"
-        app:layout_constraintTop_toTopOf="@+id/urlImage" />
+        <TextView
+            android:id="@+id/urlText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:text="facebook"
+            app:layout_constraintBottom_toBottomOf="@+id/urlImage"
+            app:layout_constraintEnd_toStartOf="@+id/guideline13"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/companyText"
+            app:layout_constraintTop_toTopOf="@+id/urlImage" />
 
-    <TextView
-        android:id="@+id/titleText_places"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
-        android:text="titletext"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline9"
-        app:layout_constraintTop_toBottomOf="@+id/logoView" />
+        <TextView
+            android:id="@+id/titleText_places"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="titletext"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/guideline13"
+            app:layout_constraintStart_toStartOf="@+id/guideline9"
+            app:layout_constraintTop_toBottomOf="@+id/logoView" />
 
-    <TextView
-        android:id="@+id/companyText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:text="company"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/companyImage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/locationText"
-        app:layout_constraintTop_toTopOf="@+id/companyImage" />
+        <TextView
+            android:id="@+id/companyText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="company"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/companyImage"
+            app:layout_constraintEnd_toStartOf="@+id/guideline13"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/locationText"
+            app:layout_constraintTop_toTopOf="@+id/companyImage" />
 
-    <TextView
-        android:id="@+id/descriptionText"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="description.."
-        android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/urlText" />
+        <TextView
+            android:id="@+id/descriptionText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="8dp"
+            android:text="description.."
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline13"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline9"
+            app:layout_constraintTop_toBottomOf="@+id/urlText"
+            app:layout_constraintVertical_bias="1.0" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.1" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
