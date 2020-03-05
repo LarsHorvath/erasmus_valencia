@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 
 import java.io.IOException;
@@ -24,12 +25,14 @@ public class EventDetailsActivity extends AppCompatActivity {
     int event_id;
     ImageView logoView;
     TextView titleText, timeText, locationText, urlText, companyText, descriptionText;
+    ConstraintLayout cl;
     private static final String TAG = "EventDetailsActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_details);
+        cl = findViewById(R.id.constraintLayout);
         logoView = findViewById(R.id.logoView);
         titleText = findViewById(R.id.titleText_places);
         timeText = findViewById(R.id.timeText);
@@ -97,7 +100,7 @@ public class EventDetailsActivity extends AppCompatActivity {
                 sendIntent.setAction(Intent.ACTION_SEND);
                 sendIntent.putExtra(Intent.EXTRA_TEXT, String.format(Locale.ENGLISH,"Hi, I would like to share the following event with you:\n\n*%s*\n%s _%s_\n%s %s\n%s\n\n Are you in?",event.getTitle(), getString(R.string.emoji_clock), event.getStartDate().toString(), getString(R.string.emoji_location), event.getLocation(),event.getUrl()));
                 sendIntent.setType("text/plain");
-                startActivity(sendIntent);
+                startActivity(Intent.createChooser(sendIntent, null));
                 return true;
             default:return super.onOptionsItemSelected(item);
         }
@@ -137,6 +140,7 @@ public class EventDetailsActivity extends AppCompatActivity {
         companyText.setText(event.getCompany());
         logoView.setImageResource(Event.imagesrc[event.getCompanyID()]);
         descriptionText.setText(event.getDescription());
+
         descriptionText.setMovementMethod(new ScrollingMovementMethod());
     }
 }

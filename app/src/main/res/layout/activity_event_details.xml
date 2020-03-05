@@ -2,9 +2,15 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fadeScrollbars="true"
+    android:isScrollContainer="true"
+    android:scrollbarAlwaysDrawVerticalTrack="false"
+    android:scrollbars="vertical"
     tools:context=".EventDetailsActivity">
+
 
     <ImageView
         android:id="@+id/companyImage"
@@ -15,6 +21,46 @@
         app:layout_constraintStart_toStartOf="@+id/timeImage"
         app:layout_constraintTop_toBottomOf="@+id/locationImage"
         app:srcCompat="@drawable/ic_people_black_24dp" />
+
+    <ImageView
+        android:id="@+id/locationImage"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/timeImage"
+        app:layout_constraintStart_toStartOf="@+id/timeImage"
+        app:layout_constraintTop_toBottomOf="@+id/timeImage"
+        app:srcCompat="@drawable/loc" />
+
+    <ImageView
+        android:id="@+id/urlImage"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/companyImage"
+        app:layout_constraintStart_toStartOf="@+id/companyImage"
+        app:layout_constraintTop_toBottomOf="@+id/companyImage"
+        app:srcCompat="@drawable/url" />
+
+    <ImageView
+        android:id="@+id/timeImage"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline9"
+        app:layout_constraintTop_toBottomOf="@+id/titleText_places"
+        app:srcCompat="@drawable/time" />
+
+    <ImageView
+        android:id="@+id/logoView"
+        android:layout_width="144dp"
+        android:layout_height="144dp"
+        android:layout_marginTop="32dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/questionmark" />
 
     <TextView
         android:id="@+id/timeText"
@@ -41,26 +87,6 @@
         app:layout_constraintTop_toTopOf="@+id/locationImage"
         app:layout_constraintVertical_bias="0.5" />
 
-    <ImageView
-        android:id="@+id/locationImage"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_margin="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/timeImage"
-        app:layout_constraintStart_toStartOf="@+id/timeImage"
-        app:layout_constraintTop_toBottomOf="@+id/timeImage"
-        app:srcCompat="@drawable/loc" />
-
-    <ImageView
-        android:id="@+id/urlImage"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_margin="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/companyImage"
-        app:layout_constraintStart_toStartOf="@+id/companyImage"
-        app:layout_constraintTop_toBottomOf="@+id/companyImage"
-        app:srcCompat="@drawable/url" />
-
     <TextView
         android:id="@+id/urlText"
         android:layout_width="0dp"
@@ -74,15 +100,6 @@
         app:layout_constraintStart_toStartOf="@+id/companyText"
         app:layout_constraintTop_toTopOf="@+id/urlImage" />
 
-    <ImageView
-        android:id="@+id/timeImage"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="@+id/guideline9"
-        app:layout_constraintTop_toBottomOf="@+id/titleText_places"
-        app:srcCompat="@drawable/time" />
-
     <TextView
         android:id="@+id/titleText_places"
         android:layout_width="0dp"
@@ -95,17 +112,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline9"
         app:layout_constraintTop_toBottomOf="@+id/logoView" />
-
-    <ImageView
-        android:id="@+id/logoView"
-        android:layout_width="144dp"
-        android:layout_height="144dp"
-        android:layout_marginTop="32dp"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/questionmark" />
 
     <TextView
         android:id="@+id/companyText"
@@ -128,10 +134,6 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:fadeScrollbars="true"
-        android:isScrollContainer="true"
-        android:scrollbarAlwaysDrawVerticalTrack="false"
-        android:scrollbars="vertical"
         android:text="description.."
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"

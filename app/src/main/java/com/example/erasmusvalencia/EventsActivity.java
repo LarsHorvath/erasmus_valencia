@@ -91,6 +91,12 @@ public class EventsActivity extends AppCompatActivity {
         // Updating the UI for the currently set date
         updateEvents(selectedDay);
 
+        Calendar date = Calendar.getInstance();
+        date.set(Calendar.YEAR, selectedDay.getYear());
+        date.set(Calendar.MONTH, selectedDay.getMonth()-1);
+        date.set(Calendar.DAY_OF_MONTH, selectedDay.getDay());
+        horizontalCalendar.selectDate(date, true);
+
     }
 
     private void setCalenderView(){
@@ -102,10 +108,16 @@ public class EventsActivity extends AppCompatActivity {
         Calendar endDate = Calendar.getInstance();
         endDate.add(Calendar.MONTH, 3);
 
+        Calendar date = Calendar.getInstance();
+        date.set(Calendar.YEAR, selectedDay.getYear());
+        date.set(Calendar.MONTH, selectedDay.getMonth()-1);
+        date.set(Calendar.DAY_OF_MONTH, selectedDay.getDay());
+
         // create the horizontal Calender with its builder
         horizontalCalendar = new HorizontalCalendar.Builder(this, R.id.calendarView)
                 .range(startDate, endDate)
                 .datesNumberOnScreen(5)
+                .defaultSelectedDate(date)
                 .build();
 
         // Set listeners to calendar view
@@ -135,6 +147,11 @@ public class EventsActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         updateEvents(selectedDay);
+        Calendar date = Calendar.getInstance();
+        date.set(Calendar.YEAR, selectedDay.getYear());
+        date.set(Calendar.MONTH, selectedDay.getMonth()-1);
+        date.set(Calendar.DAY_OF_MONTH, selectedDay.getDay());
+        horizontalCalendar.selectDate(date, true);
     }
 
     @Override

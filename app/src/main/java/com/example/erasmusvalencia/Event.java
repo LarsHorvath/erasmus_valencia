@@ -327,6 +327,18 @@ public class Event implements Comparable<Event> {
             parseString(date);
         }
 
+        public int getDay() {
+            return day;
+        }
+
+        public int getMonth() {
+            return month;
+        }
+
+        public int getYear() {
+            return year;
+        }
+
         public int compareTo(Date other) {
             return Long.compare(this.toLong(), other.toLong());
         }
