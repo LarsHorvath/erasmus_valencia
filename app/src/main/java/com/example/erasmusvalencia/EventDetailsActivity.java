@@ -134,7 +134,7 @@ public class EventDetailsActivity extends AppCompatActivity {
     private void setData() {
         event = Event.allEvents.get(event_id);
         titleText.setText(event.getTitle());
-        timeText.setText(Event.dayToString(event.getStartDate(), Event.DAY_AND_TIME));
+        timeText.setText(Event.dayToString(event.getStartDate(), Event.NAME_AND_DAY_AND_TIME));
         locationText.setText(event.getLocation());
         urlText.setText(event.getUrl());
         companyText.setText(event.getCompany());

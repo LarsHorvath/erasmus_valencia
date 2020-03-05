@@ -35,7 +35,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         final Event e = Event.allEvents.get(ids[position]);
         holder.myText1.setText(e.getTitle());
-        holder.myText2.setText(Event.dayToString(e.getStartDate(), Event.DAY_AND_TIME));
+        holder.myText2.setText(Event.dayToString(e.getStartDate(), Event.NAME_AND_DAY_AND_TIME));
         holder.myText3.setText(e.getLocation());
         holder.myImage.setImageResource(Event.imagesrc[e.getCompanyID()]);
         if (e.isFavourite()) {

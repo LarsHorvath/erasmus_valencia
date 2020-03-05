@@ -11,6 +11,8 @@ import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.time.DayOfWeek;
+import java.time.format.TextStyle;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -324,11 +326,15 @@ public class Event implements Comparable<Event> {
 
     public static final int DAY = 0;
     public static final int DAY_AND_TIME = 1;
+    public static final int NAME_AND_DAY = 2;
+    public static final int NAME_AND_DAY_AND_TIME = 3;
 
     public static String dayToString(Calendar cal, int sel) {
         switch (sel) {
             case DAY: return String.format(Locale.ENGLISH,"%02d.%02d.%04d", cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.MONTH)+1, cal.get(Calendar.YEAR));
             case DAY_AND_TIME: return String.format(Locale.ENGLISH,"%02d.%02d.%04d, %02d:%02d", cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.MONTH)+1, cal.get(Calendar.YEAR), cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE));
+            case NAME_AND_DAY: return String.format(Locale.ENGLISH,"%s %02d.%02d.%04d", DayOfWeek.of(cal.get(Calendar.DAY_OF_WEEK)), cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.MONTH)+1, cal.get(Calendar.YEAR));
+            case NAME_AND_DAY_AND_TIME: return String.format(Locale.ENGLISH,"%s %02d.%02d.%04d, %02d:%02d", DayOfWeek.of((cal.get(Calendar.DAY_OF_WEEK) + 6) % 7).getDisplayName(TextStyle.SHORT, Locale.ENGLISH), cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.MONTH)+1, cal.get(Calendar.YEAR), cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE));
             default: return "You're in idiot";
         }
     }
