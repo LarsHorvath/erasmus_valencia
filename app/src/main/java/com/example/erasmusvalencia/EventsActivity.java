@@ -58,7 +58,7 @@ public class EventsActivity extends AppCompatActivity {
     HorizontalCalendar horizontalCalendar;
 
     ArrayList<Event> events;
-    Event.Date selectedDay;
+    Calendar selectedDay;
     EditText searchEdit;
     String filterText = "";
 
@@ -87,12 +87,7 @@ public class EventsActivity extends AppCompatActivity {
         // Updating the UI for the currently set date
         updateEvents(selectedDay);
 
-        Calendar date = Calendar.getInstance();
-        date.set(Calendar.YEAR, selectedDay.getYear());
-        date.set(Calendar.MONTH, selectedDay.getMonth() - 1);
-        date.set(Calendar.DAY_OF_MONTH, selectedDay.getDay());
-        horizontalCalendar.selectDate(date, true);
-
+        horizontalCalendar.selectDate((Calendar) selectedDay, true);
     }
 
     private void setCalenderView() {
@@ -103,17 +98,11 @@ public class EventsActivity extends AppCompatActivity {
         // ends after 3 month from now
         Calendar endDate = Calendar.getInstance();
         endDate.add(Calendar.MONTH, 3);
-
-        Calendar date = Calendar.getInstance();
-        date.set(Calendar.YEAR, selectedDay.getYear());
-        date.set(Calendar.MONTH, selectedDay.getMonth() - 1);
-        date.set(Calendar.DAY_OF_MONTH, selectedDay.getDay());
-
         // create the horizontal Calender with its builder
         horizontalCalendar = new HorizontalCalendar.Builder(this, R.id.calendarView)
                 .range(startDate, endDate)
                 .datesNumberOnScreen(5)
-                .defaultSelectedDate(date)
+                .defaultSelectedDate((Calendar) selectedDay)
                 .build();
 
         // Set listeners to calendar view
@@ -121,8 +110,8 @@ public class EventsActivity extends AppCompatActivity {
             @Override
             public void onDateSelected(Calendar date, int position) {
                 Log.i(TAG, "onDateSelected: date: " + date.toString() + " position: " + position);
-                Log.i(TAG, "onDateSelected: day: " + date.get(Calendar.DAY_OF_MONTH) + " month: " + (date.get(Calendar.MONTH) + 1) + " year: " + date.get(Calendar.YEAR));
-                selectedDay = new Event.Date(date.get(Calendar.DAY_OF_MONTH), date.get(Calendar.MONTH) + 1, date.get(Calendar.YEAR));
+                Log.i(TAG, "onDateSelected: day: " + date.get(Calendar.DAY_OF_MONTH) + " month: " + (date.get(Calendar.MONTH)+1) + " year: "+date.get(Calendar.YEAR));
+                selectedDay = date;
                 updateEvents(selectedDay);
             }
 
@@ -143,11 +132,7 @@ public class EventsActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         updateEvents(selectedDay);
-        Calendar date = Calendar.getInstance();
-        date.set(Calendar.YEAR, selectedDay.getYear());
-        date.set(Calendar.MONTH, selectedDay.getMonth() - 1);
-        date.set(Calendar.DAY_OF_MONTH, selectedDay.getDay());
-        horizontalCalendar.selectDate(date, true);
+        horizontalCalendar.selectDate(selectedDay, true);
     }
 
     @Override
@@ -216,10 +201,7 @@ public class EventsActivity extends AppCompatActivity {
 
     private void setDateAndPreferences() {
         SharedPreferences preferences = getSharedPreferences("init", MODE_PRIVATE);
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        Date date = new Date();
-        String day = preferences.getString("day", dateFormat.format(date));
-        selectedDay = new Event.Date(day);
+        selectedDay = Calendar.getInstance();
         filterDay = preferences.getBoolean("restrictToDay", false);
         filterFavourites = preferences.getBoolean("restrictToFavourites", false);
         filterDialogSelection[0] = filterDay;
@@ -290,15 +272,17 @@ public class EventsActivity extends AppCompatActivity {
     }
 
     // Updates the UI (the date and the events on that date)
-    public void updateEvents(Event.Date start) {
+    public void updateEvents(Calendar start) {
         SharedPreferences preferences = getSharedPreferences("init", MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("day", start.localeDateString());
+        editor.putString("day", Event.localeDateString(start));
         editor.apply();
 
         ArrayList<Event> filtered;
-        if (filterDay)
-            filtered = Event.filterEvents(events, Event.FILTER_DATE, start, start.addDays(1));
+
+        Calendar end = (Calendar) start.clone();
+        end.add(Calendar.DAY_OF_MONTH, 1);
+        if (filterDay) filtered = Event.filterEvents(events, Event.FILTER_DATE, start, end);
         else filtered = Event.filterEvents(events, Event.FILTER_DATE, start, start);
         if (filterFavourites) filtered = Event.filterEvents(filtered, Event.FILTER_FAVOURITE, true);
         if (filterDialogSelection[2]) {
@@ -336,13 +320,9 @@ public class EventsActivity extends AppCompatActivity {
         picker = new DatePickerDialog(EventsActivity.this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                selectedDay = new Event.Date(i2, i1 + 1, i);
+                selectedDay.set(i, i1, i2);
                 updateEvents(selectedDay);
-                Calendar date = Calendar.getInstance();
-                date.set(Calendar.YEAR, i);
-                date.set(Calendar.MONTH, i1);
-                date.set(Calendar.DAY_OF_MONTH, i2);
-                horizontalCalendar.selectDate(date, true);
+                horizontalCalendar.selectDate(selectedDay, true);
             }
         }, year, month, day);
         picker.show();

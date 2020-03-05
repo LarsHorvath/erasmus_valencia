@@ -1,5 +1,7 @@
 package com.example.erasmusvalencia;
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
@@ -9,13 +11,17 @@ import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
-import java.time.LocalDate;
+import java.time.DayOfWeek;
+import java.time.format.TextStyle;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Locale;
 
 public class Event implements Comparable<Event> {
     public static HashMap<Integer, Event> allEvents = new HashMap<>();
+
+    static final String TAG = "Event";
 
     private int id;
     private String title;
@@ -28,8 +34,8 @@ public class Event implements Comparable<Event> {
     private String description;
     private String location;
     private String url;
-    private Date startDate;
-    private Date endDate;
+    private Calendar startDate;
+    private Calendar endDate;
     private boolean favourite;
     private boolean custom;
     public static final int FILTER_TITLE = 1;
@@ -45,8 +51,10 @@ public class Event implements Comparable<Event> {
         company = "no company";
         description = "no description";
         location = "no location";
-        startDate = new Date();
-        endDate = new Date();
+        startDate = Calendar.getInstance();
+        endDate = Calendar.getInstance();
+        startDate.clear();
+        endDate.clear();
         id = generateID();
         allEvents.put(id, this);
         favourite = false;
@@ -96,19 +104,19 @@ public class Event implements Comparable<Event> {
         this.location = location;
     }
 
-    public Date getStartDate() {
+    public Calendar getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(Calendar startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public Calendar getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(Calendar endDate) {
         this.endDate = endDate;
     }
 
@@ -168,8 +176,8 @@ public class Event implements Comparable<Event> {
             event.setTitle(item.getAsJsonPrimitive("summary").getAsString());
             event.setDescription(item.getAsJsonPrimitive("description").getAsString());
             event.setLocation(item.getAsJsonPrimitive("location").getAsString());
-            event.setStartDate(new Date(item.getAsJsonObject("start").getAsJsonPrimitive("dateTime").getAsString()));
-            event.setEndDate(new Date(item.getAsJsonObject("end").getAsJsonPrimitive("dateTime").getAsString()));
+            event.setStartDate(parseCalendarString(item.getAsJsonObject("start").getAsJsonPrimitive("dateTime").getAsString()));
+            event.setEndDate(parseCalendarString(item.getAsJsonObject("end").getAsJsonPrimitive("dateTime").getAsString()));
             event.findCompany();
             event.findLink();
             event.setCustom(false);
@@ -222,11 +230,14 @@ public class Event implements Comparable<Event> {
                         if (!event.getCompany().contains((String) filters[i])) return false;
                         break;
                     case FILTER_DATE:
-                        if (!(filters[i] instanceof Date || !(filters[i+1] instanceof Date))) throw new IllegalArgumentException();
-                        if (((Date) filters[i]).compareTo((Date) filters[i+1]) >= 0) {
-                            if (((Date) filters[i++]).compareTo(event.getStartDate()) > 0) return false;
+                        if (!(filters[i] instanceof Calendar || !(filters[i+1] instanceof Calendar))) throw new IllegalArgumentException();
+                        if (((Calendar) filters[i]).compareTo((Calendar) filters[i+1]) >= 0) {
+                            if (((Calendar) filters[i++]).compareTo(event.getStartDate()) > 0) return false;
+                            Log.i(TAG, "eventMatches: Date presented: " + ((Calendar) filters[i-1]).getDisplayNames(Calendar.DAY_OF_YEAR,Calendar.SHORT,Locale.ENGLISH));
+                            Log.i(TAG, "eventMatches: this Date to filter: " + (event.getStartDate()).getDisplayNames(Calendar.DAY_OF_YEAR,Calendar.SHORT,Locale.ENGLISH));
+                            Log.i(TAG, "eventMatches: result: " + ((Calendar) filters[i-1]).compareTo((Calendar) filters[i]));
                         }
-                        else if (((Date) filters[i]).compareTo(event.getStartDate()) > 0 || event.getStartDate().compareTo((Date) filters[++i]) >= 0) return false;
+                        else if (((Calendar) filters[i]).compareTo(event.getStartDate()) > 0 || event.getStartDate().compareTo((Calendar) filters[++i]) >= 0) return false;
                         break;
                     case FILTER_FAVOURITE:
                         if (!(filters[i] instanceof Boolean)) throw new IllegalArgumentException();
@@ -293,100 +304,44 @@ public class Event implements Comparable<Event> {
         return String.format(Locale.ENGLISH,"From %s to %s", startDate.toString(), endDate.toString());
     }
 
-    public static class Date implements Comparable<Date> {
-        private int minute;
-        private int hour;
-        private int day;
-        private int month;
-        private int year;
-
-        public Date() {
-            minute = hour = 0;
-            day = month = 1;
-            year = 2020;
+    /**
+     * Parses a String as a date and saves the relevant data to this Date object. See param for format. This method
+     * doesn't check the sense of the values
+     * @param date the String in the format "yyyy-mm-ddThh:mm:ssZ" or "yyyy-mm-dd" to be parsed
+     */
+    public static Calendar parseCalendarString(final String date) {
+        int year = Integer.parseInt(date.substring(0,4));
+        int month = Integer.parseInt(date.substring(5,7)) -1;
+        int day = Integer.parseInt(date.substring(8,10));
+        int hour = 0;
+        int minute = 0;
+        if (date.length()>=16) {
+            hour = Integer.parseInt(date.substring(11,13));
+            minute = Integer.parseInt(date.substring(14,16));
         }
-
-        public Date(int day, int month, int year, int hour, int minute) {
-            this(day, month, year);
-            this.minute = minute;
-            this.hour = hour;
-        }
-        public Date(int day, int month, int year) {
-            this(day, month);
-            this.year = year;
-
-        }
-        public Date(int day, int month) {
-            this();
-            this.day = day;
-            this.month = month;
-        }
-
-
-        public Date(String date) {
-            parseString(date);
-        }
-
-        public int getDay() {
-            return day;
-        }
-
-        public int getMonth() {
-            return month;
-        }
-
-        public int getYear() {
-            return year;
-        }
-
-        public int compareTo(Date other) {
-            return Long.compare(this.toLong(), other.toLong());
-        }
-
-        /**
-         * Converts a date to a single long value used to compare dates. Note it is NOt an actual representation, leap
-         * years and months of different lengths not accounted for, just to get a different long value for any date
-         * @return this Date objects long representation
-         */
-        private long toLong() {
-            return ((((((long) this.year)*12 + this.month)*31 + this.day)*24 + this.hour)*60) + this.minute;
-        }
-
-        /**
-         * Parses a String as a date and saves the relevant data to this Date object. See param for format. This method
-         * doesn't check the sense of the values
-         * @param date the String in the format "yyyy-mm-ddThh:mm:ssZ" or "yyyy-mm-dd" to be parsed
-         */
-        public void parseString(String date) {
-            year = Integer.parseInt(date.substring(0,4));
-            month = Integer.parseInt(date.substring(5,7));
-            day = Integer.parseInt(date.substring(8,10));
-            if (date.length()>=16) {
-                hour = Integer.parseInt(date.substring(11,13));
-                minute = Integer.parseInt(date.substring(14,16));
-            }
-            else {
-                hour = minute = 0;
-            }
-        }
-
-        public String toString() {
-            return String.format(Locale.ENGLISH,"%d.%d.%d, %02d:%02d", day, month, year, hour, minute);
-        }
-
-        public String dayToString() {
-            return String.format(Locale.ENGLISH,"%d.%d.%d", day, month, year);
-        }
-
-        public String localeDateString() {
-            return String.format(Locale.ENGLISH,"%04d-%02d-%02d", year, month, day);
-        }
-
-        public Date addDays(int days) {
-            LocalDate temp = LocalDate.parse(this.localeDateString());
-            return new Date(temp.plusDays(days).toString());
-        }
-
+        Calendar result = Calendar.getInstance();
+        result.set(year, month, day, hour, minute);
+        return result;
     }
+
+    public static final int DAY = 0;
+    public static final int DAY_AND_TIME = 1;
+    public static final int NAME_AND_DAY = 2;
+    public static final int NAME_AND_DAY_AND_TIME = 3;
+
+    public static String dayToString(Calendar cal, int sel) {
+        switch (sel) {
+            case DAY: return String.format(Locale.ENGLISH,"%02d.%02d.%04d", cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.MONTH)+1, cal.get(Calendar.YEAR));
+            case DAY_AND_TIME: return String.format(Locale.ENGLISH,"%02d.%02d.%04d, %02d:%02d", cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.MONTH)+1, cal.get(Calendar.YEAR), cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE));
+            case NAME_AND_DAY: return String.format(Locale.ENGLISH,"%s %02d.%02d.%04d", DayOfWeek.of(cal.get(Calendar.DAY_OF_WEEK)), cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.MONTH)+1, cal.get(Calendar.YEAR));
+            case NAME_AND_DAY_AND_TIME: return String.format(Locale.ENGLISH,"%s %02d.%02d.%04d, %02d:%02d", DayOfWeek.of((cal.get(Calendar.DAY_OF_WEEK)-1) == 0 ? 7 : (cal.get(Calendar.DAY_OF_WEEK)-1)).getDisplayName(TextStyle.SHORT, Locale.ENGLISH), cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.MONTH)+1, cal.get(Calendar.YEAR), cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE));
+            default: return "You're in idiot";
+        }
+    }
+
+    public static String localeDateString(Calendar cal) {
+        return String.format(Locale.ENGLISH,"%04d-%02d-%02d", cal.get(Calendar.YEAR), cal.get(Calendar.MONTH) +1, cal.get(Calendar.DAY_OF_MONTH));
+    }
+
 }
 
