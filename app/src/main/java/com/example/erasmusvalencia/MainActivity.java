@@ -281,6 +281,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // go to InfoActivity
+                Intent intent = new Intent(MainActivity.this, InfosActivity.class);
+                startActivity(intent);
             }
         });
     }

@@ -9,13 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".InfosActivity"
+            android:label="Informations"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".SettingsActivity"
             android:label="Settings"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".PlacesActivity"
+        <activity
+            android:name=".PlacesActivity"
             android:label="Places"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".EventsActivity"
             android:icon="@drawable/ic_event_note_black_24dp"

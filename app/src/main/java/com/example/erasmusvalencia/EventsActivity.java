@@ -18,12 +18,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.IOException;
 import java.text.DateFormat;
@@ -93,13 +89,13 @@ public class EventsActivity extends AppCompatActivity {
 
         Calendar date = Calendar.getInstance();
         date.set(Calendar.YEAR, selectedDay.getYear());
-        date.set(Calendar.MONTH, selectedDay.getMonth()-1);
+        date.set(Calendar.MONTH, selectedDay.getMonth() - 1);
         date.set(Calendar.DAY_OF_MONTH, selectedDay.getDay());
         horizontalCalendar.selectDate(date, true);
 
     }
 
-    private void setCalenderView(){
+    private void setCalenderView() {
         /* Initialize the horizontal Calendar View */
         //starts before 1 month from now
         Calendar startDate = Calendar.getInstance();
@@ -110,7 +106,7 @@ public class EventsActivity extends AppCompatActivity {
 
         Calendar date = Calendar.getInstance();
         date.set(Calendar.YEAR, selectedDay.getYear());
-        date.set(Calendar.MONTH, selectedDay.getMonth()-1);
+        date.set(Calendar.MONTH, selectedDay.getMonth() - 1);
         date.set(Calendar.DAY_OF_MONTH, selectedDay.getDay());
 
         // create the horizontal Calender with its builder
@@ -125,8 +121,8 @@ public class EventsActivity extends AppCompatActivity {
             @Override
             public void onDateSelected(Calendar date, int position) {
                 Log.i(TAG, "onDateSelected: date: " + date.toString() + " position: " + position);
-                Log.i(TAG, "onDateSelected: day: " + date.get(Calendar.DAY_OF_MONTH) + " month: " + (date.get(Calendar.MONTH)+1) + " year: "+date.get(Calendar.YEAR));
-                selectedDay = new Event.Date(date.get(Calendar.DAY_OF_MONTH), date.get(Calendar.MONTH)+1, date.get(Calendar.YEAR));
+                Log.i(TAG, "onDateSelected: day: " + date.get(Calendar.DAY_OF_MONTH) + " month: " + (date.get(Calendar.MONTH) + 1) + " year: " + date.get(Calendar.YEAR));
+                selectedDay = new Event.Date(date.get(Calendar.DAY_OF_MONTH), date.get(Calendar.MONTH) + 1, date.get(Calendar.YEAR));
                 updateEvents(selectedDay);
             }
 
@@ -149,7 +145,7 @@ public class EventsActivity extends AppCompatActivity {
         updateEvents(selectedDay);
         Calendar date = Calendar.getInstance();
         date.set(Calendar.YEAR, selectedDay.getYear());
-        date.set(Calendar.MONTH, selectedDay.getMonth()-1);
+        date.set(Calendar.MONTH, selectedDay.getMonth() - 1);
         date.set(Calendar.DAY_OF_MONTH, selectedDay.getDay());
         horizontalCalendar.selectDate(date, true);
     }
@@ -176,7 +172,8 @@ public class EventsActivity extends AppCompatActivity {
             case R.id.calendar_icon:
                 showDatePickerDialog();
                 return true;
-            default:return super.onOptionsItemSelected(item);
+            default:
+                return super.onOptionsItemSelected(item);
 
         }
     }
@@ -300,7 +297,8 @@ public class EventsActivity extends AppCompatActivity {
         editor.apply();
 
         ArrayList<Event> filtered;
-        if (filterDay) filtered = Event.filterEvents(events, Event.FILTER_DATE, start, start.addDays(1));
+        if (filterDay)
+            filtered = Event.filterEvents(events, Event.FILTER_DATE, start, start.addDays(1));
         else filtered = Event.filterEvents(events, Event.FILTER_DATE, start, start);
         if (filterFavourites) filtered = Event.filterEvents(filtered, Event.FILTER_FAVOURITE, true);
         if (filterDialogSelection[2]) {
@@ -313,12 +311,11 @@ public class EventsActivity extends AppCompatActivity {
     public void displayEvents(ArrayList<Event> fEvents) {
         if (filterDialogSelection[2]) {
             searchEdit.setVisibility(View.VISIBLE);
-        }
-        else {
+        } else {
             searchEdit.setVisibility(View.GONE);
         }
         int size = fEvents.size();
-        int [] fids = new int[size];
+        int[] fids = new int[size];
         for (int i = 0; i < size; i++) {
             fids[i] = fEvents.get(i).getId();
         }

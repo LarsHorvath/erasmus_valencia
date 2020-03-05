@@ -11,6 +11,7 @@
         android:title="Filter events"
         app:showAsAction="ifRoom"/>
     <item android:id="@+id/settings_icon"
+        android:icon="@drawable/ic_settings_black_24dp"
         android:title="Settings"
-        app:showAsAction="never"/>
+        app:showAsAction="ifRoom"/>
 </menu>
