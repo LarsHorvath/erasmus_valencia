@@ -98,7 +98,7 @@ public class EventDetailsActivity extends AppCompatActivity {
             case R.id.shareIcon:
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, String.format(Locale.ENGLISH,"Hi, I would like to share the following event with you:\n\n*%s*\n%s _%s_\n%s %s\n%s\n\n Are you in?",event.getTitle(), getString(R.string.emoji_clock), event.getStartDate().toString(), getString(R.string.emoji_location), event.getLocation(),event.getUrl()));
+                sendIntent.putExtra(Intent.EXTRA_TEXT, String.format(Locale.ENGLISH,"Hi, I would like to share the following event with you:\n\n*%s*\n%s _%s_\n%s %s\n%s\n\n Are you in?",event.getTitle(), getString(R.string.emoji_clock), Event.dayToString(event.getStartDate(), Event.DAY_AND_TIME), getString(R.string.emoji_location), event.getLocation(),event.getUrl()));
                 sendIntent.setType("text/plain");
                 startActivity(Intent.createChooser(sendIntent, null));
                 return true;
@@ -134,7 +134,7 @@ public class EventDetailsActivity extends AppCompatActivity {
     private void setData() {
         event = Event.allEvents.get(event_id);
         titleText.setText(event.getTitle());
-        timeText.setText(event.getStartDate().toString());
+        timeText.setText(Event.dayToString(event.getStartDate(), Event.DAY_AND_TIME));
         locationText.setText(event.getLocation());
         urlText.setText(event.getUrl());
         companyText.setText(event.getCompany());
