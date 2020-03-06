@@ -15,6 +15,7 @@ import java.time.DayOfWeek;
 import java.time.format.TextStyle;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Locale;
 
@@ -203,7 +204,7 @@ public class Event implements Comparable<Event> {
      * @return an ArrayList containing all the Event objects from event that match all the filters
      * @throws IllegalArgumentException
      */
-    public static ArrayList<Event> filterEvents(final ArrayList<Event> events, final Object... filters) throws IllegalArgumentException {
+    public static ArrayList<Event> filterEvents(final Collection<Event> events, final Object... filters) throws IllegalArgumentException {
         ArrayList<Event> result = new ArrayList<>();
         for (Event event : events) {
             if (eventMatches(event, filters)) result.add(event);
