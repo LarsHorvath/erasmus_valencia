@@ -174,8 +174,18 @@ public class Event implements Comparable<Event> {
             JsonObject item = items.get(i).getAsJsonObject();
             Event event = new Event();
             event.setTitle(item.getAsJsonPrimitive("summary").getAsString());
-            event.setDescription(item.getAsJsonPrimitive("description").getAsString());
-            event.setLocation(item.getAsJsonPrimitive("location").getAsString());
+            try {
+                event.setDescription(item.getAsJsonPrimitive("description").getAsString());
+            } catch (NullPointerException npe) {
+                event.setDescription("not available");
+                npe.printStackTrace();
+            }
+            try {
+                event.setLocation(item.getAsJsonPrimitive("location").getAsString());
+            } catch (NullPointerException npe) {
+                event.setLocation("not available");
+                npe.printStackTrace();
+            }
             event.setStartDate(parseCalendarString(item.getAsJsonObject("start").getAsJsonPrimitive("dateTime").getAsString()));
             event.setEndDate(parseCalendarString(item.getAsJsonObject("end").getAsJsonPrimitive("dateTime").getAsString()));
             event.findCompany();
