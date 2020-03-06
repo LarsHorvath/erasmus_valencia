@@ -26,7 +26,8 @@
             app:layout_constraintEnd_toEndOf="@+id/timeImage"
             app:layout_constraintStart_toStartOf="@+id/timeImage"
             app:layout_constraintTop_toBottomOf="@+id/locationImage"
-            app:srcCompat="@drawable/ic_people_black_24dp" />
+            app:srcCompat="@drawable/ic_people_black_24dp"
+            android:contentDescription="@string/organization_icon" />
 
         <ImageView
             android:id="@+id/locationImage"
@@ -36,7 +37,8 @@
             app:layout_constraintEnd_toEndOf="@+id/timeImage"
             app:layout_constraintStart_toStartOf="@+id/timeImage"
             app:layout_constraintTop_toBottomOf="@+id/timeImage"
-            app:srcCompat="@drawable/loc" />
+            app:srcCompat="@drawable/loc"
+            android:contentDescription="@string/location_icon"/>
 
         <ImageView
             android:id="@+id/urlImage"
@@ -46,7 +48,8 @@
             app:layout_constraintEnd_toEndOf="@+id/companyImage"
             app:layout_constraintStart_toStartOf="@+id/companyImage"
             app:layout_constraintTop_toBottomOf="@+id/companyImage"
-            app:srcCompat="@drawable/url" />
+            app:srcCompat="@drawable/url"
+            android:contentDescription="@string/url_logo"/>
 
         <ImageView
             android:id="@+id/timeImage"
@@ -55,7 +58,8 @@
             android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="@+id/guideline9"
             app:layout_constraintTop_toBottomOf="@+id/titleText_places"
-            app:srcCompat="@drawable/time" />
+            app:srcCompat="@drawable/time"
+            android:contentDescription="@string/time_icon"/>
 
         <ImageView
             android:id="@+id/logoView"
@@ -66,7 +70,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/questionmark" />
+            app:srcCompat="@drawable/questionmark"
+            android:contentDescription="@string/company_logo_picture"/>
 
         <TextView
             android:id="@+id/timeText"

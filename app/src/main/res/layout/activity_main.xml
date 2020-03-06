@@ -12,17 +12,17 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:ems="10"
-        android:hint="Title, Location, Organization..."
+        android:hint="@string/title_location_organization"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Sponsored by: lot of time spent programming"
+        android:text="@string/sponsor_text"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -146,7 +146,7 @@
         android:drawableTop="@drawable/ic_info_outline_black_24dp"
         android:elevation="12dp"
         android:paddingTop="20dp"
-        android:text="Infos"
+        android:text="@string/info"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -157,7 +157,7 @@
         android:id="@+id/noFavText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="You currently have no events marked favourite. Once you do, they will be shown here. Head over to Events and check them out!"
+        android:text="@string/no_events_marked_favourite"
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toStartOf="@+id/guideline8"
         app:layout_constraintStart_toStartOf="@+id/guideline5"

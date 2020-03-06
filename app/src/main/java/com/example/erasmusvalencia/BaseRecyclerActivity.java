@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Locale;
 
+// Activity that serves as a base class for MainActivity and EventsActivity which share most of their functionality.
 public abstract class BaseRecyclerActivity extends AppCompatActivity {
 
     // Declarations
@@ -129,7 +130,7 @@ public abstract class BaseRecyclerActivity extends AppCompatActivity {
             fids[i] = eventsFiltered.get(i).getId();
         }
 
-        MyAdapter myAdapter = new MyAdapter(this, fids);
+        EventTileAdapter myAdapter = new EventTileAdapter(this, fids);
         recyclerView.setAdapter(myAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }

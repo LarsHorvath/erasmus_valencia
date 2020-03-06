@@ -22,6 +22,16 @@
     <string name="info_link4">https://www.spotahome.com/de</string>
     <string name="info_link5">http://flats2enjoy.com/es_es/</string>
     <string name="info_link6">http://amigoflats.com/en/</string>
+    <string name="title_location_organization">Title, Location, Organization...</string>
+    <string name="sponsor_text">Sponsored by: lot of time spent programming</string>
+    <string name="info">Info</string>
+    <string name="no_events_marked_favourite">You currently have no events marked favourite. Once you do, they will be shown here. Head over to Events and check them out!</string>
+    <string name="location_icon">location icon</string>
+    <string name="company_logo_picture">company logo picture</string>
+    <string name="time_icon">time icon</string>
+    <string name="heart_icon">heart icon</string>
+    <string name="organization_icon">organization icon</string>
+    <string name="url_logo">url logo</string>
 
 
 </resources>

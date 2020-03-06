@@ -46,7 +46,8 @@
                 app:layout_constraintStart_toStartOf="@+id/timeImage"
                 app:layout_constraintTop_toBottomOf="@+id/timeImage"
                 app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/loc" />
+                app:srcCompat="@drawable/loc"
+                android:contentDescription="@string/location_icon" />
 
             <ImageView
                 android:id="@+id/logoImage"
@@ -57,7 +58,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/esnupv" />
+                app:srcCompat="@drawable/esnupv"
+                android:contentDescription="@string/company_logo_picture" />
 
             <ImageView
                 android:id="@+id/timeImage"
@@ -66,7 +68,8 @@
                 android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="@+id/titleText_places"
                 app:layout_constraintTop_toBottomOf="@+id/titleText_places"
-                app:srcCompat="@drawable/time" />
+                app:srcCompat="@drawable/time"
+                android:contentDescription="@string/time_icon" />
 
             <TextView
                 android:id="@+id/titleText_places"
@@ -75,7 +78,6 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="4dp"
                 android:layout_marginEnd="24dp"
-                android:text="Title"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/favView"
@@ -87,7 +89,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="24dp"
-                android:text="Location"
                 app:layout_constraintBottom_toBottomOf="@+id/locationImage"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/timeText"
@@ -100,7 +101,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="24dp"
-                android:text="Time"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@+id/timeImage"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -115,7 +115,8 @@
                 android:layout_marginEnd="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_favorite_black_24dp" />
+                app:srcCompat="@drawable/ic_favorite_black_24dp"
+                android:contentDescription="@string/heart_icon" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

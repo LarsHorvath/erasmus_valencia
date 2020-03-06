@@ -82,7 +82,6 @@ public class MainActivity extends BaseRecyclerActivity {
             eventsFiltered = Event.filterEvents(eventsFiltered, Event.FILTER_TEXT_SEARCH, filterText);
         }
         Collections.sort(eventsFiltered);
-        updateUI();
     }
 
     @Override
