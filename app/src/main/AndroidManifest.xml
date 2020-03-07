@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".InfosActivity"
+            android:name=".InfoActivity"
             android:label="Informations"
             android:parentActivityName=".MainActivity"/>
         <activity
