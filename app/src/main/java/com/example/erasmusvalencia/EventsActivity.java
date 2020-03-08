@@ -2,6 +2,8 @@ package com.example.erasmusvalencia;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -32,6 +34,13 @@ public class EventsActivity extends BaseRecyclerActivity {
         // set up the calendar View
         setCalenderView();
         horizontalCalendar.selectDate(selectedDay, true);
+        ConstraintLayout constraintLayout = findViewById(R.id.constraintLayout2);
+        if (theme == DEFAULT_THEME) {
+            constraintLayout.setBackgroundColor(getResources().getColor(R.color.defaultColorPrimaryDark));
+        }
+        else if (theme == THEME_1) {
+            constraintLayout.setBackgroundColor(getResources().getColor(R.color.ColorPrimaryDark1));
+        }
     }
 
     private void setCalenderView() {

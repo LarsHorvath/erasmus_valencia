@@ -92,7 +92,7 @@
         android:id="@+id/theme_description_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Will take effect on the whole application once you exit the settings"
+        android:text="Changes will take effect on the whole application once you exit the settings"
         android:textSize="10sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline12"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"

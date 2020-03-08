@@ -8,7 +8,7 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
-public class PlacesActivity extends AppCompatActivity {
+public class PlacesActivity extends BaseThemeChangerActivity {
 
     private ArrayList<Places> places = new ArrayList<>();
 

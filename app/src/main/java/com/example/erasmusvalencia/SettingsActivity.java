@@ -1,11 +1,8 @@
 package com.example.erasmusvalencia;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.os.Build;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,24 +12,16 @@ import android.widget.Toast;
 
 import java.util.Locale;
 
-public class SettingsActivity extends AppCompatActivity {
+public class SettingsActivity extends BaseThemeChangerActivity {
     Spinner themeSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SharedPreferences preferences = getSharedPreferences("settingsPref", MODE_PRIVATE);
-        int theme = preferences.getInt("theme",0);
-        if (theme == 0) {
-            setTheme(R.style.DefaultTheme);
-        }
-        else if (theme == 2) {
-            setTheme(R.style.Theme1);
-        }
         setContentView(R.layout.activity_settings);
 
         themeSpinner = findViewById(R.id.themeSpinner);
-        final String[] themes = {"Default", "Dark", "Theme 1", "Theme 2"};
+        final String[] themes = {"Default", "Theme 1"};
         ArrayAdapter mAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, themes);
         themeSpinner.setAdapter(mAdapter);
         themeSpinner.setSelection(theme,false);
@@ -52,5 +41,14 @@ public class SettingsActivity extends AppCompatActivity {
 
             }
         });
-        }
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
+    }
 }

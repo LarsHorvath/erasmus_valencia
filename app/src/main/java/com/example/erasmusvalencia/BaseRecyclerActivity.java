@@ -21,7 +21,7 @@ import java.util.Collections;
 import java.util.Locale;
 
 // Activity that serves as a base class for MainActivity and EventsActivity which share most of their functionality.
-public abstract class BaseRecyclerActivity extends AppCompatActivity {
+public abstract class BaseRecyclerActivity extends BaseThemeChangerActivity {
 
     // Declarations
     private static final String TAG = "BaseRecyclerActivity";
