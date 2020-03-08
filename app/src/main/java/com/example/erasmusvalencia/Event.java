@@ -15,6 +15,7 @@ import java.time.DayOfWeek;
 import java.time.format.TextStyle;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Locale;
 
@@ -174,8 +175,18 @@ public class Event implements Comparable<Event> {
             JsonObject item = items.get(i).getAsJsonObject();
             Event event = new Event();
             event.setTitle(item.getAsJsonPrimitive("summary").getAsString());
-            event.setDescription(item.getAsJsonPrimitive("description").getAsString());
-            event.setLocation(item.getAsJsonPrimitive("location").getAsString());
+            try {
+                event.setDescription(item.getAsJsonPrimitive("description").getAsString());
+            } catch (NullPointerException npe) {
+                event.setDescription("not available");
+                npe.printStackTrace();
+            }
+            try {
+                event.setLocation(item.getAsJsonPrimitive("location").getAsString());
+            } catch (NullPointerException npe) {
+                event.setLocation("not available");
+                npe.printStackTrace();
+            }
             event.setStartDate(parseCalendarString(item.getAsJsonObject("start").getAsJsonPrimitive("dateTime").getAsString()));
             event.setEndDate(parseCalendarString(item.getAsJsonObject("end").getAsJsonPrimitive("dateTime").getAsString()));
             event.findCompany();
@@ -193,7 +204,7 @@ public class Event implements Comparable<Event> {
      * @return an ArrayList containing all the Event objects from event that match all the filters
      * @throws IllegalArgumentException
      */
-    public static ArrayList<Event> filterEvents(final ArrayList<Event> events, final Object... filters) throws IllegalArgumentException {
+    public static ArrayList<Event> filterEvents(final Collection<Event> events, final Object... filters) throws IllegalArgumentException {
         ArrayList<Event> result = new ArrayList<>();
         for (Event event : events) {
             if (eventMatches(event, filters)) result.add(event);
