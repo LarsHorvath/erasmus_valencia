@@ -41,6 +41,13 @@ public class SettingsActivity extends BaseThemeChangerActivity {
 
             }
         });
+        findViewById(R.id.go_to_about_textview).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SettingsActivity.this, AboutActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

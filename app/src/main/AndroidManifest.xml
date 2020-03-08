@@ -9,12 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/DefaultTheme">
-        <activity android:name=".BaseThemeChangerActivity"></activity>
+        <activity android:name=".AboutActivity"
+            android:label="About"
+            android:parentActivityName=".SettingsActivity"/>
+        <activity android:name=".BaseThemeChangerActivity" />
         <activity android:name=".BaseRecyclerActivity" />
         <activity
             android:name=".InfoActivity"
             android:label="Information"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".SettingsActivity"
             android:label="Settings"
