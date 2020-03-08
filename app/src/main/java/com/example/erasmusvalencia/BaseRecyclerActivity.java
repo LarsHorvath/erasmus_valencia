@@ -95,11 +95,6 @@ public abstract class BaseRecyclerActivity extends BaseThemeChangerActivity {
     private class DownloadTask extends AsyncTask<String, Void, Object> {
         protected Object doInBackground(String... args) {
             Log.i("MyApp", "Background thread starting");
-            try {
-                Thread.sleep(5000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
 
             ArrayList<Event> events = new ArrayList<>();
             // Reading file if this is the first time that app is open
