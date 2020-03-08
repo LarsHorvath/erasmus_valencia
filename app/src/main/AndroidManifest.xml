@@ -12,7 +12,7 @@
 
         <activity
             android:name=".InfoActivity"
-            android:label="Informations"
+            android:label="Information"
             android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".SettingsActivity"
