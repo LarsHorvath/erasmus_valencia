@@ -6,9 +6,7 @@
     <string name="info_title">General information and recommendations for new exchange students</string>
 
     <string name="info_subtitle_transportation">Transportation</string>
-
     <string name="info_section_transportation1">There is a public transport card which is called Móbilis: <b>The Móbilis Card (Tarjeta Móbilis)</b> is a unique personalised card which you can use for the metro, bus and valenbisi. In other words: it\'s the only rechargeable card for all public transport in Valencia. You can buy a Móbilis Card at the tobacconists, newsagents and metro stations (but not at a ticket machine!).\nOn this card you can charge your metro and bus rides. If you charge the Mobilis Card with several rides at once using the Bonobus and Bonometro package you can save money.\nYou can see all the information <a href="https://www.emtvalencia.es/ciudadano/index.php?option=com_content&amp;view=article&amp;id=133&amp;Itemid=68&amp;lang=en">here</a></string>
-
     <string name="info_link1">https://www.emtvalencia.es/ciudadano/index.php?option=com_content&amp;view=article&amp;id=133&amp;Itemid=68&amp;lang=en</string>
 
     <string name="info_subtitle_transportation2">Valenbisi</string>
@@ -25,6 +23,16 @@
     <string name="info_link4">https://www.spotahome.com/de</string>
     <string name="info_link5">http://flats2enjoy.com/es_es/</string>
     <string name="info_link6">http://amigoflats.com/en/</string>
+    <string name="title_location_organization">Title, Location, Organization...</string>
+    <string name="sponsor_text">Sponsored by: lot of time spent programming</string>
+    <string name="info">Info</string>
+    <string name="no_events_marked_favourite">You currently have no events marked favourite. Once you do, they will be shown here. Head over to Events and check them out!</string>
+    <string name="location_icon">location icon</string>
+    <string name="company_logo_picture">company logo picture</string>
+    <string name="time_icon">time icon</string>
+    <string name="heart_icon">heart icon</string>
+    <string name="organization_icon">organization icon</string>
+    <string name="url_logo">url logo</string>
 
 
 </resources>

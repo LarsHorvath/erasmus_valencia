@@ -1,11 +1,29 @@
 <resources>
-
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="DefaultTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/defaultColorPrimary</item>
+        <item name="colorPrimaryDark">@color/defaultColorPrimaryDark</item>
+        <item name="colorAccent">@color/defaultColorAccent</item>
+        <item name="cardBackgroundColor">@color/defaultCardBackgroundColor</item>
+        <item name="android:buttonStyle">@style/DefaultFloatButton</item>
+    </style>
+    <style name="DefaultFloatButton" parent="@android:style/Widget.Material.Light.Button">
+        <item name="android:backgroundTint">@color/defaultBackgroundTint</item>
+    </style>
+    <style name="CalendarTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@color/defaultColorPrimary</item>
+    </style>
+    <style name="Theme1" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/ColorPrimary1</item>
+        <item name="colorPrimaryDark">@color/ColorPrimaryDark1</item>
+        <item name="colorAccent">@color/ColorAccent1</item>
+        <item name="cardBackgroundColor">@color/CardBackgroundColor1</item>
+        <item name="android:buttonStyle">@style/FloatButton1</item>
+    </style>
+    <style name="FloatButton1" parent="@android:style/Widget.Material.Light.Button">
+        <item name="android:backgroundTint">@color/BackgroundTint1</item>
     </style>
 
 </resources>

@@ -7,7 +7,7 @@ import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.widget.TextView;
 
-public class InfoActivity extends AppCompatActivity {
+public class InfoActivity extends BaseThemeChangerActivity {
 
     TextView chapter_transport;
 

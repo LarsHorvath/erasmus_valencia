@@ -13,38 +13,38 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+public class EventTileAdapter extends RecyclerView.Adapter<EventTileAdapter.EventViewHolder> {
 
     private int ids[];
     private Context context;
 
-    public MyAdapter(Context ct, int ids[]) {
+    public EventTileAdapter(Context ct, int ids[]) {
         context = ct;
         this.ids = ids;
     }
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public EventViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.event_tile, parent, false);
-        return new MyViewHolder(view);
+        return new EventViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull EventViewHolder holder, final int position) {
         final Event e = Event.allEvents.get(ids[position]);
-        holder.myText1.setText(e.getTitle());
-        holder.myText2.setText(Event.dayToString(e.getStartDate(), Event.NAME_AND_DAY_AND_TIME));
-        holder.myText3.setText(e.getLocation());
-        holder.myImage.setImageResource(Event.imagesrc[e.getCompanyID()]);
+        holder.titleText.setText(e.getTitle());
+        holder.timeText.setText(Event.dayToString(e.getStartDate(), Event.NAME_AND_DAY_AND_TIME));
+        holder.locationText.setText(e.getLocation());
+        holder.logoView.setImageResource(Event.imagesrc[e.getCompanyID()]);
         if (e.isFavourite()) {
             holder.favView.setVisibility(View.VISIBLE);
         }
         else {
             holder.favView.setVisibility(View.GONE);
         }
-        holder.mainLayout.setOnClickListener(new View.OnClickListener() {
+        holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, EventDetailsActivity.class);
@@ -59,20 +59,20 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         return ids.length;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public class EventViewHolder extends RecyclerView.ViewHolder{
 
-        TextView myText1, myText2, myText3;
-        ImageView myImage, favView;
-        ConstraintLayout mainLayout;
+        TextView titleText, timeText, locationText;
+        ImageView logoView, favView;
+        ConstraintLayout constraintLayout;
 
-        public MyViewHolder(@NonNull View itemView) {
+        public EventViewHolder(@NonNull View itemView) {
             super(itemView);
-            myText1 = itemView.findViewById(R.id.titleText_places);
-            myText2 = itemView.findViewById(R.id.timeText);
-            myText3 = itemView.findViewById(R.id.locationText_places);
-            myImage = itemView.findViewById(R.id.logoImage);
+            titleText = itemView.findViewById(R.id.titleText_places);
+            timeText = itemView.findViewById(R.id.timeText);
+            locationText = itemView.findViewById(R.id.locationText_places);
+            logoView = itemView.findViewById(R.id.logoImage);
             favView = itemView.findViewById(R.id.favView);
-            mainLayout = itemView.findViewById(R.id.mainLayout);
+            constraintLayout = itemView.findViewById(R.id.mainLayout);
         }
     }
 }

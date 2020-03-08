@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.MyDarkTheme" parent="Theme.AppCompat">
+        <item name="android:windowBackground">#11aa22</item>
+        <item name="android:colorPrimary">#666666</item>
+        <item name="android:colorPrimaryDark">#222222</item>
+        <item name="android:textColorHighlight">#000000</item>
+    </style>
+</resources>
