@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         // Initialization
         button_events = findViewById(R.id.button_events);
         button_places = findViewById(R.id.button_places);
@@ -69,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Updating the UI for the currently set date
         updateEvents();
+
     }
 
     @Override
