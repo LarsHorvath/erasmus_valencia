@@ -14,7 +14,6 @@ import android.widget.DatePicker;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collection;
 import java.util.Collections;
 
 import devs.mulham.horizontalcalendar.HorizontalCalendar;
