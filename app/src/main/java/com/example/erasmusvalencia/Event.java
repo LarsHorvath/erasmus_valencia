@@ -11,8 +11,6 @@ import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
-import java.time.DayOfWeek;
-import java.time.format.TextStyle;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
@@ -344,14 +342,27 @@ public class Event implements Comparable<Event> {
         switch (sel) {
             case DAY: return String.format(Locale.ENGLISH,"%02d.%02d.%04d", cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.MONTH)+1, cal.get(Calendar.YEAR));
             case DAY_AND_TIME: return String.format(Locale.ENGLISH,"%02d.%02d.%04d, %02d:%02d", cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.MONTH)+1, cal.get(Calendar.YEAR), cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE));
-            case NAME_AND_DAY: return String.format(Locale.ENGLISH,"%s %02d.%02d.%04d", DayOfWeek.of(cal.get(Calendar.DAY_OF_WEEK)), cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.MONTH)+1, cal.get(Calendar.YEAR));
-            case NAME_AND_DAY_AND_TIME: return String.format(Locale.ENGLISH,"%s %02d.%02d.%04d, %02d:%02d", DayOfWeek.of((cal.get(Calendar.DAY_OF_WEEK)-1) == 0 ? 7 : (cal.get(Calendar.DAY_OF_WEEK)-1)).getDisplayName(TextStyle.SHORT, Locale.ENGLISH), cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.MONTH)+1, cal.get(Calendar.YEAR), cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE));
-            default: return "You're in idiot";
+            case NAME_AND_DAY: return String.format(Locale.ENGLISH,"%s %02d.%02d.%04d", weekDayName(cal.get(Calendar.DAY_OF_WEEK)), cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.MONTH)+1, cal.get(Calendar.YEAR));
+            case NAME_AND_DAY_AND_TIME: return String.format(Locale.ENGLISH,"%s %02d.%02d.%04d, %02d:%02d", weekDayName(cal.get(Calendar.DAY_OF_WEEK)), cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.MONTH)+1, cal.get(Calendar.YEAR), cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE));
+            default: return "You're an idiot";
         }
     }
 
     public static String localeDateString(Calendar cal) {
         return String.format(Locale.ENGLISH,"%04d-%02d-%02d", cal.get(Calendar.YEAR), cal.get(Calendar.MONTH) +1, cal.get(Calendar.DAY_OF_MONTH));
+    }
+
+    private static String weekDayName(int day) {
+        switch (day) {
+            case 1: return "Mon";
+            case 2: return "Tue";
+            case 3: return "Wed";
+            case 4: return "Thu";
+            case 5: return "Fri";
+            case 6: return "Sat";
+            case 7: return "Sun";
+        }
+        return "dfasdfjoasfdj";
     }
 
 }
