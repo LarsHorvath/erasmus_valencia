@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
 
 public class MainActivity extends BaseRecyclerActivity {
@@ -77,6 +78,10 @@ public class MainActivity extends BaseRecyclerActivity {
 
     // Updates the UI (the date and the events on that date)
     protected void updateEvents() {
+        if (Event.allEvents == null) {
+            eventsFiltered = new ArrayList<>();
+            return;
+        }
         eventsFiltered = Event.filterEvents(Event.allEvents.values(), Event.FILTER_FAVOURITE, true);
         if (filterDialogSelection.length !=0 && filterDialogSelection[0]) {
             eventsFiltered = Event.filterEvents(eventsFiltered, Event.FILTER_TEXT_SEARCH, filterText);

@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -31,6 +33,8 @@ public abstract class BaseRecyclerActivity extends BaseThemeChangerActivity {
     String filterText = "";
     boolean[] filterDialogSelection;
     String[] filterDialogItems;
+
+    private ProgressDialog pd = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,44 +77,71 @@ public abstract class BaseRecyclerActivity extends BaseThemeChangerActivity {
     protected void doFileMagic() {
         ArrayList<Event> events = new ArrayList<>();
         // In case the Hashmap of all events is already populated
+        FileHandler.context = this;
         if (Event.allEvents != null && Event.allEvents.size() != 0) {
             Log.i(TAG, "doFileMagic: we do not need to load any events, hashmap in Event still populated :)");
             events.addAll(Event.allEvents.values());
             Collections.sort(events);
-            return;
         }
-        // Setting the FileHandler's context
-        FileHandler.context = this;
+        else {
+            // Show the ProgressDialog on this thread
+            this.pd = ProgressDialog.show(this, "Working..", "Getting the events...", true, false);
 
-        // Reading file if this is the first time that app is open
-        SharedPreferences preferences = getSharedPreferences("init", MODE_PRIVATE);
-        boolean firstOpen = preferences.getBoolean("first_time", true);
-        boolean success = true;
-        if (!firstOpen) {
-            Log.i(TAG, "onCreate: already opened it before");
-            FileHandler fileHandler = new FileHandler(FileHandler.FILE_NAME);
-            try {
-                fileHandler.readFile();
-                String json = fileHandler.getContent();
-                Event.allEvents = Event.parseFromJSON(json);
-                events.addAll(Event.allEvents.values());
-                Log.i(TAG, "onCreate: successfully read from json");
-            } catch (IOException e) {
-                e.printStackTrace();
-                success = false;
-            } catch (Exception e) {
-                success = false;
-            }
+            // Start a new thread that will download all the data
+            new DownloadTask().execute("Any parameters my download task needs here");
         }
-        if (firstOpen || !success) {
-            Log.i(TAG, "onCreate: we are opening for first time or read from json failed");
-            SharedPreferences.Editor editor = preferences.edit();
-            editor.putBoolean("first_time", false);
-            editor.apply();
-            events = Event.parseFromJSONString(FileHandler.readFromRaw());
-            for (Event e : events) {
-                Event.allEvents.put(e.getId(), e);
+    }
+
+    private class DownloadTask extends AsyncTask<String, Void, Object> {
+        protected Object doInBackground(String... args) {
+            Log.i("MyApp", "Background thread starting");
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
+
+            ArrayList<Event> events = new ArrayList<>();
+            // Reading file if this is the first time that app is open
+            SharedPreferences preferences = getSharedPreferences("init", MODE_PRIVATE);
+            boolean firstOpen = preferences.getBoolean("first_time", true);
+            boolean success = true;
+            if (!firstOpen) {
+                Log.i(TAG, "onCreate: already opened it before");
+                FileHandler fileHandler = new FileHandler(FileHandler.FILE_NAME);
+                try {
+                    fileHandler.readFile();
+                    String json = fileHandler.getContent();
+                    Event.allEvents = Event.parseFromJSON(json);
+                    events.addAll(Event.allEvents.values());
+                    Log.i(TAG, "onCreate: successfully read from json");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    success = false;
+                } catch (Exception e) {
+                    success = false;
+                }
+            }
+            if (firstOpen || !success) {
+                Log.i(TAG, "onCreate: we are opening for first time or read from json failed");
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putBoolean("first_time", false);
+                editor.apply();
+                events = Event.parseFromJSONString(FileHandler.readFromRaw());
+                for (Event e : events) {
+                    Event.allEvents.put(e.getId(), e);
+                }
+            }
+
+            return true;
+        }
+
+        protected void onPostExecute(Object result) {
+            if (BaseRecyclerActivity.this.pd != null) {
+                BaseRecyclerActivity.this.pd.dismiss();
+            }
+            updateEvents();
+            updateUI();
         }
     }
 
