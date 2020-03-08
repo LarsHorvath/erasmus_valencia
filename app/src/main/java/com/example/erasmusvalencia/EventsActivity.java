@@ -36,10 +36,10 @@ public class EventsActivity extends BaseRecyclerActivity {
         horizontalCalendar.selectDate(selectedDay, true);
         ConstraintLayout constraintLayout = findViewById(R.id.constraintLayout2);
         if (theme == DEFAULT_THEME) {
-            constraintLayout.setBackgroundColor(getResources().getColor(R.color.defaultColorPrimaryDark));
+            constraintLayout.setBackgroundColor(getResources().getColor(R.color.defaultColorPrimary));
         }
         else if (theme == THEME_1) {
-            constraintLayout.setBackgroundColor(getResources().getColor(R.color.ColorPrimaryDark1));
+            constraintLayout.setBackgroundColor(getResources().getColor(R.color.ColorPrimary1));
         }
     }
 
