@@ -47,9 +47,14 @@ public class EventTileAdapter extends RecyclerView.Adapter<EventTileAdapter.Even
         holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, EventDetailsActivity.class);
-                intent.putExtra("event_id", e.getId());
-                context.startActivity(intent);
+                if (e.getId() != 7) {
+                    Intent intent = new Intent(context, EventDetailsActivity.class);
+                    intent.putExtra("event_id", e.getId());
+                    context.startActivity(intent);
+                } else {
+                    Intent intent = new Intent(context, TicTacToeActivity.class);
+                    context.startActivity(intent);
+                }
             }
         });
     }

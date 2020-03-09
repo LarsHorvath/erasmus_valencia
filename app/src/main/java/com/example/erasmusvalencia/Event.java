@@ -57,9 +57,10 @@ public class Event implements Comparable<Event> {
         startDate.clear();
         endDate.clear();
         id = generateID();
-        allEvents.put(id, this);
+        //allEvents.put(id, this);
         favourite = false;
     }
+
 
     public int compareTo(Event other) {
         return startDate.compareTo(other.startDate);
@@ -352,6 +353,21 @@ public class Event implements Comparable<Event> {
 
     public static String localeDateString(Calendar cal) {
         return String.format(Locale.ENGLISH,"%04d-%02d-%02d", cal.get(Calendar.YEAR), cal.get(Calendar.MONTH) +1, cal.get(Calendar.DAY_OF_MONTH));
+    }
+
+    public static void addEasterEggEvent() {
+        Calendar s = Calendar.getInstance();
+        s.add(Calendar.DAY_OF_MONTH, 1);
+        Calendar e = Calendar.getInstance();
+        e.add(Calendar.MONTH, 1);
+        Event eee = new Event();
+        eee.setTitle("Erasmus goes Easter");
+        eee.setLocation("Valencia");
+        eee.setStartDate(s);
+        eee.setEndDate(e);
+        eee.setId(7);
+        eee.setCompanyID(0);
+        allEvents.put(eee.getId(), eee);
     }
 
 }

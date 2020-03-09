@@ -9,9 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/DefaultTheme">
-        <activity android:name=".AboutActivity"
+        <activity
+            android:name=".TicTacToeActivity"
+            android:label="Secret TicTacToe">
+        </activity>
+        <activity
+            android:name=".AboutActivity"
             android:label="About"
-            android:parentActivityName=".SettingsActivity"/>
+            android:parentActivityName=".SettingsActivity" />
         <activity android:name=".BaseThemeChangerActivity" />
         <activity android:name=".BaseRecyclerActivity" />
         <activity
@@ -43,6 +48,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 

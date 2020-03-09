@@ -86,7 +86,7 @@
         android:id="@+id/noFavText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="You currently have no events marked favourite. Once you do, they will be shown here. Head over to Events and check them out!"
+        android:text="@string/no_events_marked_favourite"
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toStartOf="@+id/guideline8"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
