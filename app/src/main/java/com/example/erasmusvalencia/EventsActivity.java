@@ -95,6 +95,7 @@ public class EventsActivity extends BaseRecyclerActivity {
         searchEdit = findViewById(R.id.searchEdit);
         recyclerView = findViewById(R.id.recyclerView2);
         selectedDay = Calendar.getInstance();
+        nothingToShowView = findViewById(R.id.eventsNotLoaded);
         filterDialogItems = new String[]{
                 "Show search bar",
                 "Restrict to today",

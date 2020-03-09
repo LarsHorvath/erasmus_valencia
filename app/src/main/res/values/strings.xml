@@ -42,6 +42,7 @@
     <string name="disclaimer_content">The events, organisations, information and web links presented in this app have been chosen with the sole purpose of bringing together interesting and helpful guidance for users.\nThis app is in no way affiliated with any organization or event presented, other than its creators taking part in some of these events as private persons. No compensation, monetary or otherwise, has been made in exchange for the display or promotion of aforementioned organisations and events, nor has promise of such compensation been given.\nThis application gives no guarantee for completeness or correctness of the information provided. The authority in this case are the respective official channels.</string>
     <string name="version_text">Erasmus app for Android: version 1.0</string>
     <string name="go_about_us_text"><b>About</b>\nUs &amp; the app</string>
+    <string name="event_still_loading">Oops. Looks like the events are still loading. Give it a couple of seconds. In the mean time check out the settings and customize the theme.</string>
 
 
 </resources>
