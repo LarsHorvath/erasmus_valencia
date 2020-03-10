@@ -11,7 +11,8 @@
         android:theme="@style/DefaultTheme">
         <activity
             android:name=".TicTacToeActivity"
-            android:label="Secret TicTacToe">
+            android:label="Secret TicTacToe"
+            android:parentActivityName=".MainActivity">
         </activity>
         <activity
             android:name=".AboutActivity"
