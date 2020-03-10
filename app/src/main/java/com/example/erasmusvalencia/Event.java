@@ -55,9 +55,10 @@ public class Event implements Comparable<Event> {
         startDate.clear();
         endDate.clear();
         id = generateID();
-        allEvents.put(id, this);
+        //allEvents.put(id, this);
         favourite = false;
     }
+
 
     public int compareTo(Event other) {
         return startDate.compareTo(other.startDate);
@@ -348,22 +349,38 @@ public class Event implements Comparable<Event> {
         }
     }
 
-    public static String localeDateString(Calendar cal) {
-        return String.format(Locale.ENGLISH,"%04d-%02d-%02d", cal.get(Calendar.YEAR), cal.get(Calendar.MONTH) +1, cal.get(Calendar.DAY_OF_MONTH));
-    }
-
     private static String weekDayName(int day) {
         switch (day) {
-            case 1: return "Mon";
-            case 2: return "Tue";
-            case 3: return "Wed";
-            case 4: return "Thu";
-            case 5: return "Fri";
-            case 6: return "Sat";
-            case 7: return "Sun";
+            case 1:
+                return "Mon";
+            case 2:
+                return "Tue";
+            case 3:
+                return "Wed";
+            case 4:
+                return "Thu";
+            case 5:
+                return "Fri";
+            case 6:
+                return "Sat";
+            case 7:
+                return "Sun";
         }
         return "dfasdfjoasfdj";
     }
-
+    public static void addEasterEggEvent() {
+        Calendar s = Calendar.getInstance();
+        s.add(Calendar.DAY_OF_MONTH, 1);
+        Calendar e = Calendar.getInstance();
+        e.add(Calendar.MONTH, 1);
+        Event eee = new Event();
+        eee.setTitle("Erasmus goes Easter");
+        eee.setLocation("Valencia");
+        eee.setStartDate(s);
+        eee.setEndDate(e);
+        eee.setId(7);
+        eee.setCompanyID(0);
+        allEvents.put(eee.getId(), eee);
+    }
 }
 
