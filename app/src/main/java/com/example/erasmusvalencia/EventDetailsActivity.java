@@ -2,7 +2,6 @@ package com.example.erasmusvalencia;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -12,14 +11,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 
 import java.io.IOException;
 import java.util.Locale;
 
-public class EventDetailsActivity extends AppCompatActivity {
+public class EventDetailsActivity extends BaseThemeChangerActivity {
 
     Event event;
     int event_id;

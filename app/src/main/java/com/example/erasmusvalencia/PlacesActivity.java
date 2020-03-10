@@ -1,6 +1,5 @@
 package com.example.erasmusvalencia;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -8,7 +7,7 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
-public class PlacesActivity extends AppCompatActivity {
+public class PlacesActivity extends BaseThemeChangerActivity {
 
     private ArrayList<Places> places = new ArrayList<>();
 
@@ -24,7 +23,7 @@ public class PlacesActivity extends AppCompatActivity {
 
     private void initRecyclerView(){
         RecyclerView recyclerView = findViewById(R.id.recyclerView_places);
-        MyAdapter2 adapter = new MyAdapter2(this,places);
+        PlaceTileAdapter adapter = new PlaceTileAdapter(this,places);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }

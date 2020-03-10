@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#0D47A1</color>
-    <color name="colorPrimaryDark">#002171</color>
-    <color name="colorAccent">#FF6F00</color>
-    <color name="colorCard">#e3f2fd</color>
+    <color name="defaultColorPrimary">#0D47A1</color>
+    <color name="defaultColorPrimaryDark">#002171</color>
+    <color name="defaultColorAccent">#FF6F00</color>
+    <color name="defaultBackgroundTint">#e3f2fd</color>
+    <color name="defaultCardBackgroundColor">#FBFBFB</color>
+
+    <color name="ColorPrimary1">#D64F4F</color>
+    <color name="ColorPrimaryDark1">#D60505</color>
+    <color name="ColorAccent1">#4FCCA4</color>
+    <color name="BackgroundTint1">#F1956C</color>
+    <color name="CardBackgroundColor1">#FBFBFB</color>
 </resources>
+

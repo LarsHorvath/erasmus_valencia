@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TicTacToeActivity">
+
+    <ImageButton
+        android:id="@+id/field22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toEndOf="@+id/field21"
+        app:layout_constraintTop_toBottomOf="@+id/field12"
+        app:srcCompat="@drawable/blank_60dp" />
+
+    <ImageButton
+        android:id="@+id/field21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline20"
+        app:layout_constraintStart_toStartOf="@+id/guideline19"
+        app:layout_constraintTop_toBottomOf="@+id/field11"
+        app:srcCompat="@drawable/ic_radio_button_unchecked_black_60dp" />
+
+    <ImageButton
+        android:id="@+id/field20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/field21"
+        app:layout_constraintTop_toBottomOf="@+id/field10"
+        app:srcCompat="@drawable/ic_radio_button_unchecked_black_60dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.35" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.65" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <ImageButton
+        android:id="@+id/field10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline16"
+        app:layout_constraintEnd_toStartOf="@+id/field11"
+        app:layout_constraintTop_toTopOf="@+id/guideline15"
+        app:srcCompat="@drawable/ic_radio_button_unchecked_black_60dp" />
+
+    <ImageButton
+        android:id="@+id/field12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline16"
+        app:layout_constraintStart_toEndOf="@+id/field11"
+        app:layout_constraintTop_toTopOf="@+id/guideline15"
+        app:srcCompat="@drawable/ic_radio_button_unchecked_black_60dp" />
+
+    <ImageButton
+        android:id="@+id/field02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/field12"
+        app:layout_constraintStart_toEndOf="@+id/field01"
+        app:srcCompat="@drawable/ic_radio_button_unchecked_black_60dp" />
+
+    <ImageButton
+        android:id="@+id/field00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/field10"
+        app:layout_constraintEnd_toStartOf="@+id/field01"
+        app:srcCompat="@drawable/ic_radio_button_unchecked_black_60dp" />
+
+    <ImageButton
+        android:id="@+id/field01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/field11"
+        app:layout_constraintEnd_toStartOf="@+id/guideline20"
+        app:layout_constraintStart_toStartOf="@+id/guideline19"
+        app:srcCompat="@drawable/ic_radio_button_unchecked_black_60dp" />
+
+    <ImageButton
+        android:id="@+id/field11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/guideline16"
+        app:layout_constraintEnd_toStartOf="@+id/guideline20"
+        app:layout_constraintStart_toStartOf="@+id/guideline19"
+        app:layout_constraintTop_toTopOf="@+id/guideline15"
+        app:srcCompat="@drawable/ic_close_black_60dp" />
+
+    <TextView
+        android:id="@+id/winnerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Placeholder"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/turnText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="It's the X's turn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/winnerText" />
+
+    <Button
+        android:id="@+id/newGameButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play again"
+        app:layout_constraintBottom_toTopOf="@+id/guideline17"
+        app:layout_constraintEnd_toStartOf="@+id/guideline20"
+        app:layout_constraintStart_toStartOf="@+id/guideline19" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

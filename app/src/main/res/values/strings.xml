@@ -2,26 +2,47 @@
     <string name="app_name">ErasmusValencia</string>
     <string name="emoji_clock">&#128337;</string>
     <string name="emoji_location">&#127968;</string>
-    <string name="info_title">Infos and Recommendations for new exchange students</string>
+
+    <string name="info_title">General information and recommendations for new exchange students</string>
 
     <string name="info_subtitle_transportation">Transportation</string>
-    <string name="info_section_transportation1">There is a public transport card which is called Móbilis: <b>The Móbilis Card (Tarjeta Móbilis)</b> is a unique personalised card which you can use for the metro, bus and valenbisi. In other words: it\'s the only rechargable card for all public transport in Valencia. You can buy a Móbilis Card at the tobacconists, newsagents and metro stations (but not at a ticket machine!).\nOn this card you can charge your metro and bus rides. If you charge the Mobilis Card with several rides at once using the Bonobus and Bonometro package you can save money.\nYou can see all the information <a href="https://www.emtvalencia.es/ciudadano/index.php?option=com_content&amp;view=article&amp;id=133&amp;Itemid=68&amp;lang=en">here</a></string>
+    <string name="info_section_transportation1">There is a public transport card which is called Móbilis: <a href="https://www.emtvalencia.es/ciudadano/index.php?option=com_content&amp;view=article&amp;id=133&amp;Itemid=68&amp;lang=en">here</a> is a unique personalised card which you can use for the metro, bus and valenbisi. In other words: it\'s the only rechargeable card for all public transport in Valencia. You can buy a Móbilis Card at the tobacconists, newsagents and metro stations (but not at a ticket machine!).\nOn this card you can charge your metro and bus rides. If you charge the Mobilis Card with several rides at once using the Bonobus and Bonometro package you can save money.\nYou can see all the information <b>The Móbilis Card (Tarjeta Móbilis)</b></string>
     <string name="info_link1">https://www.emtvalencia.es/ciudadano/index.php?option=com_content&amp;view=article&amp;id=133&amp;Itemid=68&amp;lang=en</string>
 
     <string name="info_subtitle_transportation2">Valenbisi</string>
-    <string name="info_section_transportation2">A new urban transport concept <b>the individual bike.</b> An ecological and healthy option, available 24 hours a day, 365 days a year. More and more cities are offering their citizens the opportunity to get around by bike. Valenbisi is available to both residents and visitors with 2,750 bikes accross 275 stations, located all over the city.\nIf you pay a yearly subscription (which costs less than 30€) you can use the bikes for 30 minutes at a time whenever you want, any time, any day (the trick is to change your bike every 25 minutes so that you don\'t have to pay any more). <b>TIPP: first buy a Mobilis Card</b> and then connect your Valenbisi subscription to it. </string>
+    <string name="info_section_transportation2">A new urban transport concept <b>the individual bike.</b> An ecological and healthy option, available 24 hours a day, 365 days a year. More and more cities are offering their citizens the opportunity to get around by bike. Valenbisi is available to both residents and visitors with 2,750 bikes across 275 stations, located all over the city.\nIf you pay a yearly subscription (which costs less than 30€) you can use the bikes for 30 minutes at a time whenever you want, any time, any day (the trick is to change your bike every 25 minutes so that you don\'t have to pay any more). <b>TIP: first buy a Mobilis Card</b> and then connect your Valenbisi subscription to it. </string>
     <string name="info_link2">http://www.valenbisi.com/</string>
 
     <string name="info_subtitle_living">Living</string>
     <string name="info_section_living">The universiy\'s surrounding areas are the perfect area for Students to live in shared flats. (Avinguda Blasco Ibañez, Avinguda Ramón LLull, Plaza Honduras, plaza del Cedro, etc…). It\'s well connected to the rest of the city with all the necessary services (supermarkets, cafés, shops, pubs, etc).
         \nAnother student area is the Benimaclet neighbourhood, also close to the universities and generally cheaper flats which are slightly older. It\'s well connected to the city with the tram line.\nAnother area where students decide to live is near the beach in the Cabanyal neighbourhood. This is close to the university campuses but in winter there\'s not as much to do. If you are coming to Valencia for the February-July period then living here has many advantages given that it\'s close to the beach and is where most people spend their free time; there are also lots of parties in this area in the summer.\n
         \nThe best thing to do is find a flat or a room before you arrive in the city. But don\'t worry, you can easily find a flat in the first two weeks you arrive in Valencia.
-        \nAlways to take into account where you will be studying because it\'s better to live near university because you have to go there everyday.
+        \nAlways take into account where you will be studying.
         \n\nCheckout some of these links to find a flat or a room:</string>
     <string name="info_link3">https://www.idealista.com/de/</string>
     <string name="info_link4">https://www.spotahome.com/de</string>
     <string name="info_link5">http://flats2enjoy.com/es_es/</string>
     <string name="info_link6">http://amigoflats.com/en/</string>
+    <string name="title_location_organization">Title, Location, Organization…</string>
+    <string name="sponsor_text">Sponsored by: lot of time spent programming</string>
+    <string name="info">Info</string>
+    <string name="no_events_marked_favourite">You currently have no events marked favourite. Once you do, they will be shown here. Head over to Events and check them out!</string>
+    <string name="location_icon">location icon</string>
+    <string name="company_logo_picture">company logo picture</string>
+    <string name="time_icon">time icon</string>
+    <string name="heart_icon">heart icon</string>
+    <string name="organization_icon">organization icon</string>
+    <string name="url_logo">url logo</string>
+
+    <string name="about_us_title">About us</string>
+    <string name="about_us_content">This app has been created as a group project in the fourth year of the UPV\'s Industrial Engineering bachelor degree.\nIt is maintained on a voluntary basis in the hope that it can be useful for erasmus and native students alike.\n\nFeedback and suggestions are always welcome under the following contact details:</string>
+    <string name="gmail_address">erasmus.app.valencia@gmail.com</string>
+    <string name="send_feedback_text">Send feedback</string>
+    <string name="disclaimer_title">Disclaimer</string>
+    <string name="disclaimer_content">The events, organisations, information and web links presented in this app have been chosen with the sole purpose of bringing together interesting and helpful guidance for users.\nThis app is in no way affiliated with any organization or event presented, other than its creators taking part in some of these events as private persons. No compensation, monetary or otherwise, has been made in exchange for the display or promotion of aforementioned organisations and events, nor has promise of such compensation been given.\nThis application gives no guarantee for completeness or correctness of the information provided. The authority in this case are the respective official channels.</string>
+    <string name="version_text">Erasmus app for Android: version 1.0</string>
+    <string name="go_about_us_text"><b>About</b>\nUs &amp; the app</string>
+    <string name="event_still_loading">Oops. Looks like the events are still loading. Give it a couple of seconds. In the mean time check out the settings and customize the theme.</string>
 
 
 </resources>

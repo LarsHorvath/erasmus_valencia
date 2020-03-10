@@ -10,12 +10,22 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/logo_erasmus_app"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-
+        android:theme="@style/DefaultTheme">
         <activity
-            android:name=".InfosActivity"
-            android:label="Informations"
-            android:parentActivityName=".MainActivity"/>
+            android:name=".TicTacToeActivity"
+            android:label="Secret TicTacToe"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity
+            android:name=".AboutActivity"
+            android:label="About"
+            android:parentActivityName=".SettingsActivity" />
+        <activity android:name=".BaseThemeChangerActivity" />
+        <activity android:name=".BaseRecyclerActivity" />
+        <activity
+            android:name=".InfoActivity"
+            android:label="Information"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".SettingsActivity"
             android:label="Settings"
@@ -41,6 +51,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 

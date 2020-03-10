@@ -6,15 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".EventsActivity">
 
-    <devs.mulham.horizontalcalendar.HorizontalCalendarView
-        android:id="@+id/calendarView"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:textColorSelected="#FFFF" />
+        style="@style/CalendarTheme">
+
+        <devs.mulham.horizontalcalendar.HorizontalCalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:textColorSelected="#FFFF" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView2"
@@ -25,16 +48,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchEdit" />
 
+    <TextView
+        android:id="@+id/eventsNotLoaded"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/event_still_loading"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
     <EditText
         android:id="@+id/searchEdit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:ems="10"
-        android:hint="Title, Location, Organization..."
+        android:hint="@string/title_location_organization"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
