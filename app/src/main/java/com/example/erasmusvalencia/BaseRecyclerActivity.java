@@ -34,7 +34,6 @@ public abstract class BaseRecyclerActivity extends BaseThemeChangerActivity {
     String filterText = "";
     boolean[] filterDialogSelection;
     String[] filterDialogItems;
-    TextView nothingToShowView;
 
     private ProgressDialog pd = null;
 
@@ -87,7 +86,7 @@ public abstract class BaseRecyclerActivity extends BaseThemeChangerActivity {
         }
         else {
             // Show the ProgressDialog on this thread
-            //this.pd = ProgressDialog.show(this, "Working..", "Getting the events...", true, false);
+            this.pd = ProgressDialog.show(this, "Working..", "Getting the events...", true, false);
 
             // Start a new thread that will download all the data
             new DownloadTask().execute("Any parameters my download task needs here");
@@ -152,13 +151,6 @@ public abstract class BaseRecyclerActivity extends BaseThemeChangerActivity {
         }
         if (eventsFiltered == null) {
             updateEvents();
-        }
-        if (Event.allEvents.size() == 0) {
-            nothingToShowView.setVisibility(View.VISIBLE);
-            return;
-        }
-        else {
-            nothingToShowView.setVisibility(View.INVISIBLE);
         }
         int[] fids = new int[eventsFiltered.size()];
         for (int i = 0; i < eventsFiltered.size(); i++) {

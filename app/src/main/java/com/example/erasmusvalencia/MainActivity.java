@@ -6,6 +6,8 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import java.io.IOException;
@@ -16,6 +18,7 @@ public class MainActivity extends BaseRecyclerActivity {
 
     private static final String TAG = "MainActivity";
     Button button_events, button_places, button_info;
+    TextView nothingToShowView;
 
     @Override
     protected void initialize() {
@@ -53,6 +56,17 @@ public class MainActivity extends BaseRecyclerActivity {
                 return true;
             default:return super.onOptionsItemSelected(item);
 
+        }
+    }
+
+    @Override
+    protected void updateUI() {
+        super.updateUI();
+        if (eventsFiltered.size() == 0) {
+            nothingToShowView.setVisibility(View.VISIBLE);
+        }
+        else {
+            nothingToShowView.setVisibility(View.INVISIBLE);
         }
     }
 

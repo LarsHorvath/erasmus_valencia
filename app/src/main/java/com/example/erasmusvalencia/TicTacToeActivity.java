@@ -1,23 +1,33 @@
 package com.example.erasmusvalencia;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
-public class TicTacToeActivity extends AppCompatActivity {
+public class TicTacToeActivity extends BaseThemeChangerActivity {
 
 
     static final String TAG ="TicTacToe";
     ArrayList<ImageButton> fields;
     Button playAgainButton;
     TextView winnerText, turnText;
+    Event event;
+    int event_id;
     final static int BLANK = 0;
     final static int XX = 1;
     final static int OO = -1;
@@ -52,6 +62,8 @@ public class TicTacToeActivity extends AppCompatActivity {
                 initGame();
             }
         });
+        getData();
+        setData();
         this.initGame();
     }
 
@@ -165,5 +177,78 @@ public class TicTacToeActivity extends AppCompatActivity {
             field.setImageResource(imResIds[BLANK]);
         }
     }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.favouriteIcon:
+                if (event.isFavourite()) {
+                    event.setFavourite(false);
+                    item.setIcon(R.drawable.ic_favorite_border_black_24dp);
+                    Toast.makeText(this,"removed from favourites", Toast.LENGTH_SHORT).show();
+                } else {
+                    event.setFavourite(true);
+                    item.setIcon(R.drawable.ic_favorite_black_24dp);
+                    Toast.makeText(this,"Event added to favourites", Toast.LENGTH_SHORT).show();
+                }
+                return true;
+            case R.id.shareIcon:
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                String toSend;
+                if (event.getUrl() != null) toSend = String.format(Locale.ENGLISH,"Hi, I would like to share the following event with you:\n\n*%s*\n%s _%s_\n%s %s\n%s\n\n Are you in?",event.getTitle(), getString(R.string.emoji_clock), Event.dayToString(event.getStartDate(), Event.DAY_AND_TIME), getString(R.string.emoji_location), event.getLocation(),event.getUrl());
+                else toSend = String.format(Locale.ENGLISH,"Hi, I would like to share the following event with you:\n\n*%s*\n%s _%s_\n%s %s\n\n Are you in?",event.getTitle(), getString(R.string.emoji_clock), Event.dayToString(event.getStartDate(), Event.DAY_AND_TIME), getString(R.string.emoji_location), event.getLocation());
+                sendIntent.putExtra(Intent.EXTRA_TEXT, toSend);
+                sendIntent.setType("text/plain");
+                startActivity(Intent.createChooser(sendIntent, null));
+                return true;
+            default:return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+
+        MenuItem settingsItem = menu.findItem(R.id.favouriteIcon);
+        // set your desired icon here based on a flag if you like
+        if (event != null) {
+            if (event.isFavourite()) settingsItem.setIcon(ContextCompat.getDrawable(this, R.drawable.ic_favorite_black_24dp));
+            else settingsItem.setIcon(ContextCompat.getDrawable(this, R.drawable.ic_favorite_border_black_24dp));
+        }
+        else {
+            Log.i(TAG, "onPrepareOptionsMenu: event isn't defined yet wjasdfjkasdf jkö asdfjlöksdaf");
+        }
+
+
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.event_details_menu, menu);
+        MenuItem fav_item = findViewById(R.id.favouriteIcon);
+        if (fav_item == null) return true;
+        if (event.isFavourite()) {
+            fav_item.setIcon(R.drawable.ic_favorite_black_24dp);
+        } else {
+            fav_item.setIcon(R.drawable.ic_favorite_border_black_24dp);
+        }
+        return true;
+    }
+
+    private void getData() {
+        if(getIntent().hasExtra("event_id")) {
+            event_id = getIntent().getIntExtra("event_id", 0);
+        }
+        else {
+            Toast.makeText(this,"no data", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void setData() {
+        event = Event.allEvents.get(event_id);
+    }
+
 
 }

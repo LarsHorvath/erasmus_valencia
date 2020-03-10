@@ -53,6 +53,7 @@ public class EventTileAdapter extends RecyclerView.Adapter<EventTileAdapter.Even
                     context.startActivity(intent);
                 } else {
                     Intent intent = new Intent(context, TicTacToeActivity.class);
+                    intent.putExtra("event_id", e.getId());
                     context.startActivity(intent);
                 }
             }

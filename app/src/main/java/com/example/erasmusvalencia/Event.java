@@ -25,7 +25,7 @@ public class Event implements Comparable<Event> {
     private int id;
     private String title;
     private String company;
-    static public final int imagesrc[] = {R.drawable.esnupv, R.drawable.esnuv, R.drawable.happyerasmus, R.drawable.soyerasmus,
+    static public final int imagesrc[] = {R.mipmap.logo_erasmus_app, R.drawable.esnupv, R.drawable.esnuv, R.drawable.happyerasmus, R.drawable.soyerasmus,
             R.drawable.erasmuslife, R.drawable.questionmark};
     private int companyID = imagesrc.length-1;
 
@@ -121,19 +121,19 @@ public class Event implements Comparable<Event> {
     }
 
     public void findCompany() {
-        String[] companies = {"ESN", "ESN", "Happy Erasmus", "Soy Erasmus", "Erasmus Life"};
-        for (int i = 0; i < companies.length; i++) {
+        String[] companies = {"", "ESN", "ESN", "Happy Erasmus", "Soy Erasmus", "Erasmus Life"};
+        for (int i = 1; i < companies.length; i++) {
             if (title.contains(companies[i]) ||  location.contains(companies[i]) || description.contains(companies[i])) {
                 this.company = companies[i];
                 this.companyID = i;
             }
         }
         if (company.equals("ESN") && (title.contains("UV") || location.contains("UV") || description.contains(("UV")))) {
-            this.companyID = 1;
+            this.companyID = 2;
             this.company ="ESN UV";
         }
         else if (company.equals("ESN")) {
-            this.companyID = 0;
+            this.companyID = 1;
             this.company ="ESN UPV";
         }
     }
@@ -373,6 +373,11 @@ public class Event implements Comparable<Event> {
         s.add(Calendar.DAY_OF_MONTH, 1);
         Calendar e = Calendar.getInstance();
         e.add(Calendar.MONTH, 1);
+        if (Event.allEvents.containsKey(7)) {
+            Event.allEvents.get(7).setStartDate(s);
+            Event.allEvents.get(7).setEndDate(e);
+            return;
+        }
         Event eee = new Event();
         eee.setTitle("Erasmus goes Easter");
         eee.setLocation("Valencia");
@@ -380,6 +385,7 @@ public class Event implements Comparable<Event> {
         eee.setEndDate(e);
         eee.setId(7);
         eee.setCompanyID(0);
+        eee.setCustom(true);
         allEvents.put(eee.getId(), eee);
     }
 }
