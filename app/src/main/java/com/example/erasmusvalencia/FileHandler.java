@@ -17,7 +17,7 @@ public class FileHandler {
     private String content;
     final static private String TAG = "FileHandler";
     public static final String FILE_NAME = "my_events";
-    static public Context context;
+    public static Context context;
 
     public FileHandler(String fileName) {
         this.fileName = fileName;
