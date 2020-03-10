@@ -153,7 +153,7 @@ public abstract class BaseRecyclerActivity extends BaseThemeChangerActivity {
         if (eventsFiltered == null) {
             updateEvents();
         }
-        if (eventsFiltered.size() == 0) {
+        if (Event.allEvents.size() == 0) {
             nothingToShowView.setVisibility(View.VISIBLE);
             return;
         }
