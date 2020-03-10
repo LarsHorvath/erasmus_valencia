@@ -16,27 +16,27 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder2> {
+public class PlaceTileAdapter extends RecyclerView.Adapter<PlaceTileAdapter.PlaceViewHolder> {
 
-    private static final String TAG = "ReceycleViewAdapter Places";
+    private static final String TAG = "RecyclerViewAdapter Places";
     private ArrayList<Places> places = new ArrayList<>();
     private Context mContext;
 
-    public MyAdapter2(Context ct, ArrayList<Places> places ) {
+    public PlaceTileAdapter(Context ct, ArrayList<Places> places ) {
         mContext = ct;
         this.places = places;
     }
 
     @NonNull
     @Override
-    public MyAdapter2.MyViewHolder2 onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public PlaceViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View view = inflater.inflate(R.layout.places_tile, parent, false);
-        return new MyAdapter2.MyViewHolder2(view);
+        return new PlaceViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyAdapter2.MyViewHolder2 holder, final int position) {
+    public void onBindViewHolder(@NonNull PlaceViewHolder holder, final int position) {
 
         holder.mTitleText.setText(places.get(position).getName());
         holder.mLocationText.setText(places.get(position).getLocation());
@@ -59,13 +59,13 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder2> {
         return places.size();
     }
 
-    public class MyViewHolder2 extends RecyclerView.ViewHolder{
+    public class PlaceViewHolder extends RecyclerView.ViewHolder{
 
         TextView mTitleText, mLocationText;
         ImageView mImage;
         ConstraintLayout mainLayout;
 
-        public MyViewHolder2(@NonNull View itemView) {
+        public PlaceViewHolder(@NonNull View itemView) {
             super(itemView);
             mTitleText = itemView.findViewById(R.id.titleText_places);
             mLocationText = itemView.findViewById(R.id.locationText_places);

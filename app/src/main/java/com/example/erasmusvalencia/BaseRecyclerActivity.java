@@ -128,8 +128,8 @@ public abstract class BaseRecyclerActivity extends BaseThemeChangerActivity {
                 for (Event e : events) {
                     Event.allEvents.put(e.getId(), e);
                 }
-                Event.addEasterEggEvent();
             }
+            Event.addEasterEggEvent();
             return true;
         }
 
