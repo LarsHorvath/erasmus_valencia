@@ -1,7 +1,5 @@
 package com.example.erasmusvalencia;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -16,7 +14,7 @@ public class AboutActivity extends BaseThemeChangerActivity {
     @Override
     public void onBackPressed()
     {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, SettingsActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();

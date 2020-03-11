@@ -28,6 +28,9 @@ public abstract class BaseRecyclerActivity extends BaseThemeChangerActivity {
 
     // Declarations
     private static final String TAG = "BaseRecyclerActivity";
+    final static int SHOW_SEARCH_BAR = 0;
+    final static int RESTRICT_DISPLAY_TO_TODAY = 1;
+    final static int ONLY_SHOW_FAVOURITES = 2;
     ArrayList<Event> eventsFiltered;
     RecyclerView recyclerView;
     EditText searchEdit;
@@ -66,7 +69,7 @@ public abstract class BaseRecyclerActivity extends BaseThemeChangerActivity {
     protected void updatePreferences() {
         SharedPreferences preferences = getSharedPreferences("init", MODE_PRIVATE);
         for (int i = 0; i < filterDialogSelection.length; i++) {
-            filterDialogSelection[i] = preferences.getBoolean(String.format(Locale.ENGLISH,"filterSelection%d", i), false);
+            filterDialogSelection[i] = preferences.getBoolean(String.format(Locale.ENGLISH,"filterSelection%d", i), i == RESTRICT_DISPLAY_TO_TODAY);
         }
     }
     protected abstract int getLayoutResID();

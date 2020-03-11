@@ -53,7 +53,7 @@
         android:drawableTop="@drawable/ic_info_outline_black_24dp"
         android:elevation="12dp"
         android:paddingTop="20dp"
-        android:text="Infos"
+        android:text="Info"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"

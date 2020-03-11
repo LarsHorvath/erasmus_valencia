@@ -103,7 +103,7 @@ public class EventsActivity extends BaseRecyclerActivity {
 
         filterDialogSelection = new boolean[]{
                 false,
-                false,
+                true,
                 false,
         };
 
@@ -168,10 +168,10 @@ public class EventsActivity extends BaseRecyclerActivity {
             eventsFiltered = new ArrayList<>();
             return;
         }
-        if (filterDialogSelection[1]) eventsFiltered = Event.filterEvents(Event.allEvents.values(), Event.FILTER_DATE, selectedDay, end);
+        if (filterDialogSelection[RESTRICT_DISPLAY_TO_TODAY]) eventsFiltered = Event.filterEvents(Event.allEvents.values(), Event.FILTER_DATE, selectedDay, end);
         else eventsFiltered = Event.filterEvents(Event.allEvents.values(), Event.FILTER_DATE, selectedDay, selectedDay);
-        if (filterDialogSelection[2]) eventsFiltered = Event.filterEvents(eventsFiltered, Event.FILTER_FAVOURITE, true);
-        if (filterDialogSelection[0]) {
+        if (filterDialogSelection[ONLY_SHOW_FAVOURITES]) eventsFiltered = Event.filterEvents(eventsFiltered, Event.FILTER_FAVOURITE, true);
+        if (filterDialogSelection[SHOW_SEARCH_BAR]) {
             eventsFiltered = Event.filterEvents(eventsFiltered, Event.FILTER_TEXT_SEARCH, filterText);
         }
         Collections.sort(eventsFiltered);

@@ -94,7 +94,7 @@ public class MainActivity extends BaseRecyclerActivity {
             return;
         }
         eventsFiltered = Event.filterEvents(Event.allEvents.values(), Event.FILTER_FAVOURITE, true);
-        if (filterDialogSelection.length !=0 && filterDialogSelection[0]) {
+        if (filterDialogSelection.length !=0 && filterDialogSelection[SHOW_SEARCH_BAR]) {
             eventsFiltered = Event.filterEvents(eventsFiltered, Event.FILTER_TEXT_SEARCH, filterText);
         }
         Collections.sort(eventsFiltered);
