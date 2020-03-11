@@ -368,7 +368,7 @@ public class Event implements Comparable<Event> {
         }
         return "dfasdfjoasfdj";
     }
-    public static void addEasterEggEvent() {
+    static void addEasterEggEvent() {
         Calendar s = Calendar.getInstance();
         s.add(Calendar.DAY_OF_MONTH, 1);
         Calendar e = Calendar.getInstance();

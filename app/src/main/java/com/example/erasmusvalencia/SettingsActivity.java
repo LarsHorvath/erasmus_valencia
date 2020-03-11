@@ -10,8 +10,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import java.util.Locale;
-
 public class SettingsActivity extends BaseThemeChangerActivity {
     Spinner themeSpinner;
 
@@ -22,14 +20,14 @@ public class SettingsActivity extends BaseThemeChangerActivity {
 
         themeSpinner = findViewById(R.id.themeSpinner);
         final String[] themes = {"Default", "Theme 1"};
-        ArrayAdapter mAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, themes);
+        ArrayAdapter<String> mAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, themes);
         themeSpinner.setAdapter(mAdapter);
         themeSpinner.setSelection(theme,false);
         themeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Context context = getApplicationContext();
-                CharSequence text = String.format(Locale.ENGLISH, themes[position] + " selected");
+                CharSequence text = themes[position] + " selected";
                 int duration = Toast.LENGTH_SHORT;
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
