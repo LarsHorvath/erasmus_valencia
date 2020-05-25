@@ -1,4 +1,6 @@
 <resources>
+    <!-- https://blog.prototypr.io/implementing-dark-theme-in-android-dfe63e62145d -->
+
     <!-- Base application theme. -->
     <style name="DefaultTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
