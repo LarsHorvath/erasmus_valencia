@@ -15,6 +15,7 @@ import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
@@ -364,9 +365,10 @@ public class Event implements Comparable<Event> {
     public static final int NAME_AND_DAY = 2;
     public static final int NAME_AND_DAY_AND_TIME = 3;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public static String dayToString(Calendar cal, int sel) {
         switch (sel) {
-            case DAY: return String.format(Locale.ENGLISH,"%02d.%02d.%04d", cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.MONTH)+1, cal.get(Calendar.YEAR));
+            case DAY: return "bö";
             case DAY_AND_TIME: return String.format(Locale.ENGLISH,"%02d.%02d.%04d, %02d:%02d", cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.MONTH)+1, cal.get(Calendar.YEAR), cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE));
             case NAME_AND_DAY: return String.format(Locale.ENGLISH,"%s %02d.%02d.%04d", weekDayName(cal.get(Calendar.DAY_OF_WEEK)), cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.MONTH)+1, cal.get(Calendar.YEAR));
             case NAME_AND_DAY_AND_TIME: return String.format(Locale.ENGLISH,"%s %02d.%02d.%04d, %02d:%02d", weekDayName(cal.get(Calendar.DAY_OF_WEEK)), cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.MONTH)+1, cal.get(Calendar.YEAR), cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE));

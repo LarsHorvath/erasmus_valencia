@@ -1,6 +1,7 @@
 package com.example.erasmusvalencia;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -11,10 +12,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 
 import java.io.IOException;
+import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 public class EventDetailsActivity extends BaseThemeChangerActivity {
@@ -26,6 +29,7 @@ public class EventDetailsActivity extends BaseThemeChangerActivity {
     ConstraintLayout cl;
     private static final String TAG = "EventDetailsActivity";
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,16 +73,17 @@ public class EventDetailsActivity extends BaseThemeChangerActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        String json = Event.toJson(Event.allEvents);
+        /*String json = Event.toJson(Event.allEvents);
         FileHandler handler = new FileHandler(FileHandler.FILE_NAME);
         try {
             handler.clearFile();
             handler.writeFile(json);
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -97,8 +102,8 @@ public class EventDetailsActivity extends BaseThemeChangerActivity {
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
                 String toSend;
-                if (event.getUrl() != null) toSend = String.format(Locale.ENGLISH,"Hi, I would like to share the following event with you:\n\n*%s*\n%s _%s_\n%s %s\n%s\n\n Are you in?",event.getTitle(), getString(R.string.emoji_clock), "THE DATE IN STRING FORMAT", getString(R.string.emoji_location), event.getLocation(),event.getUrl());
-                else toSend = String.format(Locale.ENGLISH,"Hi, I would like to share the following event with you:\n\n*%s*\n%s _%s_\n%s %s\n\n Are you in?",event.getTitle(), getString(R.string.emoji_clock), "THE DATE IN STRING FORMAT", getString(R.string.emoji_location), event.getLocation());
+                if (event.getUrl() != null) toSend = String.format(Locale.ENGLISH,"Hi, I would like to share the following event with you:\n\n*%s*\n%s _%s_\n%s %s\n%s\n\n Are you in?",event.getTitle(), getString(R.string.emoji_clock), event.getStartDate().format(DateTimeFormatter.ofPattern("E dd.MM.yyyy hh:mm")), getString(R.string.emoji_location), event.getLocation(),event.getUrl());
+                else toSend = String.format(Locale.ENGLISH,"Hi, I would like to share the following event with you:\n\n*%s*\n%s _%s_\n%s %s\n\n Are you in?",event.getTitle(), getString(R.string.emoji_clock), event.getStartDate().format(DateTimeFormatter.ofPattern("E dd.MM.yyyy hh:mm")), getString(R.string.emoji_location), event.getLocation());
                 sendIntent.putExtra(Intent.EXTRA_TEXT, toSend);
                 sendIntent.setType("text/plain");
                 startActivity(Intent.createChooser(sendIntent, null));
@@ -132,10 +137,11 @@ public class EventDetailsActivity extends BaseThemeChangerActivity {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     private void setData() {
         event = Event.allEvents.get(event_id);
         titleText.setText(event.getTitle());
-        timeText.setText("THE DATE IN STRING FORMAT");
+        timeText.setText(event.getStartDate().format(DateTimeFormatter.ofPattern("E dd.MM.yyyy hh:mm")));
         locationText.setText(event.getLocation());
         urlText.setText(event.getUrl());
         companyText.setText(event.getCompany());
