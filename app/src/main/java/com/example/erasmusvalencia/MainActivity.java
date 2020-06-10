@@ -2,6 +2,7 @@ package com.example.erasmusvalencia;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -73,7 +75,7 @@ public class MainActivity extends BaseRecyclerActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        SharedPreferences preferences = getSharedPreferences("init", MODE_PRIVATE);
+        /*SharedPreferences preferences = getSharedPreferences("init", MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         // editor.clear();
         editor.apply();
@@ -84,16 +86,17 @@ public class MainActivity extends BaseRecyclerActivity {
             handler.writeFile(json);
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     // Updates the UI (the date and the events on that date)
+    @RequiresApi(api = Build.VERSION_CODES.O)
     protected void updateEvents() {
-        if (Event.allEvents == null) {
+        if (allEvents == null) {
             eventsFiltered = new ArrayList<>();
             return;
         }
-        eventsFiltered = Event.filterEvents(Event.allEvents.values(), Event.FILTER_FAVOURITE, true);
+        eventsFiltered = Event.filterEvents(allEvents.values(), Event.FILTER_FAVOURITE, true);
         if (filterDialogSelection.length !=0 && filterDialogSelection[SHOW_SEARCH_BAR]) {
             eventsFiltered = Event.filterEvents(eventsFiltered, Event.FILTER_TEXT_SEARCH, filterText);
         }

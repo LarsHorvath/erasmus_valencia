@@ -1,17 +1,20 @@
 package com.example.erasmusvalencia;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.DatePicker;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -61,6 +64,7 @@ public class EventsActivity extends BaseRecyclerActivity {
 
         // Set listeners to calendar view
         horizontalCalendar.setCalendarListener(new HorizontalCalendarListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onDateSelected(Calendar date, int position) {
                 Log.i(TAG, "onDateSelected: date: " + date.toString() + " position: " + position);
@@ -145,7 +149,7 @@ public class EventsActivity extends BaseRecyclerActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        SharedPreferences preferences = getSharedPreferences("init", MODE_PRIVATE);
+        /*SharedPreferences preferences = getSharedPreferences("init", MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         // editor.clear();
         editor.apply();
@@ -156,20 +160,28 @@ public class EventsActivity extends BaseRecyclerActivity {
             handler.writeFile(json);
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        } */
     }
 
     // Updates the UI (the date and the events on that date)
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void updateEvents() {
-        Calendar end = (Calendar) selectedDay.clone();
-        end.add(Calendar.DAY_OF_MONTH, 1);
-        if (Event.allEvents == null) {
+        OffsetDateTime end = OffsetDateTime.now();
+        end.plusDays(1);
+        if (allEvents == null) {
+            Log.i(TAG, "updateEvents: No events found");
             eventsFiltered = new ArrayList<>();
             return;
         }
-        if (filterDialogSelection[RESTRICT_DISPLAY_TO_TODAY]) eventsFiltered = Event.filterEvents(Event.allEvents.values(), Event.FILTER_DATE, selectedDay, end);
-        else eventsFiltered = Event.filterEvents(Event.allEvents.values(), Event.FILTER_DATE, selectedDay, selectedDay);
+        Log.i(TAG, "updateEvents: number of evets: " + allEvents.values().size());
+        for (Event event : allEvents.values()) {
+            Log.i(TAG, "updateEvents: event: " + event.getTitle());
+        }
+        eventsFiltered = new ArrayList<>();
+        eventsFiltered.addAll(allEvents.values());
+        //if (filterDialogSelection[RESTRICT_DISPLAY_TO_TODAY]) eventsFiltered = Event.filterEvents(Event.allEvents.values(), Event.FILTER_DATE, selectedDay, end);
+        //else eventsFiltered = Event.filterEvents(allEvents.values(), Event.FILTER_DATE, selectedDay, selectedDay);
         if (filterDialogSelection[ONLY_SHOW_FAVOURITES]) eventsFiltered = Event.filterEvents(eventsFiltered, Event.FILTER_FAVOURITE, true);
         if (filterDialogSelection[SHOW_SEARCH_BAR]) {
             eventsFiltered = Event.filterEvents(eventsFiltered, Event.FILTER_TEXT_SEARCH, filterText);
@@ -184,6 +196,7 @@ public class EventsActivity extends BaseRecyclerActivity {
         int year = cldr.get(Calendar.YEAR);
         // date picker dialog
         picker = new DatePickerDialog(EventsActivity.this, new DatePickerDialog.OnDateSetListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
                 selectedDay.set(i, i1, i2);

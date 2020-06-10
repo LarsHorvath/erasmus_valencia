@@ -1,6 +1,9 @@
 package com.example.erasmusvalencia;
 
+import android.os.Build;
 import android.util.Log;
+
+import androidx.annotation.RequiresApi;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -11,6 +14,7 @@ import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
@@ -28,13 +32,15 @@ public class Event implements Comparable<Event> {
     static public final int imagesrc[] = {R.mipmap.logo_erasmus_app, R.drawable.esnupv, R.drawable.esnuv, R.drawable.happyerasmus, R.drawable.soyerasmus,
             R.drawable.erasmuslife, R.drawable.questionmark};
     private int companyID = imagesrc.length-1;
-
+    private String imageUrl;
 
     private String description;
     private String location;
     private String url;
-    private Calendar startDate;
-    private Calendar endDate;
+    private String eventUrl;
+    private OffsetDateTime datePosted;
+    private OffsetDateTime startDate;
+    private OffsetDateTime endDate;
     private boolean favourite;
     private boolean custom;
     public static final int FILTER_TITLE = 1;
@@ -45,20 +51,36 @@ public class Event implements Comparable<Event> {
     public static final int FILTER_FAVOURITE = 6;
     public static final int FILTER_TEXT_SEARCH = 7;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public Event() {
         title = "no title";
         company = "no company";
         description = "no description";
         location = "no location";
-        startDate = Calendar.getInstance();
-        endDate = Calendar.getInstance();
-        startDate.clear();
-        endDate.clear();
+        startDate = OffsetDateTime.now();
+        endDate = OffsetDateTime.now();
         id = generateID();
         //allEvents.put(id, this);
         favourite = false;
+
     }
 
+    public Event(int id, String title, String company, int companyID, String description,
+                 String location, String url, OffsetDateTime datePosted, OffsetDateTime startDate,
+                 OffsetDateTime endDate, String eventUrl, String imageUrl) {
+        this.id = id;
+        this.title = title;
+        this.company = company;
+        this.companyID = companyID;
+        this.description = description;
+        this.location = location;
+        this.url = url;
+        this.datePosted = datePosted;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.eventUrl = eventUrl;
+        this.imageUrl = "https://www.erasmuscalendar.com" + imageUrl;
+    }
 
     public int compareTo(Event other) {
         return startDate.compareTo(other.startDate);
@@ -104,19 +126,19 @@ public class Event implements Comparable<Event> {
         this.location = location;
     }
 
-    public Calendar getStartDate() {
+    public OffsetDateTime getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Calendar startDate) {
+    public void setStartDate(OffsetDateTime startDate) {
         this.startDate = startDate;
     }
 
-    public Calendar getEndDate() {
+    public OffsetDateTime getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Calendar endDate) {
+    public void setEndDate(OffsetDateTime endDate) {
         this.endDate = endDate;
     }
 
@@ -163,6 +185,7 @@ public class Event implements Comparable<Event> {
      * @param JSONString the String to be parsed
      * @return an ArrayList containing Event objects that were in the String
      */
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public static ArrayList<Event> parseFromJSONString(final String JSONString) {
         ArrayList<Event> result = new ArrayList<>();
         allEvents = new HashMap<>();
@@ -186,8 +209,8 @@ public class Event implements Comparable<Event> {
                 event.setLocation("not available");
                 npe.printStackTrace();
             }
-            event.setStartDate(parseCalendarString(item.getAsJsonObject("start").getAsJsonPrimitive("dateTime").getAsString()));
-            event.setEndDate(parseCalendarString(item.getAsJsonObject("end").getAsJsonPrimitive("dateTime").getAsString()));
+            //event.setStartDate(parseCalendarString(item.getAsJsonObject("start").getAsJsonPrimitive("dateTime").getAsString()));
+            //event.setEndDate(parseCalendarString(item.getAsJsonObject("end").getAsJsonPrimitive("dateTime").getAsString()));
             event.findCompany();
             event.findLink();
             event.setCustom(false);
@@ -203,6 +226,7 @@ public class Event implements Comparable<Event> {
      * @return an ArrayList containing all the Event objects from event that match all the filters
      * @throws IllegalArgumentException
      */
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public static ArrayList<Event> filterEvents(final Collection<Event> events, final Object... filters) throws IllegalArgumentException {
         ArrayList<Event> result = new ArrayList<>();
         for (Event event : events) {
@@ -218,6 +242,7 @@ public class Event implements Comparable<Event> {
      * @return true iff the events matches all the filter
      * @throws IllegalArgumentException
      */
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public static boolean eventMatches(final Event event, final Object... filters) throws IllegalArgumentException {
         int i = 0;
         while (i<filters.length) {
@@ -240,14 +265,14 @@ public class Event implements Comparable<Event> {
                         if (!event.getCompany().contains((String) filters[i])) return false;
                         break;
                     case FILTER_DATE:
-                        if (!(filters[i] instanceof Calendar || !(filters[i+1] instanceof Calendar))) throw new IllegalArgumentException();
-                        if (((Calendar) filters[i]).compareTo((Calendar) filters[i+1]) >= 0) {
-                            if (((Calendar) filters[i++]).compareTo(event.getStartDate()) > 0) return false;
-                            Log.i(TAG, "eventMatches: Date presented: " + ((Calendar) filters[i-1]).getDisplayNames(Calendar.DAY_OF_YEAR,Calendar.SHORT,Locale.ENGLISH));
-                            Log.i(TAG, "eventMatches: this Date to filter: " + (event.getStartDate()).getDisplayNames(Calendar.DAY_OF_YEAR,Calendar.SHORT,Locale.ENGLISH));
-                            Log.i(TAG, "eventMatches: result: " + ((Calendar) filters[i-1]).compareTo((Calendar) filters[i]));
+                        if (!(filters[i] instanceof OffsetDateTime || !(filters[i+1] instanceof OffsetDateTime))) throw new IllegalArgumentException();
+                        if (((OffsetDateTime) filters[i]).compareTo((OffsetDateTime) filters[i+1]) >= 0) {
+                            if (((OffsetDateTime) filters[i++]).compareTo(event.getStartDate()) > 0) return false;
+                            //Log.i(TAG, "eventMatches: Date presented: " + ((OffsetDateTime) filters[i-1]).getDisplayNames(OffsetDateTime.DAY_OF_YEAR,OffsetDateTime.SHORT,Locale.ENGLISH));
+                            //Log.i(TAG, "eventMatches: this Date to filter: " + (event.getStartDate()).getDisplayNames(OffsetDateTime.DAY_OF_YEAR,OffsetDateTime.SHORT,Locale.ENGLISH));
+                            //Log.i(TAG, "eventMatches: result: " + ((OffsetDateTime) filters[i-1]).compareTo((OffsetDateTime) filters[i]));
                         }
-                        else if (((Calendar) filters[i]).compareTo(event.getStartDate()) > 0 || event.getStartDate().compareTo((Calendar) filters[++i]) >= 0) return false;
+                        else if (((OffsetDateTime) filters[i]).compareTo(event.getStartDate()) > 0 || event.getStartDate().compareTo((OffsetDateTime) filters[++i]) >= 0) return false;
                         break;
                     case FILTER_FAVOURITE:
                         if (!(filters[i] instanceof Boolean)) throw new IllegalArgumentException();
@@ -368,11 +393,12 @@ public class Event implements Comparable<Event> {
         }
         return "dfasdfjoasfdj";
     }
+    @RequiresApi(api = Build.VERSION_CODES.O)
     static void addEasterEggEvent() {
-        Calendar s = Calendar.getInstance();
-        s.add(Calendar.DAY_OF_MONTH, 1);
-        Calendar e = Calendar.getInstance();
-        e.add(Calendar.MONTH, 1);
+        OffsetDateTime s = OffsetDateTime.now();
+        s.plusDays(1);
+        OffsetDateTime e = OffsetDateTime.now();
+        e.plusDays(1);
         if (Event.allEvents.containsKey(7)) {
             Event.allEvents.get(7).setStartDate(s);
             Event.allEvents.get(7).setEndDate(e);
@@ -387,6 +413,14 @@ public class Event implements Comparable<Event> {
         eee.setCompanyID(0);
         eee.setCustom(true);
         allEvents.put(eee.getId(), eee);
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
 

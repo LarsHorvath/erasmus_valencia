@@ -97,8 +97,8 @@ public class EventDetailsActivity extends BaseThemeChangerActivity {
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
                 String toSend;
-                if (event.getUrl() != null) toSend = String.format(Locale.ENGLISH,"Hi, I would like to share the following event with you:\n\n*%s*\n%s _%s_\n%s %s\n%s\n\n Are you in?",event.getTitle(), getString(R.string.emoji_clock), Event.dayToString(event.getStartDate(), Event.DAY_AND_TIME), getString(R.string.emoji_location), event.getLocation(),event.getUrl());
-                else toSend = String.format(Locale.ENGLISH,"Hi, I would like to share the following event with you:\n\n*%s*\n%s _%s_\n%s %s\n\n Are you in?",event.getTitle(), getString(R.string.emoji_clock), Event.dayToString(event.getStartDate(), Event.DAY_AND_TIME), getString(R.string.emoji_location), event.getLocation());
+                if (event.getUrl() != null) toSend = String.format(Locale.ENGLISH,"Hi, I would like to share the following event with you:\n\n*%s*\n%s _%s_\n%s %s\n%s\n\n Are you in?",event.getTitle(), getString(R.string.emoji_clock), "THE DATE IN STRING FORMAT", getString(R.string.emoji_location), event.getLocation(),event.getUrl());
+                else toSend = String.format(Locale.ENGLISH,"Hi, I would like to share the following event with you:\n\n*%s*\n%s _%s_\n%s %s\n\n Are you in?",event.getTitle(), getString(R.string.emoji_clock), "THE DATE IN STRING FORMAT", getString(R.string.emoji_location), event.getLocation());
                 sendIntent.putExtra(Intent.EXTRA_TEXT, toSend);
                 sendIntent.setType("text/plain");
                 startActivity(Intent.createChooser(sendIntent, null));
@@ -135,7 +135,7 @@ public class EventDetailsActivity extends BaseThemeChangerActivity {
     private void setData() {
         event = Event.allEvents.get(event_id);
         titleText.setText(event.getTitle());
-        timeText.setText(Event.dayToString(event.getStartDate(), Event.NAME_AND_DAY_AND_TIME));
+        timeText.setText("THE DATE IN STRING FORMAT");
         locationText.setText(event.getLocation());
         urlText.setText(event.getUrl());
         companyText.setText(event.getCompany());

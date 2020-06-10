@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 public class EventTileAdapter extends RecyclerView.Adapter<EventTileAdapter.EventViewHolder> {
 
     private int ids[];
@@ -35,9 +37,18 @@ public class EventTileAdapter extends RecyclerView.Adapter<EventTileAdapter.Even
     public void onBindViewHolder(@NonNull EventViewHolder holder, final int position) {
         final Event e = Event.allEvents.get(ids[position]);
         holder.titleText.setText(e.getTitle());
-        holder.timeText.setText(Event.dayToString(e.getStartDate(), Event.NAME_AND_DAY_AND_TIME));
+        holder.timeText.setText("THE DATE IN STRING FORMAT");
         holder.locationText.setText(e.getLocation());
-        holder.logoView.setImageResource(Event.imagesrc[e.getCompanyID()]);
+        Picasso.get()
+                .load(e.getImageUrl())
+                //.resizeDimen(R.dimen.image_size, R.dimen.image_size) // fit already does this
+                //.onlyScaleDown()
+                .placeholder(R.drawable.ic_launcher_foreground)
+                .error(R.drawable.ic_launcher_background)
+                .fit()
+                .centerCrop()
+                .into(holder.logoView);
+        //holder.logoView.setImageResource(Event.imagesrc[e.getCompanyID()]);
         if (e.isFavourite()) {
             holder.favView.setVisibility(View.VISIBLE);
         }

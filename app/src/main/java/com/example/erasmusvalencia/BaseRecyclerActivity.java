@@ -1,4 +1,5 @@
 package com.example.erasmusvalencia;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -8,6 +9,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -18,10 +20,26 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
+import java.util.GregorianCalendar;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 // Activity that serves as a base class for MainActivity and EventsActivity which share most of their functionality.
 public abstract class BaseRecyclerActivity extends BaseThemeChangerActivity {
@@ -31,6 +49,7 @@ public abstract class BaseRecyclerActivity extends BaseThemeChangerActivity {
     final static int SHOW_SEARCH_BAR = 0;
     final static int RESTRICT_DISPLAY_TO_TODAY = 1;
     final static int ONLY_SHOW_FAVOURITES = 2;
+    HashMap<Integer, Event> allEvents;
     ArrayList<Event> eventsFiltered;
     RecyclerView recyclerView;
     EditText searchEdit;
@@ -45,9 +64,11 @@ public abstract class BaseRecyclerActivity extends BaseThemeChangerActivity {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutResID());
 
-        // Get event data and score them in Event.allEvents and this.eventsFiltered
-        doFileMagic();
+        // Get event data and store them in Event.allEvents and this.eventsFiltered
+        //doFileMagic();
         initialize();
+        allEvents = new HashMap<>();
+        downloadEvents(-1, 10);
 
 
         // Getting the current date and initializing today & tomorrow
@@ -79,12 +100,11 @@ public abstract class BaseRecyclerActivity extends BaseThemeChangerActivity {
 
     // Either reads and parses the events from the raw_event_data resource or parses the in that case already existing json array of type Event
     protected void doFileMagic() {
-        ArrayList<Event> events = new ArrayList<>();
         // In case the Hashmap of all events is already populated
         FileHandler.context = this;
         if (Event.allEvents != null && Event.allEvents.size() != 0) {
             Log.i(TAG, "doFileMagic: we do not need to load any events, hashmap in Event still populated :)");
-            events.addAll(Event.allEvents.values());
+            ArrayList<Event> events = new ArrayList<>(Event.allEvents.values());
             Collections.sort(events);
         }
         else {
@@ -96,13 +116,91 @@ public abstract class BaseRecyclerActivity extends BaseThemeChangerActivity {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private HashMap<Integer, Event> parseEvents(JSONArray jsonArray) {
+        HashMap<Integer, Event> result = new HashMap<>();
+        for (int i = 0; i < jsonArray.length(); i++) {
+            try {
+                JSONObject jsonElement = jsonArray.getJSONObject(i);
+
+                int id = jsonElement.getInt("id");
+                String url = jsonElement.getString("url");
+                String date_posted = jsonElement.getString("date_posted");
+                int company_id = jsonElement.getInt("author");
+                company_id = 3;
+                String companyName = jsonElement.getString("organisation");
+                String title = jsonElement.getString("title");
+                String description = jsonElement.getString("description");
+
+                String start_date = jsonElement.getString("start_date");
+                String end_date = jsonElement.getString("end_date");
+                String location = jsonElement.getString("location");
+                String event_url = jsonElement.getString("event_url");
+                String image_url = jsonElement.getString("author_pic_url");
+                OffsetDateTime datePosted = OffsetDateTime.parse(date_posted);
+                OffsetDateTime startDate = OffsetDateTime.parse(start_date);
+                OffsetDateTime endDate = OffsetDateTime.parse(end_date);
+                result.put(id, new Event(id, title, companyName, company_id, description,
+                        location, url, datePosted, startDate,
+                        endDate, event_url, image_url));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        Log.i("BaseRecyclerActivity", "parseJson: number of posts = " + result.size());
+        return result;
+    }
+
+    private void downloadEvents(int start, int end) {
+        String URL = "https://www.erasmuscalendar.com/api/events/";
+        if (start >= 0) {
+            URL += String.format(Locale.ENGLISH, "?start=%d", start);
+        }
+        if (end > 0) {
+            URL += String.format(Locale.ENGLISH, "?end=%d", end);
+        }
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        JsonArrayRequest objectRequest = new JsonArrayRequest(
+                Request.Method.GET,
+                URL,
+                null,
+                new Response.Listener<JSONArray>() {
+                    @RequiresApi(api = Build.VERSION_CODES.O)
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        Log.i(TAG, "onResponse: got a response from request");
+                        Log.i(TAG, response.toString());
+                        allEvents.putAll(parseEvents(response));
+                        Event.allEvents = allEvents;
+                        updateEvents();
+                        updateUI();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e(TAG, error.toString());
+                        //refreshAndRepeat();
+                    }
+                }
+        );
+        Log.i(TAG, "downloadEvents: adding request to request queue");
+        requestQueue.add(objectRequest);
+    }
+
     private class DownloadTask extends AsyncTask<String, Void, Object> {
         protected Object doInBackground(String... args) {
             Log.i("MyApp", "Background thread starting");
 
             ArrayList<Event> events = new ArrayList<>();
+            // Check internet
+            /* if(internet nid hesch):
+            read cached events
+             */
+
+
             // Reading file if this is the first time that app is open
-            SharedPreferences preferences = getSharedPreferences("init", MODE_PRIVATE);
+            /*SharedPreferences preferences = getSharedPreferences("init", MODE_PRIVATE);
             boolean firstOpen = preferences.getBoolean("first_time", true);
             boolean success = true;
             if (!firstOpen) {
@@ -122,6 +220,8 @@ public abstract class BaseRecyclerActivity extends BaseThemeChangerActivity {
                 }
             }
             if (firstOpen || !success) {
+
+
                 Log.i(TAG, "onCreate: we are opening for first time or read from json failed");
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putBoolean("first_time", false);
@@ -131,7 +231,7 @@ public abstract class BaseRecyclerActivity extends BaseThemeChangerActivity {
                     Event.allEvents.put(e.getId(), e);
                 }
             }
-            Event.addEasterEggEvent();
+            Event.addEasterEggEvent();*/
             return true;
         }
 
