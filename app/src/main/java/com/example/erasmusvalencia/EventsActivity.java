@@ -15,9 +15,11 @@ import android.view.MenuItem;
 import android.widget.DatePicker;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.temporal.TemporalAccessor;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.GregorianCalendar;
 
 import devs.mulham.horizontalcalendar.HorizontalCalendar;
 import devs.mulham.horizontalcalendar.HorizontalCalendarView;
@@ -178,10 +180,11 @@ public class EventsActivity extends BaseRecyclerActivity {
         for (Event event : allEvents.values()) {
             Log.i(TAG, "updateEvents: event: " + event.getTitle());
         }
-        eventsFiltered = new ArrayList<>();
-        eventsFiltered.addAll(allEvents.values());
-        //if (filterDialogSelection[RESTRICT_DISPLAY_TO_TODAY]) eventsFiltered = Event.filterEvents(Event.allEvents.values(), Event.FILTER_DATE, selectedDay, end);
-        //else eventsFiltered = Event.filterEvents(allEvents.values(), Event.FILTER_DATE, selectedDay, selectedDay);
+        //eventsFiltered = new ArrayList<>();
+        //eventsFiltered.addAll(allEvents.values());
+        OffsetDateTime sDay = OffsetDateTime.from(((GregorianCalendar)selectedDay).toZonedDateTime());
+        if (filterDialogSelection[RESTRICT_DISPLAY_TO_TODAY]) eventsFiltered = Event.filterEvents(Event.allEvents.values(), Event.FILTER_DATE, sDay, sDay.plusDays(1));
+        else eventsFiltered = Event.filterEvents(allEvents.values(), Event.FILTER_DATE, sDay, sDay);
         if (filterDialogSelection[ONLY_SHOW_FAVOURITES]) eventsFiltered = Event.filterEvents(eventsFiltered, Event.FILTER_FAVOURITE, true);
         if (filterDialogSelection[SHOW_SEARCH_BAR]) {
             eventsFiltered = Event.filterEvents(eventsFiltered, Event.FILTER_TEXT_SEARCH, filterText);
